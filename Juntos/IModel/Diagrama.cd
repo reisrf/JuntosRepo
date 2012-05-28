@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Juntos.IModel.Oferta.IAnunciante">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Oferta\IAnunciante.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Juntos.IModel.Oferta.ICupom">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAgAAAgAAA=</HashCode>
+      <FileName>Oferta\ICupom.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Oferta" />
+      <Property Name="Pessoa" />
+      <Property Name="Pagamento" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Oferta.IOferta">
+    <Position X="6.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAAAAAABAAAAAAAQAABAAAACAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Oferta\IOferta.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="CuponsDisponiveis" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Oferta.IPagamento">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Oferta\IPagamento.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.IBairro">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIABAAAAAIAEAAACAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Pessoa\IBairro.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cidade" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.ICEP">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pessoa\ICEP.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bairro" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.ICidade">
+    <Position X="14.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAQgAAAAAAAQAAACAAAAAEAAAA=</HashCode>
+      <FileName>Pessoa\ICidade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UF" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.IContato">
+    <Position X="1.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Pessoa\IContato.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tipo" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.IEndereco">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAACIAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Pessoa\IEndereco.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CEP" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.IPessoa">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAARAAAEQAAAAAAAAEIEAA=</HashCode>
+      <FileName>Pessoa\IPessoa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Enderecos" />
+      <Property Name="Contatos" />
+    </ShowAsCollectionAssociation>
+  </Interface>
+  <Interface Name="Juntos.IModel.Pessoa.IUF">
+    <Position X="17" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAgAAAAAAAAAAAABAABAIAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Pessoa\IUF.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Juntos.IModel.Pessoa.Enumerador.EnumTipoContato">
+    <Position X="1.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Pessoa\Enumerador\EnumTipoContato.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

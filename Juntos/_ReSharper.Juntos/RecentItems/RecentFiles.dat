@@ -1,0 +1,58 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:Endereco.cs" caret="721" fromTop="31" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:Juridica.cs" caret="0" fromTop="0" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:Fisica.cs" caret="111" fromTop="5" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:Pessoa.cs" caret="0" fromTop="0" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICEP.cs" caret="125" fromTop="5" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:Player.cs" caret="0" fromTop="0" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:Oferta.cs" caret="123" fromTop="6" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:TipoOferta.cs" caret="0" fromTop="0" />
+    <File id="94F3DA3D-A2DB-4ED6-9C14-913BB7693501/f:TipoDePlano.cs" caret="0" fromTop="0" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/d:Enumerador/f:EnumTipoContato.cs" caret="267" fromTop="11" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:IAnunciante.cs" caret="103" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:IPagamento.cs" caret="0" fromTop="0" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:ICupom.cs" caret="369" fromTop="15" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IContato.cs" caret="0" fromTop="0" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IEndereco.cs" caret="0" fromTop="0" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IPessoa.cs" caret="679" fromTop="25" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IUF.cs" caret="93" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="93" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IBairro.cs" caret="93" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:IOferta.cs" caret="1050" fromTop="22" />
+    <File id="7DF22C47-A576-4F2B-BBB1-5C8491130614/f:IBaseDAO.cs" caret="711" fromTop="19" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="896" fromTop="22" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IUF.cs" caret="283" fromTop="10" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IUF.cs" caret="990" fromTop="26" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IUF.cs" caret="1293" fromTop="30" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="792" fromTop="29" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="1558" fromTop="46" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="1540" fromTop="47" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IBairro.cs" caret="639" fromTop="24" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IBairro.cs" caret="965" fromTop="34" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IBairro.cs" caret="689" fromTop="26" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="837" fromTop="31" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="1042" fromTop="37" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:ICupom.cs" caret="981" fromTop="32" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:ICupom.cs" caret="982" fromTop="33" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:ICupom.cs" caret="369" fromTop="13" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:IAnunciante.cs" caret="179" fromTop="7" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Oferta/f:IAnunciante.cs" caret="103" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IUF.cs" caret="93" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="1269" fromTop="43" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:ICidade.cs" caret="93" fromTop="4" />
+    <File id="F304679B-D88F-47C4-847A-A1BBBC5C2DB1/d:Pessoa/f:IBairro.cs" caret="93" fromTop="4" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="2592" fromTop="27" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="1700" fromTop="22" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="1565" fromTop="30" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="1347" fromTop="29" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="1849" fromTop="39" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="2758" fromTop="47" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="459" fromTop="8" />
+    <File id="7DF22C47-A576-4F2B-BBB1-5C8491130614/f:IBaseDAO.cs" caret="65" fromTop="3" />
+    <File id="7DF22C47-A576-4F2B-BBB1-5C8491130614/f:IBaseDAO.cs" caret="711" fromTop="19" />
+    <File id="DCB7F722-A469-4AC2-9179-C1F190442B1D/f:IBaseRepository.cs" caret="389" fromTop="9" />
+  </RecentEdits>
+</RecentFiles>

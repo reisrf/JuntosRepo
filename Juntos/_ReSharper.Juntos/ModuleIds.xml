@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="F304679B-D88F-47C4-847A-A1BBBC5C2DB1" ModuleId="Juntos.IModel" />
+  <Module PersistentId="94F3DA3D-A2DB-4ED6-9C14-913BB7693501" ModuleId="Juntos.Model" />
+  <Module PersistentId="DCB7F722-A469-4AC2-9179-C1F190442B1D" ModuleId="IRepository" />
+  <Module PersistentId="7DF22C47-A576-4F2B-BBB1-5C8491130614" ModuleId="IDAL" />
+</Modules>

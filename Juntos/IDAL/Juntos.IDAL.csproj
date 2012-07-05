@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7DF22C47-A576-4F2B-BBB1-5C8491130614}</ProjectGuid>
+    <ProjectGuid>{9A7FAC96-74EA-432A-93E7-33FE1563B5A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Juntos.IDAL</RootNamespace>
@@ -40,8 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAnuncianteDAO.cs" />
     <Compile Include="IBaseDAO.cs" />
+    <Compile Include="ICompraDAO.cs" />
+    <Compile Include="IConsumidorDAO.cs" />
+    <Compile Include="ICupomDAO.cs" />
+    <Compile Include="IEnderecoDAO.cs" />
+    <Compile Include="IOfertaDAO.cs" />
+    <Compile Include="IPagamentoDAO.cs" />
+    <Compile Include="IPessoaDAO.cs" />
+    <Compile Include="ITelefoneDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Juntos.Model.csproj">
+      <Project>{B1E0C843-EEB5-47FD-B3C9-8EE587EC4205}</Project>
+      <Name>Juntos.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

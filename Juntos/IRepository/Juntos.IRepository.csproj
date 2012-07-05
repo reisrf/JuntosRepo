@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DCB7F722-A469-4AC2-9179-C1F190442B1D}</ProjectGuid>
+    <ProjectGuid>{BC248CDA-587D-4DF5-9FB0-7D41B8B5FDCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Juntos.IRepository</RootNamespace>
@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAnuncianteRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
+    <Compile Include="ICompraRepository.cs" />
+    <Compile Include="IConsumidorRepository.cs" />
+    <Compile Include="IOfertaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Juntos.Model.csproj">
+      <Project>{B1E0C843-EEB5-47FD-B3C9-8EE587EC4205}</Project>
+      <Name>Juntos.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

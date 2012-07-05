@@ -1,23 +1,16 @@
-﻿namespace Juntos.IDAL
-{
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-    /// <summary>
-    /// Interface base para uma classe de acesso a dados.
-    /// </summary>
+namespace Juntos.IDAL
+{
     public interface IBaseDAO<TEntidade>
     {
-        /// <summary>
-        /// Consulta uma lista de entidades persistidas de acordo com a expressão LINQ.
-        /// </summary>
-        /// <param name="consulta">Expressão LINQ.</param>
-        /// <returns>Retorna uma lista de entidades.</returns>
-        IEnumerable<TEntidade> Consultar(IEnumerable<TEntidade> consulta);
+        void Adicionar(TEntidade entidade);
 
-        /// <summary>
-        /// Persiste uma lista de entidades.
-        /// </summary>
-        /// <param name="entidades">Entidades a serem persistidas.</param>
-        void Salvar(IEnumerable<TEntidade> entidades);
+        void Atualizar(TEntidade entidade);
+
+        void Remover(TEntidade entidade);
+
+        IEnumerable<TEntidade> Consultar(Func<TEntidade, bool> expressaoDeConsulta);
     }
 }

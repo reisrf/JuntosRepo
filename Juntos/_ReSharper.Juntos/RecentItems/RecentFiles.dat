@@ -2,7 +2,6 @@
   <RecentFiles>
     <File id="BC248CDA-587D-4DF5-9FB0-7D41B8B5FDCC/f:IAnuncianteRepository.cs" caret="118" fromTop="4" />
     <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:AnuncianteDAO.cs" caret="59" fromTop="2" />
-    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Anunciante.cs" caret="0" fromTop="0" />
     <File id="9A7FAC96-74EA-432A-93E7-33FE1563B5A3/f:IAnuncianteDAO.cs" caret="103" fromTop="4" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Compra.cs" caret="0" fromTop="0" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Consumidor.cs" caret="0" fromTop="0" />
@@ -16,14 +15,17 @@
     <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:BaseService.cs" caret="15" fromTop="1" />
     <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:CompraService.cs" caret="515" fromTop="16" />
     <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:ExtensionMethods.cs" caret="2253" fromTop="54" />
-    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:App.config" caret="6680" fromTop="42" />
-    <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:UnityHelper.cs" caret="4346" fromTop="113" />
-    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:Program.cs" caret="244" fromTop="9" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Anunciante.cs" caret="167" fromTop="4" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Pessoa.cs" caret="161" fromTop="7" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumFormaPagamento.cs" caret="0" fromTop="0" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumStatusOferta.cs" caret="0" fromTop="0" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumStatusPagamento.cs" caret="0" fromTop="0" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumTipoPessoa.cs" caret="0" fromTop="0" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Entidade.cs" caret="0" fromTop="0" />
+    <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:UnityHelper.cs" caret="1697" fromTop="8" />
   </RecentFiles>
   <RecentEdits>
-    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:App.config" caret="6680" fromTop="42" />
     <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:UnityHelper.cs" caret="80" fromTop="0" />
     <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:AnuncianteDAO.cs" caret="79" fromTop="3" />
-    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:Program.cs" caret="70" fromTop="3" />
   </RecentEdits>
 </RecentFiles>

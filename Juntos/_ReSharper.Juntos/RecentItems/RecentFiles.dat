@@ -1,31 +1,50 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="BC248CDA-587D-4DF5-9FB0-7D41B8B5FDCC/f:IAnuncianteRepository.cs" caret="118" fromTop="4" />
-    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:AnuncianteDAO.cs" caret="59" fromTop="2" />
-    <File id="9A7FAC96-74EA-432A-93E7-33FE1563B5A3/f:IAnuncianteDAO.cs" caret="103" fromTop="4" />
-    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Compra.cs" caret="0" fromTop="0" />
-    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Consumidor.cs" caret="0" fromTop="0" />
-    <File id="F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9/f:AnuncianteRepository.cs" caret="173" fromTop="6" />
-    <File id="F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9/f:BaseRepository.cs" caret="319" fromTop="11" />
-    <File id="F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9/f:CompraRepository.cs" caret="0" fromTop="0" />
-    <File id="DCE9F905-B8F9-43D8-9A04-2BA073946FC7/f:IAnuncianteService.cs" caret="113" fromTop="4" />
-    <File id="F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9/f:ConsumidorRepository.cs" caret="0" fromTop="0" />
-    <File id="F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9/f:OfertaRepository.cs" caret="0" fromTop="0" />
-    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:AnuncianteService.cs" caret="192" fromTop="7" />
-    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:BaseService.cs" caret="15" fromTop="1" />
-    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:CompraService.cs" caret="515" fromTop="16" />
     <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:ExtensionMethods.cs" caret="2253" fromTop="54" />
-    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Anunciante.cs" caret="167" fromTop="4" />
-    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Pessoa.cs" caret="161" fromTop="7" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumFormaPagamento.cs" caret="0" fromTop="0" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumStatusOferta.cs" caret="0" fromTop="0" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumStatusPagamento.cs" caret="0" fromTop="0" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/d:Enums/f:EnumTipoPessoa.cs" caret="0" fromTop="0" />
     <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Entidade.cs" caret="0" fromTop="0" />
     <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:UnityHelper.cs" caret="1697" fromTop="8" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:CompraDAO.cs" caret="827" fromTop="24" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:ConsumidorDAO.cs" caret="773" fromTop="25" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:CupomDAO.cs" caret="818" fromTop="24" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:EnderecoDAO.cs" caret="894" fromTop="28" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:OfertaDAO.cs" caret="827" fromTop="24" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:PagamentoDAO.cs" caret="854" fromTop="25" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:TelefoneDAO.cs" caret="883" fromTop="28" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:JuntosContext.cs" caret="570" fromTop="19" />
+    <File id="F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9/f:BaseRepository.cs" caret="559" fromTop="15" />
+    <File id="6320D92F-6DB7-4C07-8B03-B7C09AF811FD/f:MelhorCompraDb.cs/l:..?..?Users?tiagor87?Documents?Visual Studio 2010?Projects?MelhorCompra?MelhorCompra.DAL.EF4?MelhorCompraDb.cs" caret="0" fromTop="0" />
+    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:OfertaService.cs" caret="1879" fromTop="28" />
+    <File id="6320D92F-6DB7-4C07-8B03-B7C09AF811FD/f:MelhorCompraContext.cs/l:..?..?Users?tiagor87?Documents?Visual Studio 2010?Projects?MelhorCompra?MelhorCompra.DAL.EF4?MelhorCompraContext.cs" caret="0" fromTop="0" />
+    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:PessoaService.cs" caret="0" fromTop="0" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Anunciante.cs" caret="419" fromTop="14" />
+    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:Program.cs" caret="673" fromTop="16" />
+    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:ConsumidorService.cs" caret="0" fromTop="0" />
+    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:CompraService.cs" caret="0" fromTop="0" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Pessoa.cs" caret="544" fromTop="20" />
+    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:App.config" caret="1409" fromTop="21" />
+    <File id="6320D92F-6DB7-4C07-8B03-B7C09AF811FD/f:CupomDao.cs/l:..?..?Users?tiagor87?Documents?Visual Studio 2010?Projects?MelhorCompra?MelhorCompra.DAL.EF4?CupomDao.cs" caret="0" fromTop="0" />
+    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:BaseService.cs" caret="538" fromTop="15" />
+    <File id="53A72DBB-9341-4391-AABB-6BB913E56DF9/f:AnuncianteService.cs" caret="0" fromTop="0" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:AnuncianteDAO.cs" caret="294" fromTop="12" />
   </RecentFiles>
   <RecentEdits>
     <File id="561F133F-D269-4E2E-A692-56916C87C2FE/f:UnityHelper.cs" caret="80" fromTop="0" />
-    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:AnuncianteDAO.cs" caret="79" fromTop="3" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:TelefoneDAO.cs" caret="883" fromTop="28" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:PagamentoDAO.cs" caret="854" fromTop="25" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:OfertaDAO.cs" caret="827" fromTop="24" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:EnderecoDAO.cs" caret="845" fromTop="27" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:CupomDAO.cs" caret="818" fromTop="24" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:ConsumidorDAO.cs" caret="773" fromTop="25" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:CompraDAO.cs" caret="827" fromTop="24" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:JuntosContext.cs" caret="138" fromTop="3" />
+    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:App.config" caret="313" fromTop="7" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Anunciante.cs" caret="294" fromTop="12" />
+    <File id="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA/f:Program.cs" caret="734" fromTop="19" />
+    <File id="B1E0C843-EEB5-47FD-B3C9-8EE587EC4205/f:Pessoa.cs" caret="542" fromTop="20" />
+    <File id="E6AA5350-51F4-444C-8F4B-81CEE9300152/f:AnuncianteDAO.cs" caret="294" fromTop="12" />
   </RecentEdits>
 </RecentFiles>

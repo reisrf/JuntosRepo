@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Juntos.IDAL;
 using Juntos.Model;
 
@@ -9,22 +10,22 @@ namespace Juntos.DAL.Provider.EntityFramework
     {
         public void Adicionar(Consumidor entidade)
         {
-            throw new NotImplementedException();
+            JuntosContext.Instance.Consumidores.Add(entidade);
         }
 
         public void Atualizar(Consumidor entidade)
         {
-            throw new NotImplementedException();
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Consumidor entidade)
         {
-            throw new NotImplementedException();
+            JuntosContext.Instance.Consumidores.Remove(entidade);
         }
 
         public IEnumerable<Consumidor> Consultar(Func<Consumidor, bool> expressaoDeConsulta)
         {
-            throw new NotImplementedException();
+            return JuntosContext.Instance.Consumidores.Where(expressaoDeConsulta);
         }
     }
 }

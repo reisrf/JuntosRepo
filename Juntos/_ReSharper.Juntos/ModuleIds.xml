@@ -8,4 +8,5 @@
   <Module PersistentId="53A72DBB-9341-4391-AABB-6BB913E56DF9" ModuleId="Service" />
   <Module PersistentId="C9020A8A-65C1-427D-BC1C-E9D3E0C46CCA" ModuleId="ConsoleApp" />
   <Module PersistentId="561F133F-D269-4E2E-A692-56916C87C2FE" ModuleId="Framework" />
+  <Module PersistentId="D713377D-5ABF-4D8D-A8DE-81AB9ABDA75F" ModuleId="Juntos.MvcJuntos" />
 </Modules>

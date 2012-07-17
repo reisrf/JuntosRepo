@@ -16,6 +16,9 @@ namespace Juntos.Model
             this.Nome = nome;
             this.CpfCnpj = cpfCnpj;
             this.Email = email;
+
+            this.Enderecos = new List<Endereco>();
+            this.Telefones = new List<Telefone>();
         }
 
         public string Email { get; set; }

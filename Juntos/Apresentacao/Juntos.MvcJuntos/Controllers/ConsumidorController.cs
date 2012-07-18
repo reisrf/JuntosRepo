@@ -23,7 +23,7 @@ namespace Juntos.MvcJuntos.Controllers
         public ActionResult Edit(Guid id)
         {
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
-            Consumidor consumidor = consumidorService.ConsultarPeloId(id);
+            Consumidor consumidor = consumidorService.BuscarPorId(id);
             return View(consumidor);
         }
         [HttpPost]

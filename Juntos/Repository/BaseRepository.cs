@@ -40,5 +40,10 @@ namespace Juntos.Repository
         {
             return this._entidadeDAO.RetornarTodos().ToList();
         }
+
+        public TEntidade BuscarPorId(Guid id)
+        {
+            return this._entidadeDAO.BuscarPorId(id);
+        }
     }
 }

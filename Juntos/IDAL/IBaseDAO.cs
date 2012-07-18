@@ -15,5 +15,7 @@ namespace Juntos.IDAL
 
         List<TEntidade> RetornarTodos();
 
+        TEntidade BuscarPorId(Guid id);
+
     }
 }

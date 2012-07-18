@@ -34,5 +34,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Telefones.ToList();
         }
+
+        public Telefone BuscarPorId(Guid id)
+        {
+            return JuntosContext.Instance.Telefones.Where(a => a.Id == id).FirstOrDefault();
+        }
     }
 }

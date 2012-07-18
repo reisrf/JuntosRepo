@@ -11,5 +11,6 @@ namespace Juntos.IRepository
         void Remover(TEntidade pessoa);
         List<TEntidade> Consultar(Func<TEntidade, bool> expressaoDeConsulta);
         List<TEntidade> RetornarTodos();
+        TEntidade BuscarPorId(Guid id);
     }
 }

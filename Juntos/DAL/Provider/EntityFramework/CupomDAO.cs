@@ -34,5 +34,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Cupons.ToList();
         }
+
+        public Cupom BuscarPorId(Guid id)
+        {
+            return JuntosContext.Instance.Cupons.Where(a => a.Id == id).FirstOrDefault();
+        }
     }
 }

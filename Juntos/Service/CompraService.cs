@@ -15,10 +15,10 @@ namespace Juntos.Service
         public Compra ComprarOferta(Guid idConsumidor, Guid idOferta, int quantidadeCupons)
         {
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
-            var consumidor = consumidorService.ConsultarPeloId(idConsumidor);
+            var consumidor = consumidorService.BuscarPorId(idConsumidor);
 
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
-            var oferta = ofertaService.ConsultarPeloId(idOferta);
+            var oferta = ofertaService.BuscarPorId(idOferta);
 
             var compra = new Compra(consumidor);
             var cupons = oferta.GerarCupons(quantidadeCupons);

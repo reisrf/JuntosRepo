@@ -33,5 +33,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Compras.ToList();
         }
+
+        public Compra BuscarPorId(Guid id)
+        {
+            return JuntosContext.Instance.Compras.Where(a => a.Id == id).FirstOrDefault();
+        }
     }
 }

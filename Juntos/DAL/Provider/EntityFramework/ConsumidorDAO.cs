@@ -33,5 +33,10 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Consumidores.ToList();
         }
 
+        public Consumidor BuscarPorId(Guid id)
+        {
+            return JuntosContext.Instance.Consumidores.Where(a => a.Id == id).FirstOrDefault();
+        }
+
     }
 }

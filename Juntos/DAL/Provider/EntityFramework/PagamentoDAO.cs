@@ -34,5 +34,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Pagamentos.ToList();
         }
+
+        public Pagamento BuscarPorId(Guid id)
+        {
+            return JuntosContext.Instance.Pagamentos.Where(a => a.Id == id).FirstOrDefault();
+        }
     }
 }

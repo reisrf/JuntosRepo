@@ -33,5 +33,9 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Enderecos.ToList();
         }
+        public Endereco BuscarPorId(Guid id)
+        {
+            return JuntosContext.Instance.Enderecos.Where(a => a.Id == id).FirstOrDefault();
+        }
     }
 }

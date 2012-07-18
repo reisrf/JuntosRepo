@@ -12,5 +12,8 @@ namespace Juntos.IDAL
         void Remover(TEntidade entidade);
 
         IEnumerable<TEntidade> Consultar(Func<TEntidade, bool> expressaoDeConsulta);
+
+        List<TEntidade> RetornarTodos();
+
     }
 }

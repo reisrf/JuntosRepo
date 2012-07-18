@@ -1,6 +1,9 @@
-﻿using Juntos.IRepository;
+﻿using System.Collections.Generic;
+using Juntos.IRepository;
 using Juntos.IService;
 using Juntos.Model;
+
+
 
 namespace Juntos.Service
 {
@@ -10,4 +13,5 @@ namespace Juntos.Service
         {
         }
     }
+
 }

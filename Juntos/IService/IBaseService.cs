@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Juntos.Model;
 
 namespace Juntos.IService
@@ -10,5 +11,6 @@ namespace Juntos.IService
         void Atualizar(TEntidade entidade);
         void Remover(TEntidade entidade);
         TEntidade ConsultarPeloId(Guid id);
+        List<TEntidade> RetornarTodos();
     }
 }

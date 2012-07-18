@@ -29,5 +29,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Pagamentos.Where(expressaoDeConsulta);
         }
+
+        public List<Pagamento> RetornarTodos()
+        {
+            return JuntosContext.Instance.Pagamentos.ToList();
+        }
     }
 }

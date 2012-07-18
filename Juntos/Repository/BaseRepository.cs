@@ -35,5 +35,10 @@ namespace Juntos.Repository
         {
             return this._entidadeDAO.Consultar(expressaoDeConsulta).ToList();
         }
+
+        public List<TEntidade> RetornarTodos()
+        {
+            return this._entidadeDAO.RetornarTodos().ToList();
+        }
     }
 }

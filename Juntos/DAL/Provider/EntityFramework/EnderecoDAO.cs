@@ -29,5 +29,9 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Enderecos.Where(expressaoDeConsulta);
         }
+        public List<Endereco> RetornarTodos()
+        {
+            return JuntosContext.Instance.Enderecos.ToList();
+        }
     }
 }

@@ -146,10 +146,25 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework.csproj">
+      <Project>{561F133F-D269-4E2E-A692-56916C87C2FE}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IService\Juntos.IService.csproj">
+      <Project>{DCE9F905-B8F9-43D8-9A04-2BA073946FC7}</Project>
+      <Name>Juntos.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Juntos.Model.csproj">
+      <Project>{B1E0C843-EEB5-47FD-B3C9-8EE587EC4205}</Project>
+      <Name>Juntos.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Service\Juntos.Service.csproj">
       <Project>{53A72DBB-9341-4391-AABB-6BB913E56DF9}</Project>
       <Name>Juntos.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Consumidor\Edit.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Juntos.IRepository;
 using Juntos.IService;
@@ -35,6 +36,12 @@ namespace Juntos.Service
         {
             return this._repository.Consultar(c => c.Id.Equals(id)).FirstOrDefault();
         }
+
+        public List<TEntidade> RetornarTodos()
+        {
+            return this._repository.RetornarTodos().ToList();
+        }
+
 
         protected IBaseRepository<TEntidade> Repository { get { return this._repository; }}
     }

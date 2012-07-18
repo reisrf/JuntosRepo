@@ -29,5 +29,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Telefones.Where(expressaoDeConsulta);
         }
+
+        public List<Telefone> RetornarTodos()
+        {
+            return JuntosContext.Instance.Telefones.ToList();
+        }
     }
 }

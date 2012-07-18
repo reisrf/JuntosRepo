@@ -29,5 +29,10 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Cupons.Where(expressaoDeConsulta);
         }
+
+        public List<Cupom> RetornarTodos()
+        {
+            return JuntosContext.Instance.Cupons.ToList();
+        }
     }
 }

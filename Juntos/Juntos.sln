@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domínio", "Domínio", "{46
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentação", "Apresentação", "{FD1BD8A3-D5C4-4707-90DB-14DBD9F5DBDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juntos.MvcJuntos", "Apresentação\Juntos.MvcJuntos\Juntos.MvcJuntos.csproj", "{D713377D-5ABF-4D8D-A8DE-81AB9ABDA75F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juntos.MvcJuntos", "Apresentacao\Juntos.MvcJuntos\Juntos.MvcJuntos.csproj", "{D713377D-5ABF-4D8D-A8DE-81AB9ABDA75F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

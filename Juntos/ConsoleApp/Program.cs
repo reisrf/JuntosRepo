@@ -11,6 +11,7 @@ namespace Juntos.ConsoleApp
         static void Main(string[] args)
         {
             IConsumidorService anuncianteService = typeof (IConsumidorService).Fabricar();
+            IPagamentoService pagamentoService = typeof(IPagamentoService).Fabricar();
         }
     }
 }

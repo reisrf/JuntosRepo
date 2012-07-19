@@ -12,11 +12,11 @@ namespace Juntos.Service
 {
     public class PagamentoService : BaseService<Juntos.Model.Pagamento>, IPagamentoService
     {
-        IPagamentoRepository repository;
+        
         
         public PagamentoService(IPagamentoRepository pagamentoRepository): base(pagamentoRepository)
         {
-            repository = pagamentoRepository;
+        
         }
         
        public void ProcessarPagamento(Juntos.Model.Pagamento pagamento)
@@ -65,7 +65,7 @@ namespace Juntos.Service
 
                     }
 
-                    repository.AtualizarPagamento(pagamento);
+                    this.AtualizarPagameto(pagamento);
 
                 }
 

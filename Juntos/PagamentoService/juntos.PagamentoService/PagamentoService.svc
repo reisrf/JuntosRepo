@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="juntos.PagamentoService.PagamentoService" CodeBehind="PagamentoService.svc.cs" %>

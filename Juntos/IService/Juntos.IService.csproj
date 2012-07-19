@@ -44,6 +44,7 @@
     <Compile Include="IBaseService.cs" />
     <Compile Include="ICompraService.cs" />
     <Compile Include="IConsumidorService.cs" />
+    <Compile Include="IPagamentoService.cs" />
     <Compile Include="IOfertaService.cs" />
     <Compile Include="IPessoaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

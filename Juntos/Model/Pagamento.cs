@@ -12,8 +12,8 @@ namespace Juntos.Model
 
         public EnumFormaPagamento FormaPagamento { get; set; }
 
-        [Obsolete] //Será que não poderíamos usar o ID?
-        public string Codigo { get; set; }
+       
+        public Guid Codigo { get; set; }
 
         public DateTime DataPagamento { get; set; }
 

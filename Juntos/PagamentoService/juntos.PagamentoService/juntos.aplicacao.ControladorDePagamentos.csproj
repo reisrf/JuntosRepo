@@ -52,7 +52,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PagamentoService.svc" />
+    <Content Include="ControladorDePagamentoService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -66,10 +66,10 @@
     <Compile Include="model\StatusPagamento.cs" />
     <Compile Include="model\Pagamento.cs" />
     <Compile Include="model\Pagamentos.cs" />
-    <Compile Include="PagamentoService.svc.cs">
-      <DependentUpon>PagamentoService.svc</DependentUpon>
+    <Compile Include="ControladorDePagamentoService.svc.cs">
+      <DependentUpon>ControladorDePagamentoService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IPagamentoService.cs" />
+    <Compile Include="IControladorPagamentoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

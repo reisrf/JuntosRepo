@@ -31,9 +31,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentacao", "Apresentaca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juntos.MvcJuntos", "Apresentacao\Juntos.MvcJuntos\Juntos.MvcJuntos.csproj", "{D713377D-5ABF-4D8D-A8DE-81AB9ABDA75F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juntos.PagamentoService", "PagamentoService\juntos.PagamentoService\Juntos.PagamentoService.csproj", "{B63B3242-FE75-4C91-B442-E243C82162AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "juntos.aplicacao.ControladorDePagamentos", "PagamentoService\juntos.PagamentoService\juntos.aplicacao.ControladorDePagamentos.csproj", "{B63B3242-FE75-4C91-B442-E243C82162AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagamentoClient", "PagamentoClient\PagamentoClient.csproj", "{74115D59-BE77-437E-B13C-7B760D4B33A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B63B3242-FE75-4C91-B442-E243C82162AA} = {B63B3242-FE75-4C91-B442-E243C82162AA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

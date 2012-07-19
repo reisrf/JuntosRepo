@@ -10,7 +10,7 @@ using juntos.PagamentoService.model;
 namespace juntos.PagamentoService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    public class PagamentoService : IPagamentoService
+    public class PagamentoService : IControladorPagamentoService
     {
         public void PaymentRequest(Pagamento pagto)
         {
@@ -36,7 +36,7 @@ namespace juntos.PagamentoService
 
         }
 
-        public Pagamento GetPaymentResult(string pagtoid)
+        public Pagamento GetPaymentResult(Guid pagtoid)
         {
             Console.WriteLine(@"Verificando o status do pagamento : " + pagtoid);
 

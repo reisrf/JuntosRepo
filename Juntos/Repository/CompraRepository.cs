@@ -8,6 +8,8 @@ namespace Juntos.Repository
     {
         public CompraRepository(ICompraDAO compraDAO) : base(compraDAO)
         {
+
         }
+
     }
 }

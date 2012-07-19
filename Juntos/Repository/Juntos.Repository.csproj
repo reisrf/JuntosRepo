@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AnuncianteRepository.cs" />
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="PagamentoRepository.cs" />
     <Compile Include="CompraRepository.cs" />
     <Compile Include="ConsumidorRepository.cs" />
     <Compile Include="OfertaRepository.cs" />

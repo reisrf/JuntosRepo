@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +47,26 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IRepository\Juntos.IRepository.csproj">
+      <Project>{BC248CDA-587D-4DF5-9FB0-7D41B8B5FDCC}</Project>
+      <Name>Juntos.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IService\Juntos.IService.csproj">
+      <Project>{DCE9F905-B8F9-43D8-9A04-2BA073946FC7}</Project>
+      <Name>Juntos.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Juntos.Service.csproj">
+      <Project>{53A72DBB-9341-4391-AABB-6BB913E56DF9}</Project>
+      <Name>Juntos.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -44,6 +44,7 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="ICompraRepository.cs" />
     <Compile Include="IConsumidorRepository.cs" />
+    <Compile Include="IPagamentoRepository.cs" />
     <Compile Include="IOfertaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

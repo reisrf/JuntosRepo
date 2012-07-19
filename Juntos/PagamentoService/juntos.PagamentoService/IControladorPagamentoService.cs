@@ -9,16 +9,15 @@ using juntos.PagamentoService.model;
 
 namespace juntos.PagamentoService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IPagamentoService
+    public interface IControladorPagamentoService
     {
 
         [OperationContract(IsOneWay = true)]
         void PaymentRequest(Pagamento pgto);
 
         [OperationContract]
-        Pagamento GetPaymentResult(string pagtoid);
+        Pagamento GetPaymentResult(Guid pagtoid);
 
         // TODO: Add your service operations here
     }

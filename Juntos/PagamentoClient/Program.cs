@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Juntos.Service;
+using Juntos.IService;
+using Juntos.IRepository;
+
 
 namespace PagamentoClient
 {
@@ -9,6 +13,10 @@ namespace PagamentoClient
     {
         static void Main(string[] args)
         {
+
+            
+            
+
 
            
         }

@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using Juntos.Service;
 using Juntos.Model;
 using Juntos.IService;
+using Juntos.Model.Enums;
+
 
 
 namespace Juntos.MvcJuntos.Controllers
@@ -26,18 +28,55 @@ namespace Juntos.MvcJuntos.Controllers
             Consumidor consumidor = consumidorService.BuscarPorId(id);
             return View(consumidor);
         }
+
         [HttpPost]
-        public ActionResult Edit(Consumidor consumidor)
+        public ActionResult Edit(Guid id, FormCollection collection)
         {
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
+            List<Consumidor> consumidores = consumidorService.RetornarTodos(); 
+
+            Consumidor consumidor = consumidores.Where(c => c.Id == id).FirstOrDefault();
+
             if (consumidor != null)
             {
                 TryUpdateModel<Consumidor>(consumidor);
                 consumidorService.Atualizar(consumidor);
-
             }
+
             return RedirectToAction("Index");
         }
-         
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Models.PessoaDTO pessoa)
+        {
+            Consumidor consumidor = new Consumidor();
+            consumidor.Nome = pessoa.Nome;
+            consumidor.Email = pessoa.Email;
+            consumidor.CpfCnpj = pessoa.CpfCnpj;
+            consumidor.Tipo = EnumTipoPessoa.Fisica;
+            Endereco endereco = new Endereco(consumidor);
+            endereco.Logradouro = pessoa.Logradouro;
+            endereco.Numero = pessoa.LogradouroNumero;
+            endereco.Complemento = pessoa.Complemento;
+            endereco.Bairro = pessoa.Bairro;
+            endereco.Cidade  =pessoa.Cidade;
+            endereco.Estado = pessoa.Estado;
+            endereco.Pais = pessoa.Pais;
+            endereco.Cep = pessoa.Cep;
+
+            Telefone telefone = new Telefone(consumidor);
+            telefone.DDI = pessoa.DDI;
+            telefone.DDD = pessoa.DDD;
+            telefone.Numero = pessoa.NumeroTelefone;
+            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
+            consumidorService.Adicionar(consumidor);
+
+            return RedirectToAction("Index");
+        }
     }
 }

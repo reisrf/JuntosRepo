@@ -38,8 +38,8 @@ namespace Juntos.DAL.Provider.EntityFramework
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Pessoa>().HasKey(c => c.Id);
-            modelBuilder.Entity<Anunciante>().HasKey(c => c.Id);
-            modelBuilder.Entity<Consumidor>().HasKey(c => c.Id);
+            //modelBuilder.Entity<Anunciante>().HasKey(c => c.Id);
+            //modelBuilder.Entity<Consumidor>().HasKey(c => c.Id);
 
             modelBuilder.Entity<Endereco>().HasKey(e => e.Id);
             modelBuilder.Entity<Telefone>().HasKey(e => e.Id);

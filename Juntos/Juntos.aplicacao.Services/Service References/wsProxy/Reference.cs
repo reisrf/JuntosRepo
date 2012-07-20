@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Juntos.Service.proxy {
+namespace Juntos.aplicacao.Services.wsProxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,10 +29,10 @@ namespace Juntos.Service.proxy {
         private System.DateTime DataPagamentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Service.proxy.FormaPagamento FormaPagamentoField;
+        private Juntos.aplicacao.Services.wsProxy.FormaPagamento FormaPagamentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Service.proxy.StatusPagamento StatusField;
+        private Juntos.aplicacao.Services.wsProxy.StatusPagamento StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValorField;
@@ -74,7 +74,7 @@ namespace Juntos.Service.proxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Service.proxy.FormaPagamento FormaPagamento {
+        public Juntos.aplicacao.Services.wsProxy.FormaPagamento FormaPagamento {
             get {
                 return this.FormaPagamentoField;
             }
@@ -87,7 +87,7 @@ namespace Juntos.Service.proxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Service.proxy.StatusPagamento Status {
+        public Juntos.aplicacao.Services.wsProxy.StatusPagamento Status {
             get {
                 return this.StatusField;
             }
@@ -154,23 +154,23 @@ namespace Juntos.Service.proxy {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="proxy.IControladorPagamentoService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="wsProxy.IControladorPagamentoService")]
     public interface IControladorPagamentoService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IControladorPagamentoService/PaymentRequest")]
-        void PaymentRequest(Juntos.Service.proxy.Pagamento pgto);
+        void PaymentRequest(Juntos.aplicacao.Services.wsProxy.Pagamento pgto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControladorPagamentoService/GetPaymentResult", ReplyAction="http://tempuri.org/IControladorPagamentoService/GetPaymentResultResponse")]
-        Juntos.Service.proxy.Pagamento GetPaymentResult(System.Guid pagtoid);
+        Juntos.aplicacao.Services.wsProxy.Pagamento GetPaymentResult(System.Guid pagtoid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IControladorPagamentoServiceChannel : Juntos.Service.proxy.IControladorPagamentoService, System.ServiceModel.IClientChannel {
+    public interface IControladorPagamentoServiceChannel : Juntos.aplicacao.Services.wsProxy.IControladorPagamentoService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ControladorPagamentoServiceClient : System.ServiceModel.ClientBase<Juntos.Service.proxy.IControladorPagamentoService>, Juntos.Service.proxy.IControladorPagamentoService {
+    public partial class ControladorPagamentoServiceClient : System.ServiceModel.ClientBase<Juntos.aplicacao.Services.wsProxy.IControladorPagamentoService>, Juntos.aplicacao.Services.wsProxy.IControladorPagamentoService {
         
         public ControladorPagamentoServiceClient() {
         }
@@ -191,11 +191,11 @@ namespace Juntos.Service.proxy {
                 base(binding, remoteAddress) {
         }
         
-        public void PaymentRequest(Juntos.Service.proxy.Pagamento pgto) {
+        public void PaymentRequest(Juntos.aplicacao.Services.wsProxy.Pagamento pgto) {
             base.Channel.PaymentRequest(pgto);
         }
         
-        public Juntos.Service.proxy.Pagamento GetPaymentResult(System.Guid pagtoid) {
+        public Juntos.aplicacao.Services.wsProxy.Pagamento GetPaymentResult(System.Guid pagtoid) {
             return base.Channel.GetPaymentResult(pagtoid);
         }
     }

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{53A72DBB-9341-4391-AABB-6BB913E56DF9}</ProjectGuid>
+    <ProjectGuid>{8884FB36-D15C-421D-8D0F-02FB24C87DC1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Juntos.Service</RootNamespace>
-    <AssemblyName>Juntos.Service</AssemblyName>
+    <RootNamespace>Juntos.aplicacao.Services</RootNamespace>
+    <AssemblyName>Juntos.aplicacao.Services</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Framework\bin\Debug\Framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -46,34 +42,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnuncianteService.cs" />
-    <Compile Include="BaseService.cs" />
-    <Compile Include="PagamentoService.cs" />
-    <Compile Include="CompraService.cs" />
-    <Compile Include="ConsumidorService.cs" />
-    <Compile Include="OfertaService.cs" />
-    <Compile Include="PessoaService.cs" />
+    <Compile Include="PagamentoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IRepository\Juntos.IRepository.csproj">
-      <Project>{BC248CDA-587D-4DF5-9FB0-7D41B8B5FDCC}</Project>
-      <Name>Juntos.IRepository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IService\Juntos.IService.csproj">
-      <Project>{DCE9F905-B8F9-43D8-9A04-2BA073946FC7}</Project>
-      <Name>Juntos.IService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Juntos.Model.csproj">
-      <Project>{B1E0C843-EEB5-47FD-B3C9-8EE587EC4205}</Project>
-      <Name>Juntos.Model</Name>
-    </ProjectReference>
+    <Compile Include="Service References\wsProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\wsProxy\ControladorDePagamentoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsProxy\ControladorDePagamentoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsProxy\ControladorDePagamentoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsProxy\Juntos.aplicacao.Services.wsProxy.Pagamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsProxy\PagamentoService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsProxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsProxy\ControladorDePagamentoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsProxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsProxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

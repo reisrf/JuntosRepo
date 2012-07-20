@@ -5,14 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{74115D59-BE77-437E-B13C-7B760D4B33A1}</ProjectGuid>
+    <ProjectGuid>{E9615A79-76A6-41B9-B333-D8D5F6787E83}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PagamentoClient</RootNamespace>
-    <AssemblyName>PagamentoClient</AssemblyName>
+    <RootNamespace>PagamentoConsoleApp</RootNamespace>
+    <AssemblyName>PagamentoConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -38,7 +37,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,12 +48,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\DAL\Provider\EntityFramework\Juntos.DAL.Provider.EntityFramework.csproj">
+      <Project>{E6AA5350-51F4-444C-8F4B-81CEE9300152}</Project>
+      <Name>Juntos.DAL.Provider.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{561F133F-D269-4E2E-A692-56916C87C2FE}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDAL\Juntos.IDAL.csproj">
+      <Project>{9A7FAC96-74EA-432A-93E7-33FE1563B5A3}</Project>
+      <Name>Juntos.IDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IRepository\Juntos.IRepository.csproj">
       <Project>{BC248CDA-587D-4DF5-9FB0-7D41B8B5FDCC}</Project>
       <Name>Juntos.IRepository</Name>
@@ -64,10 +68,27 @@
       <Project>{DCE9F905-B8F9-43D8-9A04-2BA073946FC7}</Project>
       <Name>Juntos.IService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Juntos.aplicacao.Services\Juntos.aplicacao.Services.csproj">
+      <Project>{8884FB36-D15C-421D-8D0F-02FB24C87DC1}</Project>
+      <Name>Juntos.aplicacao.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Juntos.Model.csproj">
+      <Project>{B1E0C843-EEB5-47FD-B3C9-8EE587EC4205}</Project>
+      <Name>Juntos.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Juntos.Repository.csproj">
+      <Project>{F065FA50-705B-4EF1-A4BA-3EC59C7ED9C9}</Project>
+      <Name>Juntos.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Juntos.Service.csproj">
       <Project>{53A72DBB-9341-4391-AABB-6BB913E56DF9}</Project>
       <Name>Juntos.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

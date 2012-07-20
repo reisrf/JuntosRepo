@@ -12,6 +12,10 @@ namespace Juntos.ConsoleApp
         {
             IConsumidorService anuncianteService = typeof (IConsumidorService).Fabricar();
             IPagamentoService pagamentoService = typeof(IPagamentoService).Fabricar();
+
+            
+
+           
         }
     }
 }

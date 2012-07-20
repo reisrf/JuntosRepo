@@ -6,9 +6,8 @@ using Juntos.Model;
 
 namespace Juntos.IService
 {
-    public interface IPagamentoService
+    public interface IPagamentoService : IBaseService<Pagamento>
     {
-        void ProcessarPagamento(Pagamento pagamento);
-        void AtualizarPagameto(Pagamento pagamento);
+        void AtualizarPagamento(Pagamento pagamento);
     }
 }

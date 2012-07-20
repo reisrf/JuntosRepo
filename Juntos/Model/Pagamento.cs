@@ -10,6 +10,10 @@ namespace Juntos.Model
             this.FormaPagamento = formaPagamento;
         }
 
+        public Pagamento()
+        {
+        }
+
         public EnumFormaPagamento FormaPagamento { get; set; }
 
        

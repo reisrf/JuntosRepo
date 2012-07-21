@@ -16,12 +16,7 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         public void Atualizar(Anunciante anunciante)
         {
-            var anunciantePersistido = this.BuscarPorId(anunciante.Id);
-            if (anunciantePersistido != null)
-            {
-                this.Remover(anunciantePersistido);
-            }
-            this.Adicionar(anunciante);
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Anunciante anunciante)

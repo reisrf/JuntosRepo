@@ -14,7 +14,6 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         private JuntosContext(string connectionString) : base(connectionString)
         {
-            
         }
 
         public static JuntosContext Instance

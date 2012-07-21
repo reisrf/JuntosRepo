@@ -16,12 +16,7 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         public void Atualizar(Cupom cupom)
         {
-            var cupomPersistido = this.BuscarPorId(cupom.Id);
-            if (cupomPersistido != null)
-            {
-                this.Remover(cupomPersistido);
-            }
-            this.Adicionar(cupom);
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Cupom cupom)

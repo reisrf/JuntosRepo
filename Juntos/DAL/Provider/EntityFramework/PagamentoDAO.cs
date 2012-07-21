@@ -16,12 +16,7 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         public void Atualizar(Pagamento pagamento)
         {
-            var pagamentoPersistido = this.BuscarPorId(pagamento.Id);
-            if (pagamentoPersistido != null)
-            {
-                this.Remover(pagamentoPersistido);
-            }
-            this.Adicionar(pagamento);
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Pagamento pagamento)

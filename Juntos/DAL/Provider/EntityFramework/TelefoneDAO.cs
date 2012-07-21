@@ -16,12 +16,7 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         public void Atualizar(Telefone telefone)
         {
-            var telefonePersistido = this.BuscarPorId(telefone.Id);
-            if (telefonePersistido != null)
-            {
-                this.Remover(telefonePersistido);
-            }
-            this.Adicionar(telefone);
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Telefone telefone)

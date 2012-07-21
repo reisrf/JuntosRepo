@@ -63,5 +63,15 @@
         {
             return UnityHelper.Instancia.Resolve(tipoInterface, parametros);
         }
+
+        public static T Hidratar<T>(this T objeto, T objetoDeHidracao)
+        {
+            var propriedades = objeto.GetType().GetProperties();
+            foreach (var propriedade in propriedades)
+            {
+                propriedade.SetValue(objeto, propriedade.GetValue(objetoDeHidracao, new object[] {}), new object[] {});
+            }
+            return objeto;
+        }
     }
 }

@@ -16,12 +16,7 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         public void Atualizar(Endereco endereco)
         {
-            var enderecoPersistido = this.BuscarPorId(endereco.Id);
-            if (enderecoPersistido != null)
-            {
-                this.Remover(enderecoPersistido);
-            }
-            this.Adicionar(endereco);
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Endereco endereco)

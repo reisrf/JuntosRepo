@@ -4,6 +4,7 @@ using System.Linq;
 using Juntos.IRepository;
 using Juntos.IService;
 using Juntos.Model;
+using Framework;
 
 namespace Juntos.Service
 {
@@ -24,7 +25,8 @@ namespace Juntos.Service
 
         public void Atualizar(TEntidade entidade)
         {
-            this._repository.Atualizar(entidade);
+            var persistido = this.BuscarPorId(entidade.Id);
+            this._repository.Atualizar(persistido.Hidratar(entidade));
         }
 
         public void Remover(TEntidade entidade)

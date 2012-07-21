@@ -16,12 +16,7 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         public void Atualizar(Compra compra)
         {
-            var compraPersistida = this.BuscarPorId(compra.Id);
-            if (compraPersistida != null)
-            {
-                this.Remover(compraPersistida);
-            }
-            this.Adicionar(compra);
+            JuntosContext.Instance.SaveChanges();
         }
 
         public void Remover(Compra compra)

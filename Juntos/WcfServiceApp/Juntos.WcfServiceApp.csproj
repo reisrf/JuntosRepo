@@ -54,10 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JuntosService.svc" />
-    <None Include="Service References\PagamentoService\PagamentoService.disco" />
-    <None Include="Service References\PagamentoService\configuration91.svcinfo" />
-    <None Include="Service References\PagamentoService\configuration.svcinfo" />
-    <None Include="Service References\PagamentoService\Reference.svcmap">
+    <None Include="Service References\PagamentoServices\PagamentoService.disco" />
+    <None Include="Service References\PagamentoServices\configuration91.svcinfo" />
+    <None Include="Service References\PagamentoServices\configuration.svcinfo" />
+    <None Include="Service References\PagamentoServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -68,11 +68,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <None Include="Service References\PagamentoService\PagamentoService.wsdl" />
-    <None Include="Service References\PagamentoService\PagamentoService.xsd">
+    <None Include="Service References\PagamentoServices\PagamentoService.wsdl" />
+    <None Include="Service References\PagamentoServices\PagamentoService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PagamentoService\PagamentoService1.xsd">
+    <None Include="Service References\PagamentoServices\PagamentoService1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -82,7 +82,7 @@
     </Compile>
     <Compile Include="IJuntosService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\PagamentoService\Reference.cs">
+    <Compile Include="Service References\PagamentoServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -129,7 +129,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\PagamentoService\" />
+    <WCFMetadataStorage Include="Service References\PagamentoServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

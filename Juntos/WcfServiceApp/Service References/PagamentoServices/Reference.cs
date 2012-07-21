@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Juntos.WcfServiceApp.PagamentoService {
+namespace Juntos.WcfServiceApp.PagamentoServices {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PagamentoService.IPagamentoService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PagamentoServices.IPagamentoService")]
     public interface IPagamentoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPagamentoService/Pagar", ReplyAction="http://tempuri.org/IPagamentoService/PagarResponse")]
@@ -20,12 +20,12 @@ namespace Juntos.WcfServiceApp.PagamentoService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPagamentoServiceChannel : Juntos.WcfServiceApp.PagamentoService.IPagamentoService, System.ServiceModel.IClientChannel {
+    public interface IPagamentoServiceChannel : Juntos.WcfServiceApp.PagamentoServices.IPagamentoService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PagamentoServiceClient : System.ServiceModel.ClientBase<Juntos.WcfServiceApp.PagamentoService.IPagamentoService>, Juntos.WcfServiceApp.PagamentoService.IPagamentoService {
+    public partial class PagamentoServiceClient : System.ServiceModel.ClientBase<Juntos.WcfServiceApp.PagamentoServices.IPagamentoService>, Juntos.WcfServiceApp.PagamentoServices.IPagamentoService {
         
         public PagamentoServiceClient() {
         }

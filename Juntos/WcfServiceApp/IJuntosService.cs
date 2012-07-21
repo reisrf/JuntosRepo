@@ -48,6 +48,7 @@ namespace Juntos.WcfServiceApp
         [OperationContract]
         Compra ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons);
 
+        [OperationContract]
         void PagarCompra(long idCompra, EnumFormaPagamento formaPagamento);
     }
 }

@@ -2,7 +2,7 @@ namespace Juntos.Model.Enums
 {
     public enum EnumFormaPagamento
     {
-        Cartao,
+        NaoDefinida,
         PayPal,
         PagSeguro
     }

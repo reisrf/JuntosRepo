@@ -1,4 +1,4 @@
-﻿using Juntos.WcfServiceApp.PagamentoService;
+﻿using Juntos.WcfServiceApp.PagamentoServices;
 
 namespace Juntos.WcfServiceApp
 {
@@ -97,16 +97,28 @@ namespace Juntos.WcfServiceApp
 
         public void PagarCompra(long idCompra, EnumFormaPagamento formaPagamento)
         {
+            if (formaPagamento == EnumFormaPagamento.NaoDefinida)
+            {
+                throw new Exception("Forma de pagamento não definida.");
+            }
+
             ICompraService compraService = typeof (ICompraService).Fabricar();
             var compra = compraService.BuscarPorId(idCompra);
 
-            using (var pagamentoServiceClient = new PagamentoServiceClient())
+            if (formaPagamento == EnumFormaPagamento.PayPal)
             {
-                pagamentoServiceClient.Open();
-                if (pagamentoServiceClient.Pagar(compra.ValorTotal))
+                using (var pagamentoServiceClient = new PagamentoServiceClient())
                 {
-                    compraService.PagarCompra(compra, formaPagamento);
+                    pagamentoServiceClient.Open();
+                    if (pagamentoServiceClient.Pagar(compra.ValorTotal))
+                    {
+                        compraService.PagarCompra(compra, formaPagamento);
+                    }
                 }
+            }
+            else
+            {
+                //João, coloca teu código aqui.
             }
         }
     }

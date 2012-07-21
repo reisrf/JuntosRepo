@@ -59,7 +59,6 @@ namespace PagamentoConsoleApp
 
             switch (pagto.FormaPagamento)
             {
-                case Juntos.aplicacao.Services.wsProxy.FormaPagamento.Cartao: model.FormaPagamento = EnumFormaPagamento.Cartao; break;
                 case Juntos.aplicacao.Services.wsProxy.FormaPagamento.PagSeguro: model.FormaPagamento = EnumFormaPagamento.PagSeguro; break;
                 case Juntos.aplicacao.Services.wsProxy.FormaPagamento.PayPal: model.FormaPagamento = EnumFormaPagamento.PayPal; break;
 

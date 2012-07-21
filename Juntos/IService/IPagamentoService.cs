@@ -8,6 +8,5 @@ namespace Juntos.IService
 {
     public interface IPagamentoService : IBaseService<Pagamento>
     {
-        void AtualizarPagamento(Pagamento pagamento);
     }
 }

@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class CompraDAO : ICompraDAO
     {
-        public void Adicionar(Compra modelo)
+        public void Adicionar(Compra compra)
         {
-            JuntosContext.Instance.Compras.Add(modelo);
+            JuntosContext.Instance.Compras.Add(compra);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Compra modelo)
+        public void Atualizar(Compra compra)
         {
-            JuntosContext.Instance.SaveChanges();
+            var compraPersistida = this.BuscarPorId(compra.Id);
+            if (compraPersistida != null)
+            {
+                this.Remover(compraPersistida);
+            }
+            this.Adicionar(compra);
         }
 
-        public void Remover(Compra modelo)
+        public void Remover(Compra compra)
         {
-            JuntosContext.Instance.Compras.Remove(modelo);
+            JuntosContext.Instance.Compras.Remove(compra);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -34,7 +39,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Compras.ToList();
         }
 
-        public Compra BuscarPorId(Guid id)
+        public Compra BuscarPorId(long id)
         {
             return JuntosContext.Instance.Compras.Where(a => a.Id == id).FirstOrDefault();
         }

@@ -10,7 +10,7 @@ namespace juntos.PagamentoService.model
         
         public FormaPagamento FormaPagamento { get; set; }
 
-        public Guid Codigo { get; set; }
+        public long Codigo { get; set; }
 
         public DateTime DataPagamento { get; set; }
 

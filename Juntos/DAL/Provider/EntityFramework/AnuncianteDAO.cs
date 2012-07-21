@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class AnuncianteDAO : IAnuncianteDAO
     {
-        public void Adicionar(Anunciante entidade)
+        public void Adicionar(Anunciante anunciante)
         {
-            JuntosContext.Instance.Anunciantes.Add(entidade);
+            JuntosContext.Instance.Anunciantes.Add(anunciante);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Anunciante entidade)
+        public void Atualizar(Anunciante anunciante)
         {
-            JuntosContext.Instance.SaveChanges();
+            var anunciantePersistido = this.BuscarPorId(anunciante.Id);
+            if (anunciantePersistido != null)
+            {
+                this.Remover(anunciantePersistido);
+            }
+            this.Adicionar(anunciante);
         }
 
-        public void Remover(Anunciante entidade)
+        public void Remover(Anunciante anunciante)
         {
-            JuntosContext.Instance.Anunciantes.Remove(entidade);
+            JuntosContext.Instance.Anunciantes.Remove(anunciante);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -35,7 +40,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Anunciantes.ToList();
         }
 
-        public Anunciante BuscarPorId(Guid id)
+        public Anunciante BuscarPorId(long id)
         {
             return JuntosContext.Instance.Anunciantes.Where(a => a.Id == id).FirstOrDefault();
         }

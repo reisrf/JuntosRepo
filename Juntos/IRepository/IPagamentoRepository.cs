@@ -8,6 +8,5 @@ namespace Juntos.IRepository
 {
     public interface IPagamentoRepository : IBaseRepository<Pagamento>
     {
-        void AtualizarPagamento(Pagamento pagamento);
     }
 }

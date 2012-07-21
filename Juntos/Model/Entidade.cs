@@ -5,11 +5,11 @@ namespace Juntos.Model
     public abstract class Entidade
     {
 
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         protected Entidade()
         {
-            this.Id = Guid.NewGuid();
+            this.Id = 0;
         }
     }
 }

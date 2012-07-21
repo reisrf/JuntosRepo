@@ -18,7 +18,7 @@ namespace Juntos.MvcJuntos.Controllers
             List<Oferta> ofertas = ofertaService.RetornarTodos();
             return View(ofertas);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(long id)
         {
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
             Oferta oferta = ofertaService.BuscarPorId(id);

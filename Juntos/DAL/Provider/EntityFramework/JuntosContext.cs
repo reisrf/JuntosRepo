@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -38,17 +39,22 @@ namespace Juntos.DAL.Provider.EntityFramework
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Pessoa>().HasKey(c => c.Id);
-            //modelBuilder.Entity<Anunciante>().HasKey(c => c.Id);
-            //modelBuilder.Entity<Consumidor>().HasKey(c => c.Id);
+            modelBuilder.Entity<Pessoa>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Endereco>().HasKey(e => e.Id);
+            modelBuilder.Entity<Endereco>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Telefone>().HasKey(e => e.Id);
+            modelBuilder.Entity<Telefone>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Oferta>().HasKey(e => e.Id);
+            modelBuilder.Entity<Oferta>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Cupom>().HasKey(e => e.Id);
+            modelBuilder.Entity<Cupom>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Compra>().HasKey(e => e.Id);
+            modelBuilder.Entity<Compra>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Pagamento>().HasKey(e => e.Id);
+            modelBuilder.Entity<Pagamento>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Pessoa>().HasMany(e => e.Enderecos);
             modelBuilder.Entity<Pessoa>().HasMany(e => e.Telefones);

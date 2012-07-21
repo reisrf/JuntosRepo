@@ -11,23 +11,8 @@ namespace Juntos.Service
 {
     public class PagamentoService : BaseService<Pagamento>, IPagamentoService
     {
-        
-        
-        public PagamentoService(IPagamentoRepository pagamentoRepository): base(pagamentoRepository)
+        public PagamentoService(IBaseRepository<Pagamento> repository) : base(repository)
         {
-        
         }
-        
-       
-       public void AtualizarPagamento(Juntos.Model.Pagamento pagamento)
-        {
-            if (pagamento.Status != EnumStatusPagamento.Pendente)
-            {
-                this.AtualizarPagamento(pagamento);
-            }
-
-
-        }
-
     }
 }

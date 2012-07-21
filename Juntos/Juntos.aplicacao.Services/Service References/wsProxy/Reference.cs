@@ -23,7 +23,7 @@ namespace Juntos.aplicacao.Services.wsProxy {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid CodigoField;
+        private long CodigoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DataPagamentoField;
@@ -48,7 +48,7 @@ namespace Juntos.aplicacao.Services.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Codigo {
+        public long Codigo {
             get {
                 return this.CodigoField;
             }
@@ -161,7 +161,7 @@ namespace Juntos.aplicacao.Services.wsProxy {
         void PaymentRequest(Juntos.aplicacao.Services.wsProxy.Pagamento pgto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControladorPagamentoService/GetPaymentResult", ReplyAction="http://tempuri.org/IControladorPagamentoService/GetPaymentResultResponse")]
-        Juntos.aplicacao.Services.wsProxy.Pagamento GetPaymentResult(System.Guid pagtoid);
+        Juntos.aplicacao.Services.wsProxy.Pagamento GetPaymentResult(long pagtoid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -195,7 +195,7 @@ namespace Juntos.aplicacao.Services.wsProxy {
             base.Channel.PaymentRequest(pgto);
         }
         
-        public Juntos.aplicacao.Services.wsProxy.Pagamento GetPaymentResult(System.Guid pagtoid) {
+        public Juntos.aplicacao.Services.wsProxy.Pagamento GetPaymentResult(long pagtoid) {
             return base.Channel.GetPaymentResult(pagtoid);
         }
     }

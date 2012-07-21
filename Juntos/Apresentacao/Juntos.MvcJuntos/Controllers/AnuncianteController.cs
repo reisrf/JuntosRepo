@@ -19,14 +19,14 @@ namespace Juntos.MvcJuntos.Controllers
             List<Anunciante> anunciantes = anuncianteService.RetornarTodos();
             return View(anunciantes);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(long id)
         {
             IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
             Anunciante anunciante = anuncianteService.BuscarPorId(id);
             return View(anunciante);
         }
         [HttpPost]
-        public ActionResult Edit(Guid id, FormCollection collection)
+        public ActionResult Edit(long id, FormCollection collection)
         {
             IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
             List<Anunciante> anunciantes = anuncianteService.RetornarTodos();

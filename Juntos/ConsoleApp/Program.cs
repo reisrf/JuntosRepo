@@ -62,18 +62,19 @@ namespace Juntos.ConsoleApp
 
         private static List<Consumidor> GeraConsumidoresParaTeste()
         {
-            
+            return null;
+            /*
             Consumidor consumidor = new Consumidor();
             consumidor.CpfCnpj =30030030030;
             //consumidor.Compras = new List<Compra>();
             consumidor.Email = "email@servidor.com";
-            consumidor.Id = Guid.NewGuid();
+            consumidor.Id = 0;
             consumidor.Nome = "Incluido da Silva";
             consumidor.Tipo = EnumTipoPessoa.Fisica;
                         
             
             Endereco endereco = new Endereco();
-            endereco.Id = Guid.NewGuid();
+            endereco.Id = 0;
             endereco.Logradouro = "Onde eu moro";
             endereco.Numero=0;
             endereco.Bairro="bairro";
@@ -87,7 +88,7 @@ namespace Juntos.ConsoleApp
             telefone.DDI=55;
             telefone.DDD=21;
             telefone.Numero=22222222;
-            telefone.Id=Guid.NewGuid();
+            telefone.Id=0;
 
             consumidor.Enderecos.Add(endereco);
             consumidor.Telefones.Add(telefone);
@@ -96,12 +97,12 @@ namespace Juntos.ConsoleApp
             consumidor1.CpfCnpj =191;
             //consumidor1.Compras = new List<Compra>();
             consumidor1.Email = "email-empresa@servidor.com";
-            consumidor1.Id = Guid.NewGuid();
+            consumidor1.Id = 0;
             consumidor1.Nome = "Trambiques e Trombadas";
             consumidor1.Tipo = EnumTipoPessoa.Fisica;
             
             Endereco endereco1 = new Endereco();
-            endereco1.Id = Guid.NewGuid();
+            endereco1.Id = 0;
             endereco1.Logradouro = "Onde a empresa mora";
             endereco1.Numero=0;
             endereco1.Bairro="bairro";
@@ -115,7 +116,7 @@ namespace Juntos.ConsoleApp
             telefone1.DDI=55;
             telefone1.DDD=21;
             telefone1.Numero=11111111;
-            telefone1.Id=Guid.NewGuid();
+            telefone1.Id=0;
 
             consumidor1.Enderecos.Add(endereco1);
             consumidor1.Telefones.Add(telefone1);
@@ -125,12 +126,12 @@ namespace Juntos.ConsoleApp
             consumidor2.CpfCnpj = 11111111111;
             //consumidor2.Compras = new List<Compra>();
             consumidor2.Email = "exmail@servidor.com";
-            consumidor2.Id = Guid.NewGuid();
+            consumidor2.Id = 0;
             consumidor2.Nome = "Excluido da Silva";
             consumidor2.Tipo = EnumTipoPessoa.Fisica;
 
             Endereco endereco2 = new Endereco();
-            endereco2.Id = Guid.NewGuid();
+            endereco2.Id = 0;
             endereco2.Logradouro = "Sem Destino";
             endereco2.Numero = 0;
             endereco2.Bairro = "bairro";
@@ -155,7 +156,7 @@ namespace Juntos.ConsoleApp
             result.Add(consumidor1);
             result.Add(consumidor2);
             
-            return result;
+            return result; */
         }
       
 

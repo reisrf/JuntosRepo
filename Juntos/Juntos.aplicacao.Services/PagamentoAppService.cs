@@ -21,7 +21,7 @@ namespace Juntos.aplicacao.Services
         }
 
 
-        public Pagamento ObterResultadoPagamento(Guid pagamentoID)
+        public Pagamento ObterResultadoPagamento(long pagamentoID)
         {
 
             Pagamento result = client.GetPaymentResult(pagamentoID);

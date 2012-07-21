@@ -3,6 +3,7 @@ using Framework;
 using Juntos.IRepository;
 using Juntos.IService;
 using Juntos.Model;
+using Juntos.Model.Enums;
 
 namespace Juntos.Service
 {
@@ -12,14 +13,11 @@ namespace Juntos.Service
         {
         }
 
-        public Compra ComprarOferta(Guid idConsumidor, Guid idOferta, int quantidadeCupons)
+        public Compra ComprarOferta(Consumidor consumidor, Oferta oferta, int quantidadeCupons)
         {
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
-            var consumidor = consumidorService.BuscarPorId(idConsumidor);
-
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
-            var oferta = ofertaService.BuscarPorId(idOferta);
-
+            
             var compra = new Compra(consumidor);
             var cupons = oferta.GerarCupons(quantidadeCupons);
             compra.Cupons.AddRange(cupons);
@@ -30,6 +28,19 @@ namespace Juntos.Service
             ofertaService.Atualizar(oferta);
 
             return compra;
+        }
+
+        public void PagarCompra(Compra compra, EnumFormaPagamento formaPagamento)
+        {
+            if (compra.IsPaga())
+            {
+                throw new Exception("A compra já se encontra paga.");
+            }
+
+            var pagamento = compra.Pagar(formaPagamento);
+            IPagamentoService pagamentoService = typeof (IPagamentoService).Fabricar();
+            pagamentoService.Adicionar(pagamento);
+            this.Repository.Atualizar(compra);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace juntos.PagamentoService
 
         }
 
-        public Pagamento GetPaymentResult(Guid pagtoid)
+        public Pagamento GetPaymentResult(long pagtoid)
         {
             Console.WriteLine(@"Verificando o status do pagamento : " + pagtoid);
 

@@ -7,14 +7,14 @@ namespace juntos.PagamentoService.model
 {
     public class Pagamentos
     {
-        static Dictionary<Guid, Pagamento> pagamentos = new Dictionary<Guid, Pagamento>();
+        static Dictionary<long, Pagamento> pagamentos = new Dictionary<long, Pagamento>();
 
         public static void Add(Pagamento pagamento)
         {
             pagamentos.Add(pagamento.Codigo, pagamento);
         }
 
-        public static Pagamento BuscarPagamento(Guid pagamentoId)
+        public static Pagamento BuscarPagamento(long pagamentoId)
         {
             Pagamento pagamento;
             pagamentos.TryGetValue(pagamentoId, out pagamento);
@@ -22,7 +22,7 @@ namespace juntos.PagamentoService.model
             return pagamento;
         }
 
-        public static void Remover(Guid pagamentoId)
+        public static void Remover(long pagamentoId)
         {
             if (pagamentos[pagamentoId] != null)
                 pagamentos.Remove(pagamentoId);
@@ -30,7 +30,7 @@ namespace juntos.PagamentoService.model
 
 
 
-        internal static void Add(Guid p, Pagamento pagto)
+        internal static void Add(long p, Pagamento pagto)
         {
             throw new NotImplementedException();
         }

@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class ConsumidorDAO : IConsumidorDAO
     {
-        public void Adicionar(Consumidor entidade)
+        public void Adicionar(Consumidor consumidor)
         {
-            JuntosContext.Instance.Consumidores.Add(entidade);
+            JuntosContext.Instance.Consumidores.Add(consumidor);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Consumidor entidade)
+        public void Atualizar(Consumidor consumidor)
         {
-            JuntosContext.Instance.SaveChanges();
+            var consumidorPersistida = this.BuscarPorId(consumidor.Id);
+            if (consumidorPersistida != null)
+            {
+                this.Remover(consumidorPersistida);
+            }
+            this.Adicionar(consumidor);
         }
 
-        public void Remover(Consumidor entidade)
+        public void Remover(Consumidor consumidor)
         {
-            JuntosContext.Instance.Consumidores.Remove(entidade);
+            JuntosContext.Instance.Consumidores.Remove(consumidor);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -35,7 +40,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Consumidores.ToList();
         }
 
-        public Consumidor BuscarPorId(Guid id)
+        public Consumidor BuscarPorId(long id)
         {
             return JuntosContext.Instance.Consumidores.Where(a => a.Id == id).FirstOrDefault();
         }

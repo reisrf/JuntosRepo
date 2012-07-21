@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class TelefoneDAO : ITelefoneDAO
     {
-        public void Adicionar(Telefone modelo)
+        public void Adicionar(Telefone telefone)
         {
-            JuntosContext.Instance.Telefones.Add(modelo);
+            JuntosContext.Instance.Telefones.Add(telefone);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Telefone modelo)
+        public void Atualizar(Telefone telefone)
         {
-            JuntosContext.Instance.SaveChanges();
+            var telefonePersistido = this.BuscarPorId(telefone.Id);
+            if (telefonePersistido != null)
+            {
+                this.Remover(telefonePersistido);
+            }
+            this.Adicionar(telefone);
         }
 
-        public void Remover(Telefone modelo)
+        public void Remover(Telefone telefone)
         {
-            JuntosContext.Instance.Telefones.Remove(modelo);
+            JuntosContext.Instance.Telefones.Remove(telefone);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -35,7 +40,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Telefones.ToList();
         }
 
-        public Telefone BuscarPorId(Guid id)
+        public Telefone BuscarPorId(long id)
         {
             return JuntosContext.Instance.Telefones.Where(a => a.Id == id).FirstOrDefault();
         }

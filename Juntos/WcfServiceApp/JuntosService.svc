@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Juntos.WcfServiceApp.JuntosService" CodeBehind="JuntosService.svc.cs" %>

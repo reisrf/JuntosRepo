@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class CupomDAO : ICupomDAO
     {
-        public void Adicionar(Cupom modelo)
+        public void Adicionar(Cupom cupom)
         {
-            JuntosContext.Instance.Cupons.Add(modelo);
+            JuntosContext.Instance.Cupons.Add(cupom);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Cupom modelo)
+        public void Atualizar(Cupom cupom)
         {
-            JuntosContext.Instance.SaveChanges();
+            var cupomPersistido = this.BuscarPorId(cupom.Id);
+            if (cupomPersistido != null)
+            {
+                this.Remover(cupomPersistido);
+            }
+            this.Adicionar(cupom);
         }
 
-        public void Remover(Cupom modelo)
+        public void Remover(Cupom cupom)
         {
-            JuntosContext.Instance.Cupons.Remove(modelo);
+            JuntosContext.Instance.Cupons.Remove(cupom);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -35,7 +40,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Cupons.ToList();
         }
 
-        public Cupom BuscarPorId(Guid id)
+        public Cupom BuscarPorId(long id)
         {
             return JuntosContext.Instance.Cupons.Where(a => a.Id == id).FirstOrDefault();
         }

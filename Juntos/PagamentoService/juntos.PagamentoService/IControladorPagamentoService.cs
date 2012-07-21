@@ -17,7 +17,7 @@ namespace juntos.PagamentoService
         void PaymentRequest(Pagamento pgto);
 
         [OperationContract]
-        Pagamento GetPaymentResult(Guid pagtoid);
+        Pagamento GetPaymentResult(long pagtoid);
 
         // TODO: Add your service operations here
     }

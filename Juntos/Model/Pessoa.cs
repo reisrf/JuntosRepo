@@ -29,12 +29,9 @@ namespace Juntos.Model
 
         public EnumTipoPessoa Tipo { get; set; }
 
-        private List<Telefone> telefones = new List<Telefone>();
-        public virtual List<Telefone> Telefones { get { return this.telefones; } protected set { this.telefones = value; } }
+        public List<Telefone> Telefones { get; set; }
 
-
-        private List<Endereco> enderecos = new List<Endereco>();
-        public virtual List<Endereco> Enderecos { get { return this.enderecos; } protected set { this.enderecos = value; } }
+        public List<Endereco> Enderecos { get; set; }
 
     }
 }

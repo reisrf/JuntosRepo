@@ -22,7 +22,7 @@ namespace Juntos.MvcJuntos.Controllers
             List<Consumidor> consumidores = consumidorService.RetornarTodos();
             return View(consumidores);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(long id)
         {
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
             Consumidor consumidor = consumidorService.BuscarPorId(id);
@@ -30,7 +30,7 @@ namespace Juntos.MvcJuntos.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Guid id, FormCollection collection)
+        public ActionResult Edit(long id, FormCollection collection)
         {
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
             List<Consumidor> consumidores = consumidorService.RetornarTodos(); 

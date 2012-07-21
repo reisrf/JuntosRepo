@@ -46,7 +46,7 @@
             {
                 throw new Exception(
                     string.Format(
-                        "Não foi possível identificar o construtor do tipo '{0}', que apresenta a seguinte sequência de tipos de parâmetros: {1}. Verifique!",
+                        "Não foi possível identificar o construtor do tipo '{0}', que apresenta a seglonge sequência de tipos de parâmetros: {1}. Verifique!",
                         tipo.Name, tiposDosParametros.Aggregate(string.Empty, (cur, tipoDoParametro) => cur + "'" + tipoDoParametro.Name + "' ")));
             }
 

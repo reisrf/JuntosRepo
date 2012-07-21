@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class EnderecoDAO : IEnderecoDAO
     {
-        public void Adicionar(Endereco modelo)
+        public void Adicionar(Endereco endereco)
         {
-            JuntosContext.Instance.Enderecos.Add(modelo);
+            JuntosContext.Instance.Enderecos.Add(endereco);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Endereco modelo)
+        public void Atualizar(Endereco endereco)
         {
-            JuntosContext.Instance.SaveChanges();
+            var enderecoPersistido = this.BuscarPorId(endereco.Id);
+            if (enderecoPersistido != null)
+            {
+                this.Remover(enderecoPersistido);
+            }
+            this.Adicionar(endereco);
         }
 
-        public void Remover(Endereco modelo)
+        public void Remover(Endereco endereco)
         {
-            JuntosContext.Instance.Enderecos.Remove(modelo);
+            JuntosContext.Instance.Enderecos.Remove(endereco);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -33,7 +38,7 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Enderecos.ToList();
         }
-        public Endereco BuscarPorId(Guid id)
+        public Endereco BuscarPorId(long id)
         {
             return JuntosContext.Instance.Enderecos.Where(a => a.Id == id).FirstOrDefault();
         }

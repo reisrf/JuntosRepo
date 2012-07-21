@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5fa81084-b318-40f8-a028-5fc2992d23e2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1459/PagamentoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PagamentoService.disco" MetadataType="Disco" ID="d5792ca3-73e6-4e60-b3ce-21538ec4aca2" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?disco" />
+    <MetadataFile FileName="PagamentoService.xsd" MetadataType="Schema" ID="ab315d95-2e8c-4478-8d30-e825d4d1fe57" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PagamentoService1.xsd" MetadataType="Schema" ID="ce495204-8388-4725-b7b8-6591d5785926" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PagamentoService.wsdl" MetadataType="Wsdl" ID="70894f52-a739-4388-8378-5eeb6d192abb" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

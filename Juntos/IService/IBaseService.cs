@@ -10,7 +10,9 @@ namespace Juntos.IService
         void Adicionar(TEntidade entidade);
         void Atualizar(TEntidade entidade);
         void Remover(TEntidade entidade);
-        TEntidade BuscarPorId(Guid id);
+        void Salvar(TEntidade entidade);
+
+        TEntidade BuscarPorId(long id);
         List<TEntidade> RetornarTodos();
     }
 }

@@ -18,7 +18,7 @@ namespace Juntos.MvcJuntos.Controllers
             List<Compra> compras = compraService.RetornarTodos();
             return View(compras);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(long id)
         {
             ICompraService compraService = typeof(ICompraService).Fabricar();
             Compra compra = compraService.BuscarPorId(id);

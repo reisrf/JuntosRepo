@@ -32,7 +32,19 @@ namespace Juntos.Service
             this._repository.Remover(entidade);
         }
 
-        public TEntidade BuscarPorId(Guid id)
+        public void Salvar(TEntidade entidade)
+        {
+            if (entidade.Id == 0)
+            {
+                this.Adicionar(entidade);
+            }
+            else
+            {
+                this.Atualizar(entidade);
+            }
+        }
+
+        public TEntidade BuscarPorId(long id)
         {
             return this._repository.Consultar(c => c.Id.Equals(id)).FirstOrDefault();
         }

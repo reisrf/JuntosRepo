@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class PagamentoDAO : IPagamentoDAO
     {
-        public void Adicionar(Pagamento modelo)
+        public void Adicionar(Pagamento pagamento)
         {
-            JuntosContext.Instance.Pagamentos.Add(modelo);
+            JuntosContext.Instance.Pagamentos.Add(pagamento);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Pagamento modelo)
+        public void Atualizar(Pagamento pagamento)
         {
-            JuntosContext.Instance.SaveChanges();
+            var pagamentoPersistido = this.BuscarPorId(pagamento.Id);
+            if (pagamentoPersistido != null)
+            {
+                this.Remover(pagamentoPersistido);
+            }
+            this.Adicionar(pagamento);
         }
 
-        public void Remover(Pagamento modelo)
+        public void Remover(Pagamento pagamento)
         {
-            JuntosContext.Instance.Pagamentos.Remove(modelo);
+            JuntosContext.Instance.Pagamentos.Remove(pagamento);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -35,7 +40,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             return JuntosContext.Instance.Pagamentos.ToList();
         }
 
-        public Pagamento BuscarPorId(Guid id)
+        public Pagamento BuscarPorId(long id)
         {
             return JuntosContext.Instance.Pagamentos.Where(a => a.Id == id).FirstOrDefault();
         }

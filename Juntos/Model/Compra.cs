@@ -34,14 +34,14 @@ namespace Juntos.Model
 
         public List<Pagamento> Pagamentos { get; set; }
 
-        public bool IsPago()
+        public bool IsPaga()
         {
             return this.Pagamentos.Any(p => p.Status == EnumStatusPagamento.Aprovado);
         }
 
         public Pagamento Pagar(EnumFormaPagamento formaPagamento)
         {
-            if (this.IsPago())
+            if (this.IsPaga())
             {
                 throw new Exception("A compra já está paga.");
             }

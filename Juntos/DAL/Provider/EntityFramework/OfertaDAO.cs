@@ -8,20 +8,25 @@ namespace Juntos.DAL.Provider.EntityFramework
 {
     public class OfertaDAO : IOfertaDAO
     {
-        public void Adicionar(Oferta modelo)
+        public void Adicionar(Oferta oferta)
         {
-            JuntosContext.Instance.Ofertas.Add(modelo);
+            JuntosContext.Instance.Ofertas.Add(oferta);
             JuntosContext.Instance.SaveChanges();
         }
 
-        public void Atualizar(Oferta modelo)
+        public void Atualizar(Oferta oferta)
         {
-            JuntosContext.Instance.SaveChanges();
+            var ofertaPersistida = this.BuscarPorId(oferta.Id);
+            if (ofertaPersistida != null)
+            {
+                this.Remover(ofertaPersistida);
+            }
+            this.Adicionar(oferta);
         }
 
-        public void Remover(Oferta modelo)
+        public void Remover(Oferta oferta)
         {
-            JuntosContext.Instance.Ofertas.Remove(modelo);
+            JuntosContext.Instance.Ofertas.Remove(oferta);
             JuntosContext.Instance.SaveChanges();
         }
 
@@ -34,7 +39,7 @@ namespace Juntos.DAL.Provider.EntityFramework
         {
             return JuntosContext.Instance.Ofertas.ToList();
         }
-        public Oferta BuscarPorId(Guid id)
+        public Oferta BuscarPorId(long id)
         {
             return JuntosContext.Instance.Ofertas.Where(a => a.Id == id).FirstOrDefault();
         }

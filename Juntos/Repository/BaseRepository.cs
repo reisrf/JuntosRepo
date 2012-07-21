@@ -16,19 +16,19 @@ namespace Juntos.Repository
             this._entidadeDAO = entidadeDAO;
         }
 
-        public void Adicionar(TEntidade pessoa)
+        public void Adicionar(TEntidade entidade)
         {
-            this._entidadeDAO.Adicionar(pessoa);
+            this._entidadeDAO.Adicionar(entidade);
         }
 
-        public void Atualizar(TEntidade pessoa)
+        public void Atualizar(TEntidade entidade)
         {
-            this._entidadeDAO.Atualizar(pessoa);
+            this._entidadeDAO.Atualizar(entidade);
         }
 
-        public void Remover(TEntidade pessoa)
+        public void Remover(TEntidade entidade)
         {
-            this._entidadeDAO.Remover(pessoa);
+            this._entidadeDAO.Remover(entidade);
         }
 
         public List<TEntidade> Consultar(Func<TEntidade, bool> expressaoDeConsulta)
@@ -41,7 +41,7 @@ namespace Juntos.Repository
             return this._entidadeDAO.RetornarTodos().ToList();
         }
 
-        public TEntidade BuscarPorId(Guid id)
+        public TEntidade BuscarPorId(long id)
         {
             return this._entidadeDAO.BuscarPorId(id);
         }

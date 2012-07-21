@@ -21,7 +21,7 @@ namespace PagamentoConsoleApp
             //Criando DTO de pagamento
             Juntos.aplicacao.Services.wsProxy.Pagamento pagto = new Juntos.aplicacao.Services.wsProxy.Pagamento();
 
-            pagto.Codigo = Guid.NewGuid();
+            pagto.Codigo = 1;
             pagto.DataPagamento = new DateTime();
             pagto.FormaPagamento = Juntos.aplicacao.Services.wsProxy.FormaPagamento.Cartao;
             pagto.Status = Juntos.aplicacao.Services.wsProxy.StatusPagamento.Pendente;
@@ -70,7 +70,7 @@ namespace PagamentoConsoleApp
         }
 
 
-        private static void AtualizarPagamento(Guid id) 
+        private static void AtualizarPagamento(long id) 
         {
             Juntos.aplicacao.Services.wsProxy.Pagamento result = app.ObterResultadoPagamento(id);
 
@@ -87,7 +87,7 @@ namespace PagamentoConsoleApp
                 }
             }
 
-            pagamentoService.AtualizarPagamento(model);
+            pagamentoService.Atualizar(model);
 
         
         }

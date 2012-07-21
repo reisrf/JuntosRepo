@@ -1,4 +1,6 @@
-﻿namespace Juntos.WcfServiceApp
+﻿using Juntos.WcfServiceApp.PagamentoService;
+
+namespace Juntos.WcfServiceApp
 {
     using System;
     using System.Collections.Generic;
@@ -97,7 +99,15 @@
         {
             ICompraService compraService = typeof (ICompraService).Fabricar();
             var compra = compraService.BuscarPorId(idCompra);
-            compraService.PagarCompra(compra, formaPagamento);
+
+            using (var pagamentoServiceClient = new PagamentoServiceClient())
+            {
+                pagamentoServiceClient.Open();
+                if (pagamentoServiceClient.Pagar(compra.ValorTotal))
+                {
+                    compraService.PagarCompra(compra, formaPagamento);
+                }
+            }
         }
     }
 }

@@ -67,11 +67,12 @@ namespace Juntos.Apresentacao.ConsoleTest
 
                 Consumidor consumidor = client.ConsultarConsumidorPeloId(4);
                
-                Oferta oferta = client.ConsultarOfertaPeloId(1);
+                Oferta oferta1 = client.ConsultarOfertaPeloId(1);
+                Oferta oferta2 = client.ConsultarOfertaPeloId(2);
 
-               Compra compraA = client.ComprarOferta(consumidor.Id, ofertaA.Id, 4);
+               Compra compraA = client.ComprarOferta(consumidor.Id, oferta1.Id, 4);
                client.SalvarCompra(compraA);
-               Compra compraB = client.ComprarOferta(consumidor.Id, ofertaB.Id, 6);
+               Compra compraB = client.ComprarOferta(consumidor.Id, oferta2.Id, 6);
                client.SalvarCompra(compraB);
 
                consumidor = client.ConsultarConsumidorPeloId(4);
@@ -84,7 +85,7 @@ namespace Juntos.Apresentacao.ConsoleTest
                });
 
 
-               oferta.CuponsGerados.ForEach(o => {
+               oferta1.CuponsGerados.ForEach(o => {
 
                    if (o.Id % 2 == 0)
                    {
@@ -95,8 +96,19 @@ namespace Juntos.Apresentacao.ConsoleTest
                });
 
 
+              List<Cupom> cupons = client.ConsolidarOferta(oferta2.Id);
 
-            
+              decimal total = 0;
+
+              cupons.ForEach(c =>
+              {
+
+                  Console.WriteLine("Cupom " + c.Id + ":" + c.Valor);
+                  total = total + c.Valor;
+
+              });
+
+              Console.WriteLine("Total da Oferta = " + total);
                 
 
                        

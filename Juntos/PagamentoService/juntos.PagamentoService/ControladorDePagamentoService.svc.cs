@@ -32,7 +32,7 @@ namespace juntos.PagamentoService
                 pagto.Status = StatusPagamento.Aprovado;
             }
             
-            Pagamentos.Add(pagto.Codigo, pagto);         
+            Pagamentos.Add(pagto);         
 
         }
 

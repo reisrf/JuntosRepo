@@ -221,4 +221,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsolidarOferta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ofertaid" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsolidarOfertaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ConsolidarOfertaResult" nillable="true" type="q16:ArrayOfCupom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

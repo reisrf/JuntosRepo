@@ -872,6 +872,9 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PagSeguro = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cartão = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -945,6 +948,9 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ListarCuponsNaoUtilizados", ReplyAction="http://tempuri.org/IJuntosService/ListarCuponsNaoUtilizadosResponse")]
         System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Cupom> ListarCuponsNaoUtilizados(long ofertaid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsolidarOferta", ReplyAction="http://tempuri.org/IJuntosService/ConsolidarOfertaResponse")]
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Cupom> ConsolidarOferta(long ofertaid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1040,6 +1046,10 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         
         public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Cupom> ListarCuponsNaoUtilizados(long ofertaid) {
             return base.Channel.ListarCuponsNaoUtilizados(ofertaid);
+        }
+        
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Cupom> ConsolidarOferta(long ofertaid) {
+            return base.Channel.ConsolidarOferta(ofertaid);
         }
     }
 }

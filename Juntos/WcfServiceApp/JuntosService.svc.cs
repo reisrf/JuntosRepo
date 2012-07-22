@@ -9,6 +9,7 @@ namespace Juntos.WcfServiceApp
     using IService;
     using Model;
     using Model.Enums;
+    using Juntos.WcfServiceApp.wsProxy;
 
     public class JuntosService : IJuntosService
     {
@@ -118,7 +119,27 @@ namespace Juntos.WcfServiceApp
             }
             else
             {
-                //João, coloca teu código aqui.
+
+                using (var client = new ControladorPagamentoServiceClient())
+                {
+                    client.Open();
+
+                    Juntos.WcfServiceApp.wsProxy.Pagamento pagto = new Juntos.WcfServiceApp.wsProxy.Pagamento();
+                    pagto.Codigo = idCompra;
+                    pagto.DataPagamento = DateTime.Now;
+                    pagto.FormaPagamento = FormaPagamento.PagSeguro;
+                    pagto.Valor = compra.ValorTotal;
+
+                    client.PaymentRequest(pagto);
+
+                    pagto = client.GetPaymentResult(pagto.Codigo);
+
+                    if (pagto.Status==StatusPagamento.Aprovado) 
+                    {
+                        compraService.PagarCompra(compra, formaPagamento);
+                    }
+               
+               }
             }
         }
 
@@ -161,6 +182,28 @@ namespace Juntos.WcfServiceApp
 
             return result; 
 
+        }
+
+
+
+        public List<Cupom> ConsolidarOferta(long ofertaid)
+        {
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+
+            Oferta oferta = ofertaService.BuscarPorId(ofertaid);
+            List<Cupom> result = new List<Cupom>();
+
+            oferta.CuponsGerados.ForEach(c =>
+            {
+
+                if (c.IsUtilizado())
+                {
+                    result.Add(c);
+                }
+
+            });
+
+            return result; 
         }
     }
 }

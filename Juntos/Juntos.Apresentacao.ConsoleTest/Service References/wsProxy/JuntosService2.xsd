@@ -20,6 +20,7 @@
       <xs:enumeration value="NaoDefinida" />
       <xs:enumeration value="PayPal" />
       <xs:enumeration value="PagSeguro" />
+      <xs:enumeration value="Cartão" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="EnumFormaPagamento" nillable="true" type="tns:EnumFormaPagamento" />

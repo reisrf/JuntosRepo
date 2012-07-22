@@ -59,5 +59,8 @@ namespace Juntos.WcfServiceApp
 
         [OperationContract]
         List<Cupom> ListarCuponsNaoUtilizados(long ofertaid);
+
+        [OperationContract]
+        List<Cupom> ConsolidarOferta(long ofertaid);
     }
 }

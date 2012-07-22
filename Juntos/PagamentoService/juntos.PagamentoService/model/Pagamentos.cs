@@ -27,12 +27,7 @@ namespace juntos.PagamentoService.model
             if (pagamentos[pagamentoId] != null)
                 pagamentos.Remove(pagamentoId);
         }
-
-
-
-        internal static void Add(long p, Pagamento pagto)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
+
+

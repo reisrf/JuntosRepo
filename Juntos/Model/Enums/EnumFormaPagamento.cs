@@ -4,6 +4,7 @@ namespace Juntos.Model.Enums
     {
         NaoDefinida,
         PayPal,
-        PagSeguro
+        PagSeguro,
+        Cartão
     }
 }

@@ -13,108 +13,71 @@ namespace Juntos.Apresentacao.ConsoleTest
         static void Main(string[] args)
         {
             start();
-                        
+
+
+               Console.WriteLine("Criando Anunciantes");
                Anunciante empresaA = CriarAnunciante("Empresa A LTDA",EnumTipoPessoa.Juridica,11111111111111, "empresai@servidor.com");
                Anunciante empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresaa@servidor.com");
                Anunciante empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresae@servidor.com");
+               
+               Console.WriteLine("Salvando Anunciantes");
                client.SalvarAnunciante(empresaA);
                client.SalvarAnunciante(empresaB);
                client.SalvarAnunciante(empresaC);
 
+               Console.WriteLine("Criando Consumidores");
                Consumidor consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "email@servidor.com");
                Consumidor consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "emeio@servidor.com");
                Consumidor consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "emaul@servidor.com");
+               
+               Console.WriteLine("Salvando Anunciantes");
                client.SalvarConsumidor(consumidorA);
                client.SalvarConsumidor(consumidorB);
                client.SalvarConsumidor(consumidorC);
 
-               Anunciante anunciante = client.ConsultarAnunciantePeloId(2);
+               Console.WriteLine("Gerando Ofertas");
+               Anunciante anunciante = ObterAnunciante();
 
-               Oferta ofertaA = new Oferta();
 
-               ofertaA.Anunciante = anunciante;
-               ofertaA.Condicoes = "So nos dias de semana ate as 18 horas";
-               ofertaA.Descricao = "Cha completo para duas pessoas";
-               ofertaA.DataInicioValidade = DateTime.Now;
-               ofertaA.DataExpiracao = DateTime.Now.AddDays(5);
-               ofertaA.DataValidadeCupons = DateTime.Now.AddDays(30);
-               ofertaA.ValorCupons = 30;
-               ofertaA.NumeroMaximoCupons = 100;
-                           
-               Oferta ofertaB = new Oferta();
-
-               ofertaB.Anunciante = anunciante;
-               ofertaB.Condicoes = "tercas e quintas";
-               ofertaB.Descricao = "Jantar a luz de velas";
-               ofertaB.DataInicioValidade = DateTime.Now;
-               ofertaB.DataExpiracao = DateTime.Now.AddDays(2);
-               ofertaB.DataValidadeCupons = DateTime.Now.AddDays(15);
-               ofertaB.ValorCupons = 50;
-               ofertaB.NumeroMaximoCupons = 70;
-
+               Console.WriteLine(">");
+               Oferta ofertaA = GerarOferta("Cha completo para duas pessoas",anunciante,"So nos dias de semana ate as 18 horas", 30, 100);
                client.SalvarOferta(ofertaA);
+               
+               Console.WriteLine(">>");           
+               Oferta ofertaB = GerarOferta("Jantar Pink Fleet",anunciante,"Tercas e quintas", 10, 30);              
                client.SalvarOferta(ofertaB);
-
-               List<Oferta> ofertas = client.RetornarTodasOfertas();
-
-               ofertas.ForEach(o => {
-
-                   if (o.Status == EnumStatusOferta.Criada)
-                       client.PublicarOferta(o.Id);
                
+               Console.WriteLine(">>>");
+               Oferta ofertaC = GerarOferta("Rodizio de Pizza", anunciante, "Segundas e Tercas", 35, 10);
+               client.SalvarOferta(ofertaC);
+
+               Console.WriteLine("Publicando Oferta");
+
+               PublicarOferta();
+
+               Console.WriteLine("Comprando Oferta");
+
+               Consumidor consumidor = ObterConsumidor();
+               Oferta oferta = ObterOferta();
+
+               ComprarOfertas(consumidor, oferta, 5);
+
+               Console.WriteLine("Pagar Compra");
+
+               PagarCompras(consumidor, EnumFormaPagamento.PayPal);
+
+
+               Console.WriteLine("Comprando Oferta de novo");
+               ComprarOfertas(consumidor, oferta, 10);
                
-               });
+               Console.WriteLine("Pagar nova Compra");
+               PagarCompras(consumidor, EnumFormaPagamento.PagSeguro);
 
-                Consumidor consumidor = client.ConsultarConsumidorPeloId(4);
+               Console.WriteLine("Informar utilizacao Cupom");
+               InformarCupom(oferta);
                
-                Oferta oferta1 = client.ConsultarOfertaPeloId(1);
-                Oferta oferta2 = client.ConsultarOfertaPeloId(2);
-
-               Compra compraA = client.ComprarOferta(consumidor.Id, oferta1.Id, 4);
-               client.SalvarCompra(compraA);
-               Compra compraB = client.ComprarOferta(consumidor.Id, oferta2.Id, 6);
-               client.SalvarCompra(compraB);
-
-               consumidor = client.ConsultarConsumidorPeloId(4);
-
-               consumidor.Compras.ForEach(c => {
-
-                   client.PagarCompra(c.Id, EnumFormaPagamento.PagSeguro);    
- 
-               
-               });
-
-
-               oferta1.CuponsGerados.ForEach(o => {
-
-                   if (o.Id % 2 == 0)
-                   {
-                       client.InformarUsoCupom(o.Id);
-                   }
-               
-               
-               });
-
-
-              List<Cupom> cupons = client.ConsolidarOferta(oferta2.Id);
-
-              decimal total = 0;
-
-              cupons.ForEach(c =>
-              {
-
-                  Console.WriteLine("Cupom " + c.Id + ":" + c.Valor);
-                  total = total + c.Valor;
-
-              });
-
-              Console.WriteLine("Total da Oferta = " + total);
-                
-
-                       
-                            
-            
-            
+               Console.WriteLine("Consolidar Oferta");
+               ConsolidarOferta(oferta);
 
             stop();
 
@@ -196,6 +159,151 @@ namespace Juntos.Apresentacao.ConsoleTest
             consumidor.Enderecos.Add(endereco);
             
             return consumidor;
+        }
+
+        private static Anunciante ObterAnunciante()
+        {
+
+            List<Anunciante> anunciantes = client.RetornarTodosAnunciantes();
+            Anunciante anunciante=null;
+
+            if (anunciantes.Count > 0)
+            {
+
+                anunciante = anunciantes.ElementAt(0);
+            }
+            else
+            {
+                throw new Exception("Não existem anunciantes cadastrados");
+            }
+
+
+            return anunciante;
+        }
+
+        private static Oferta GerarOferta(string descricao, Anunciante anunciante, string condicao, int nrcupons, decimal valor)
+        {
+            Oferta ofertaA = new Oferta();
+
+            ofertaA.Anunciante = anunciante;
+            ofertaA.Condicoes = condicao;
+            ofertaA.Descricao = descricao;
+            ofertaA.DataInicioValidade = DateTime.Now;
+            ofertaA.DataExpiracao = DateTime.Now.AddDays(7);
+            ofertaA.DataValidadeCupons = DateTime.Now.AddDays(30);
+            ofertaA.ValorCupons = valor;
+            ofertaA.NumeroMaximoCupons = nrcupons;
+
+            return ofertaA;
+        }
+
+
+        private static void PublicarOferta()
+        {
+            List<Oferta> ofertas = client.RetornarTodasOfertas();
+
+            ofertas.ForEach(o =>
+            {
+
+                if (o.Status == EnumStatusOferta.Criada)
+                    client.PublicarOferta(o.Id);
+
+            });
+        }
+
+
+        private static Consumidor ObterConsumidor()
+        {
+            List<Consumidor> consumidores = client.RetornarTodosConsumidores();
+
+            Consumidor consumidor = null;
+
+            if (consumidores.Count > 0)
+            {
+
+                consumidor = consumidores.ElementAt(0);
+            }
+            else
+            {
+                throw new Exception("Não existem anunciantes cadastrados");
+            }
+
+
+            return consumidor;
+        }
+
+        private static Oferta ObterOferta() {
+
+            List<Oferta> ofertas = client.RetornarTodasOfertas();
+
+            Oferta oferta = null;
+
+            if (ofertas.Count > 0)
+            {
+                oferta = ofertas.ElementAt(0);
+                
+            }
+            else
+            {
+                throw new Exception("Não existem anunciantes cadastrados");
+            }
+
+
+            return oferta;
+        
+        }
+
+
+        private static void ComprarOfertas(Consumidor consumidor, Oferta oferta, int nrcupons) {
+
+            Compra compra = client.ComprarOferta(consumidor.Id, oferta.Id, nrcupons);
+            client.SalvarCompra(compra);
+         
+       }
+
+
+        private static void PagarCompras(Consumidor consumidor, EnumFormaPagamento tipo)
+        {
+            consumidor.Compras.ForEach(c =>
+            {
+            
+               
+                client.PagarCompra(c.Id, tipo);
+
+
+            });
+        }
+
+        private static void InformarCupom(Oferta oferta) 
+        {
+            oferta.CuponsGerados.ForEach(o =>
+            {
+
+                if (o.Id % 2 == 0)
+                {
+                    client.InformarUsoCupom(o.Id);
+                }
+
+
+            });
+        }
+
+        private static void ConsolidarOferta(Oferta oferta)
+        {
+            List<Cupom> cupons = client.ConsolidarOferta(oferta.Id);
+
+            decimal total = 0;
+
+            cupons.ForEach(c =>
+            {
+
+                Console.WriteLine("Cupom " + c.Id + ":" + c.Valor);
+                total = total + c.Valor;
+
+            });
+
+            Console.WriteLine("Total da Oferta = " + total);
+                
         }
 
 

@@ -50,5 +50,14 @@ namespace Juntos.WcfServiceApp
 
         [OperationContract]
         void PagarCompra(long idCompra, EnumFormaPagamento formaPagamento);
+
+        [OperationContract]
+        void InformarUsoCupom(long idCupom);
+
+        [OperationContract]
+        void PublicarOferta(long idOferta);
+
+        [OperationContract]
+        List<Cupom> ListarCuponsNaoUtilizados(long ofertaid);
     }
 }

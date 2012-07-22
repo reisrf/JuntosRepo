@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EnumTipoPessoa">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fisica" />
+      <xs:enumeration value="Juridica" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTipoPessoa" nillable="true" type="tns:EnumTipoPessoa" />
+  <xs:simpleType name="EnumStatusOferta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Criada" />
+      <xs:enumeration value="Publicada" />
+      <xs:enumeration value="Finalizada" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumStatusOferta" nillable="true" type="tns:EnumStatusOferta" />
+  <xs:simpleType name="EnumFormaPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NaoDefinida" />
+      <xs:enumeration value="PayPal" />
+      <xs:enumeration value="PagSeguro" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumFormaPagamento" nillable="true" type="tns:EnumFormaPagamento" />
+  <xs:simpleType name="EnumStatusPagamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pendente" />
+      <xs:enumeration value="Aprovado" />
+      <xs:enumeration value="Rejeitado" />
+      <xs:enumeration value="Cancelado" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumStatusPagamento" nillable="true" type="tns:EnumStatusPagamento" />
+</xs:schema>

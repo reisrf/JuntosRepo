@@ -121,5 +121,46 @@ namespace Juntos.WcfServiceApp
                 //João, coloca teu código aqui.
             }
         }
+
+
+        public void InformarUsoCupom(long idCupom) 
+        {
+
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+
+
+            ofertaService.UtilizarCupom(idCupom);
+            
+        
+        }
+
+
+        public void PublicarOferta(long idOferta) {
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+
+            ofertaService.Publicar(idOferta);
+        
+        
+        }
+
+
+        public List<Cupom> ListarCuponsNaoUtilizados(long ofertaid) {
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            
+            Oferta oferta = ofertaService.BuscarPorId(ofertaid);
+            List<Cupom> result = new List<Cupom>();
+
+            oferta.CuponsGerados.ForEach(c => {
+
+                if (!c.IsUtilizado())
+                {
+                    result.Add(c);
+                }
+            
+            });
+
+            return result; 
+
+        }
     }
 }

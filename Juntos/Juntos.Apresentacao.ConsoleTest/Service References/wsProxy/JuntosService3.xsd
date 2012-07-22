@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Juntos.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Juntos.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1048/JuntosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" />
+  <xs:complexType name="ArrayOfConsumidor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Consumidor" nillable="true" type="tns:Consumidor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsumidor" nillable="true" type="tns:ArrayOfConsumidor" />
+  <xs:complexType name="Consumidor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Pessoa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Compras" nillable="true" type="tns:ArrayOfCompra" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Consumidor" nillable="true" type="tns:Consumidor" />
+  <xs:complexType name="Pessoa">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CpfCnpj" type="xs:long" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Enderecos" nillable="true" type="tns:ArrayOfEndereco" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefones" nillable="true" type="tns:ArrayOfTelefone" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="Tipo" type="q1:EnumTipoPessoa" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Pessoa" nillable="true" type="tns:Pessoa" />
+  <xs:complexType name="Entidade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Entidade" nillable="true" type="tns:Entidade" />
+  <xs:complexType name="ArrayOfEndereco">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Endereco" nillable="true" type="tns:Endereco" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEndereco" nillable="true" type="tns:ArrayOfEndereco" />
+  <xs:complexType name="Endereco">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Logradouro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" type="xs:int" />
+          <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Endereco" nillable="true" type="tns:Endereco" />
+  <xs:complexType name="ArrayOfTelefone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telefone" nillable="true" type="tns:Telefone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelefone" nillable="true" type="tns:ArrayOfTelefone" />
+  <xs:complexType name="Telefone">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DDD" type="xs:short" />
+          <xs:element minOccurs="0" name="DDI" type="xs:short" />
+          <xs:element minOccurs="0" name="Numero" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Telefone" nillable="true" type="tns:Telefone" />
+  <xs:complexType name="ArrayOfCompra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompra" nillable="true" type="tns:ArrayOfCompra" />
+  <xs:complexType name="Compra">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Consumidor" nillable="true" type="tns:Consumidor" />
+          <xs:element minOccurs="0" name="Cupons" nillable="true" type="tns:ArrayOfCupom" />
+          <xs:element minOccurs="0" name="DataCompra" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Pagamentos" nillable="true" type="tns:ArrayOfPagamento" />
+          <xs:element minOccurs="0" name="ValorTotal" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Compra" nillable="true" type="tns:Compra" />
+  <xs:complexType name="ArrayOfCupom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cupom" nillable="true" type="tns:Cupom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCupom" nillable="true" type="tns:ArrayOfCupom" />
+  <xs:complexType name="Cupom">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataUtilizacao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataValidade" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Oferta" nillable="true" type="tns:Oferta" />
+          <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cupom" nillable="true" type="tns:Cupom" />
+  <xs:complexType name="Oferta">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Anunciante" nillable="true" type="tns:Anunciante" />
+          <xs:element minOccurs="0" name="Condicoes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CuponsGerados" nillable="true" type="tns:ArrayOfCupom" />
+          <xs:element minOccurs="0" name="DataExpiracao" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataInicioValidade" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataPublicacao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataValidadeCupons" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroMaximoCupons" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="Status" type="q2:EnumStatusOferta" />
+          <xs:element minOccurs="0" name="ValorCupons" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Oferta" nillable="true" type="tns:Oferta" />
+  <xs:complexType name="Anunciante">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Pessoa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ofertas" nillable="true" type="tns:ArrayOfOferta" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Anunciante" nillable="true" type="tns:Anunciante" />
+  <xs:complexType name="ArrayOfOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Oferta" nillable="true" type="tns:Oferta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOferta" nillable="true" type="tns:ArrayOfOferta" />
+  <xs:complexType name="ArrayOfPagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pagamento" nillable="true" type="tns:Pagamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagamento" nillable="true" type="tns:ArrayOfPagamento" />
+  <xs:complexType name="Pagamento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entidade">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" type="xs:long" />
+          <xs:element minOccurs="0" name="DataPagamento" type="xs:dateTime" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="FormaPagamento" type="q3:EnumFormaPagamento" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="Status" type="q4:EnumStatusPagamento" />
+          <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Pagamento" nillable="true" type="tns:Pagamento" />
+  <xs:complexType name="ArrayOfAnunciante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Anunciante" nillable="true" type="tns:Anunciante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnunciante" nillable="true" type="tns:ArrayOfAnunciante" />
+</xs:schema>

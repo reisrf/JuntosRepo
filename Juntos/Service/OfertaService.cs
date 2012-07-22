@@ -12,7 +12,7 @@ namespace Juntos.Service
         {
         }
 
-        public void Publicar(Guid idOferta)
+        public void Publicar(long idOferta)
         {
             var oferta = this.Repository.Consultar(o => o.Id.Equals(idOferta)).FirstOrDefault();
 
@@ -26,7 +26,7 @@ namespace Juntos.Service
             this.Repository.Atualizar(oferta);
         }
 
-        public void Finalizar(Guid idOferta)
+        public void Finalizar(long idOferta)
         {
             var oferta = this.Repository.Consultar(o => o.Id.Equals(idOferta)).FirstOrDefault();
 
@@ -40,7 +40,7 @@ namespace Juntos.Service
             this.Repository.Atualizar(oferta);
         }
 
-        public void UtilizarCupom(Guid idCupom)
+        public void UtilizarCupom(long idCupom)
         {
             var oferta = this.Repository.Consultar(o => o.CuponsGerados.Any(c => c.Id.Equals(idCupom))).FirstOrDefault();
             

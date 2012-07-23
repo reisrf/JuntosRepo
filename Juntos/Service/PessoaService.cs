@@ -22,5 +22,10 @@ namespace Juntos.Service
         {
             return this.Repository.Consultar(e => e.CpfCnpj.Equals(cpfCnpj)).FirstOrDefault();
         }
+
+        public TPessoa ConsultarPeloEmail(string email)
+        {
+            return this.Repository.Consultar(e => e.Email.Equals(email)).FirstOrDefault();
+        }
     }
 }

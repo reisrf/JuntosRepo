@@ -43,6 +43,12 @@ namespace Juntos.WcfServiceApp
             return anuncianteService.BuscarPorId(id);
         }
 
+        public Anunciante ConsultarAnunciantePeloEmail(string email)
+        {
+            IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
+            return anuncianteService.ConsultarPeloEmail(email);
+        }
+
         public void SalvarAnunciante(Anunciante anunciante)
         {
             IAnuncianteService anuncianteService = typeof (IAnuncianteService).Fabricar();

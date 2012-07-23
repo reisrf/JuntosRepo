@@ -16,9 +16,9 @@ namespace Juntos.Apresentacao.ConsoleTest
 
 
                Console.WriteLine("Criando Anunciantes");
-               Anunciante empresaA = CriarAnunciante("Empresa A LTDA",EnumTipoPessoa.Juridica,11111111111111, "empresai@servidor.com");
-               Anunciante empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresaa@servidor.com");
-               Anunciante empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresae@servidor.com");
+               Anunciante empresaA = CriarAnunciante("Empresa A LTDA",EnumTipoPessoa.Juridica,11111111111111, "empresa_A@servidor.com");
+               Anunciante empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresa_B@servidor.com");
+               Anunciante empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresa_C@servidor.com");
                
                Console.WriteLine("Salvando Anunciantes");
                client.SalvarAnunciante(empresaA);
@@ -26,9 +26,9 @@ namespace Juntos.Apresentacao.ConsoleTest
                client.SalvarAnunciante(empresaC);
 
                Console.WriteLine("Criando Consumidores");
-               Consumidor consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "email@servidor.com");
-               Consumidor consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "emeio@servidor.com");
-               Consumidor consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "emaul@servidor.com");
+               Consumidor consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "genesio@servidor.com");
+               Consumidor consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "gervasio@servidor.com");
+               Consumidor consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "geroncio@servidor.com");
                
                Console.WriteLine("Salvando Anunciantes");
                client.SalvarConsumidor(consumidorA);
@@ -36,8 +36,8 @@ namespace Juntos.Apresentacao.ConsoleTest
                client.SalvarConsumidor(consumidorC);
 
                Console.WriteLine("Gerando Ofertas");
-               Anunciante anunciante = ObterAnunciante();
-
+               //Anunciante anunciante = ObterAnunciante();
+               Anunciante anunciante = ObterAnunciantePorEmail("empresa_A@servidor.com");
 
                Console.WriteLine(">");
                Oferta ofertaA = GerarOferta("Cha completo para duas pessoas",anunciante,"So nos dias de semana ate as 18 horas", 30, 100);
@@ -181,6 +181,22 @@ namespace Juntos.Apresentacao.ConsoleTest
             return anunciante;
         }
 
+        private static Anunciante ObterAnunciantePorEmail(string email)
+        {
+
+            Anunciante anunciante = client.ConsultarAnunciantePeloEmail(email);
+
+            if (anunciante!=null)
+            {
+
+                return anunciante;
+            }
+            else
+            {
+                throw new Exception("Anunciante não cadastrado");
+            }
+
+        }
         private static Oferta GerarOferta(string descricao, Anunciante anunciante, string condicao, int nrcupons, decimal valor)
         {
             Oferta ofertaA = new Oferta();

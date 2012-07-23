@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Juntos.Model.Enums;
+using System.Xml.Serialization;
 
 namespace Juntos.Model
 {
@@ -19,7 +20,6 @@ namespace Juntos.Model
 
         //Não lembrei o que era...
         //public EnumTipoOferta Tipo { get; set; }
-
         public Anunciante Anunciante { get; set; }
 
         public EnumStatusOferta Status { get; set; }

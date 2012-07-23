@@ -28,7 +28,7 @@ namespace Juntos.WcfServiceApp
         void SalvarAnunciante(Anunciante anunciante);
 
         [OperationContract]
-        List<Oferta> RetornarTodasOfertas();
+        List<Oferta> RetornarTodasOfertas(long anuncianteid);
 
         [OperationContract]
         Oferta ConsultarOfertaPeloId(long id);
@@ -37,7 +37,7 @@ namespace Juntos.WcfServiceApp
         void SalvarOferta(Oferta oferta);
 
         [OperationContract]
-        List<Compra> RetornarTodasCompras();
+        List<Compra> RetornarTodasCompras(long consumidorid);
 
         [OperationContract]
         Compra ConsultarCompraPeloId(long id);

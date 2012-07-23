@@ -917,7 +917,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante anunciante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasOfertas", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasOfertasResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta> RetornarTodasOfertas();
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta> RetornarTodasOfertas(long anuncianteid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarOfertaPeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarOfertaPeloIdResponse")]
         Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta ConsultarOfertaPeloId(long id);
@@ -926,7 +926,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta oferta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasCompras", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasComprasResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Compra> RetornarTodasCompras();
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Compra> RetornarTodasCompras(long consumidorid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarCompraPeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarCompraPeloIdResponse")]
         Juntos.Apresentacao.ConsoleTest.wsProxy.Compra ConsultarCompraPeloId(long id);
@@ -1004,8 +1004,8 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
             base.Channel.SalvarAnunciante(anunciante);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta> RetornarTodasOfertas() {
-            return base.Channel.RetornarTodasOfertas();
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta> RetornarTodasOfertas(long anuncianteid) {
+            return base.Channel.RetornarTodasOfertas(anuncianteid);
         }
         
         public Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta ConsultarOfertaPeloId(long id) {
@@ -1016,8 +1016,8 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
             base.Channel.SalvarOferta(oferta);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Compra> RetornarTodasCompras() {
-            return base.Channel.RetornarTodasCompras();
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Compra> RetornarTodasCompras(long consumidorid) {
+            return base.Channel.RetornarTodasCompras(consumidorid);
         }
         
         public Juntos.Apresentacao.ConsoleTest.wsProxy.Compra ConsultarCompraPeloId(long id) {

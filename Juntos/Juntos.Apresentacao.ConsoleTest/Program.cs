@@ -41,7 +41,16 @@ namespace Juntos.Apresentacao.ConsoleTest
 
                Console.WriteLine(">");
                Oferta ofertaA = GerarOferta("Cha completo para duas pessoas",anunciante,"So nos dias de semana ate as 18 horas", 30, 100);
-               client.SalvarOferta(ofertaA);
+
+               if (anunciante.Ofertas == null)
+               {
+                   anunciante.Ofertas = new List<Oferta>();
+               }
+
+               anunciante.Ofertas.Add(ofertaA);
+               client.SalvarAnunciante(anunciante);
+            
+                client.SalvarOferta(ofertaA);
                
                Console.WriteLine(">>");           
                Oferta ofertaB = GerarOferta("Jantar Pink Fleet",anunciante,"Tercas e quintas", 10, 30);              
@@ -53,12 +62,12 @@ namespace Juntos.Apresentacao.ConsoleTest
 
                Console.WriteLine("Publicando Oferta");
 
-               PublicarOferta();
+               PublicarOferta(anunciante.Id);
 
                Console.WriteLine("Comprando Oferta");
 
                Consumidor consumidor = ObterConsumidor();
-               Oferta oferta = ObterOferta();
+               Oferta oferta = ObterOferta(anunciante.Id);
 
                ComprarOfertas(consumidor, oferta, 5);
 
@@ -185,7 +194,7 @@ namespace Juntos.Apresentacao.ConsoleTest
         {
             Oferta ofertaA = new Oferta();
 
-            ofertaA.Anunciante = anunciante;
+           // ofertaA.Anunciante = anunciante;
             ofertaA.Condicoes = condicao;
             ofertaA.Descricao = descricao;
             ofertaA.DataInicioValidade = DateTime.Now;
@@ -193,17 +202,28 @@ namespace Juntos.Apresentacao.ConsoleTest
             ofertaA.DataValidadeCupons = DateTime.Now.AddDays(30);
             ofertaA.ValorCupons = valor;
             ofertaA.NumeroMaximoCupons = nrcupons;
-
             return ofertaA;
         }
 
 
-        private static void PublicarOferta()
+        private static void PublicarOferta(long id)
         {
-            List<Oferta> ofertas = client.RetornarTodasOfertas();
+            Console.WriteLine("Publicando Oferta");
+            List<Oferta> ofertas = client.RetornarTodasOfertas(id);
+            Console.WriteLine("Obter ofertas");
+
+            if (ofertas == null)
+            {
+                Console.WriteLine("Eh null");
+            }
+            else
+            {
+                Console.WriteLine("Pussui {0} membros", ofertas.Count);
+            }
 
             ofertas.ForEach(o =>
             {
+                Console.WriteLine("Publicando Oferta : " + o.Id);
 
                 if (o.Status == EnumStatusOferta.Criada)
                     client.PublicarOferta(o.Id);
@@ -232,9 +252,9 @@ namespace Juntos.Apresentacao.ConsoleTest
             return consumidor;
         }
 
-        private static Oferta ObterOferta() {
+        private static Oferta ObterOferta(long id) {
 
-            List<Oferta> ofertas = client.RetornarTodasOfertas();
+            List<Oferta> ofertas = client.RetornarTodasOfertas(id);
 
             Oferta oferta = null;
 

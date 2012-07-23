@@ -8,5 +8,6 @@ namespace Juntos.IService
     {
         List<TPessoa> ConsultarPeloNome(string nome);
         TPessoa ConsultarPeloCpfOuCnpj(long cpfCnpj);
+        TPessoa ConsultarPeloEmail(string email);
     }
 }

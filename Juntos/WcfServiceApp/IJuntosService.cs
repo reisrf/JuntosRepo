@@ -23,6 +23,9 @@ namespace Juntos.WcfServiceApp
 
         [OperationContract]
         Anunciante ConsultarAnunciantePeloId(long id);
+        
+        [OperationContract]
+        Anunciante ConsultarAnunciantePeloEmail(string email);
 
         [OperationContract]
         void SalvarAnunciante(Anunciante anunciante);
@@ -34,7 +37,7 @@ namespace Juntos.WcfServiceApp
         Oferta ConsultarOfertaPeloId(long id);
 
         [OperationContract]
-        void SalvarOferta(Oferta oferta);
+        void SalvarOferta(Oferta oferta, long idConsumidor);
 
         [OperationContract]
         List<Compra> RetornarTodasCompras(long consumidorid);

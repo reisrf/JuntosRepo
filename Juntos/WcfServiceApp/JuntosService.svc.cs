@@ -43,6 +43,12 @@ namespace Juntos.WcfServiceApp
             return anuncianteService.BuscarPorId(id);
         }
 
+        public Anunciante ConsultarAnunciantePeloEmail(string email)
+        {
+            IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
+            return anuncianteService.ConsultarPeloEmail(email);
+        }
+
         public void SalvarAnunciante(Anunciante anunciante)
         {
             IAnuncianteService anuncianteService = typeof (IAnuncianteService).Fabricar();
@@ -68,10 +74,19 @@ namespace Juntos.WcfServiceApp
             return ofertaService.BuscarPorId(id);
         }
 
-        public void SalvarOferta(Oferta oferta)
+        public void SalvarOferta(Oferta oferta, long idAnunciante)
         {
-            IOfertaService ofertaService = typeof (IOfertaService).Fabricar();
-            ofertaService.Salvar(oferta);
+            IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
+            Anunciante anunciante = anuncianteService.BuscarPorId(idAnunciante);
+
+            oferta.Anunciante = null;
+
+            if (anunciante.Ofertas == null)
+            {
+                anunciante.Ofertas = new List<Oferta>();
+            }
+            anunciante.Ofertas.Add(oferta);
+            anuncianteService.Salvar(anunciante);
         }
 
         public List<Compra> RetornarTodasCompras(long consumidorid)

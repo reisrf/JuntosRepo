@@ -909,10 +909,13 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodosAnunciantes", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodosAnunciantesResponse")]
         System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante> RetornarTodosAnunciantes();
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarAnunciantePeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarAnunciantePeloIdResponse")]
         Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante ConsultarAnunciantePeloId(long id);
-        
+
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IJuntosService/ConsultarAnunciantePeloEmail", ReplyAction = "http://tempuri.org/IJuntosService/ConsultarAnunciantePeloEmailResponse")]
+        Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante ConsultarAnunciantePeloEmail(string email);
+
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/SalvarAnunciante", ReplyAction="http://tempuri.org/IJuntosService/SalvarAnuncianteResponse")]
         void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante anunciante);
         
@@ -923,7 +926,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta ConsultarOfertaPeloId(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/SalvarOferta", ReplyAction="http://tempuri.org/IJuntosService/SalvarOfertaResponse")]
-        void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta oferta);
+        void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta oferta, long idConsumidor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasCompras", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasComprasResponse")]
         System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Compra> RetornarTodasCompras(long consumidorid);
@@ -995,11 +998,16 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante> RetornarTodosAnunciantes() {
             return base.Channel.RetornarTodosAnunciantes();
         }
-        
+
         public Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante ConsultarAnunciantePeloId(long id) {
             return base.Channel.ConsultarAnunciantePeloId(id);
         }
-        
+
+        public Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante ConsultarAnunciantePeloEmail(string email)
+        {
+            return base.Channel.ConsultarAnunciantePeloEmail(email);
+        }
+
         public void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante anunciante) {
             base.Channel.SalvarAnunciante(anunciante);
         }
@@ -1011,9 +1019,10 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         public Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta ConsultarOfertaPeloId(long id) {
             return base.Channel.ConsultarOfertaPeloId(id);
         }
-        
-        public void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta oferta) {
-            base.Channel.SalvarOferta(oferta);
+
+        public void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta oferta, long idConsumidor)
+        {
+            base.Channel.SalvarOferta(oferta, idConsumidor);
         }
         
         public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.Compra> RetornarTodasCompras(long consumidorid) {

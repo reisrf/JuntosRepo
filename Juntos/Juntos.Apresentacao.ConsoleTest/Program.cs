@@ -38,19 +38,17 @@ namespace Juntos.Apresentacao.ConsoleTest
                Console.WriteLine("Gerando Ofertas");
                //Anunciante anunciante = ObterAnunciante();
                Anunciante anunciante = ObterAnunciantePorEmail("empresa_A@servidor.com");
-
+               //anunciante.Ofertas = new List<Oferta>();
                Console.WriteLine(">");
                Oferta ofertaA = GerarOferta("Cha completo para duas pessoas",anunciante,"So nos dias de semana ate as 18 horas", 30, 100);
-               client.SalvarOferta(ofertaA);
-               
-               Console.WriteLine(">>");           
-               Oferta ofertaB = GerarOferta("Jantar Pink Fleet",anunciante,"Tercas e quintas", 10, 30);              
-               client.SalvarOferta(ofertaB);
-               
-               Console.WriteLine(">>>");
+               client.SalvarOferta(ofertaA, anunciante.Id);
+               Oferta ofertaB = GerarOferta("Jantar Pink Fleet", anunciante, "Tercas e quintas", 10, 30);
+               client.SalvarOferta(ofertaB, anunciante.Id);
                Oferta ofertaC = GerarOferta("Rodizio de Pizza", anunciante, "Segundas e Tercas", 35, 10);
-               client.SalvarOferta(ofertaC);
+               client.SalvarOferta(ofertaC, anunciante.Id);
 
+
+             
                Console.WriteLine("Publicando Oferta");
 
                PublicarOferta();
@@ -201,7 +199,7 @@ namespace Juntos.Apresentacao.ConsoleTest
         {
             Oferta ofertaA = new Oferta();
 
-            ofertaA.Anunciante = anunciante;
+            //ofertaA.Anunciante = anunciante;
             ofertaA.Condicoes = condicao;
             ofertaA.Descricao = descricao;
             ofertaA.DataInicioValidade = DateTime.Now;

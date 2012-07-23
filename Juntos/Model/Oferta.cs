@@ -19,7 +19,6 @@ namespace Juntos.Model
 
         //Não lembrei o que era...
         //public EnumTipoOferta Tipo { get; set; }
-
         public Anunciante Anunciante { get; set; }
 
         public EnumStatusOferta Status { get; set; }

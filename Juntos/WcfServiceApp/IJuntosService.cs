@@ -37,7 +37,7 @@ namespace Juntos.WcfServiceApp
         Oferta ConsultarOfertaPeloId(long id);
 
         [OperationContract]
-        void SalvarOferta(Oferta oferta);
+        void SalvarOferta(Oferta oferta, long idConsumidor);
 
         [OperationContract]
         List<Compra> RetornarTodasCompras();

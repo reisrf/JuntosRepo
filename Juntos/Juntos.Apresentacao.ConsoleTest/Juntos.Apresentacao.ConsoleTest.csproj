@@ -58,19 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.Anunciante.datasource">
+    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.Compra.datasource">
+    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.Consumidor.datasource">
+    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.Cupom.datasource">
+    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.Oferta.datasource">
+    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\wsProxy\JuntosService.wsdl" />

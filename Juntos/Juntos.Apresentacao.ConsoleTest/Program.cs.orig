@@ -16,9 +16,9 @@ namespace Juntos.Apresentacao.ConsoleTest
 
 
                Console.WriteLine("Criando Anunciantes");
-               AnuncianteDTO empresaA = CriarAnunciante("Empresa A LTDA",EnumTipoPessoa.Juridica,11111111111111, "empresa_A@servidor.com");
-               AnuncianteDTO empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresa_B@servidor.com");
-               AnuncianteDTO empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresa_C@servidor.com");
+               Anunciante empresaA = CriarAnunciante("Empresa A LTDA",EnumTipoPessoa.Juridica,11111111111111, "empresa_A@servidor.com");
+               Anunciante empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresa_B@servidor.com");
+               Anunciante empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresa_C@servidor.com");
                
                Console.WriteLine("Salvando Anunciantes");
                client.SalvarAnunciante(empresaA);
@@ -26,9 +26,9 @@ namespace Juntos.Apresentacao.ConsoleTest
                client.SalvarAnunciante(empresaC);
 
                Console.WriteLine("Criando Consumidores");
-               ConsumidorDTO consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "genesio@servidor.com");
-               ConsumidorDTO consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "gervasio@servidor.com");
-               ConsumidorDTO consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "geroncio@servidor.com");
+               Consumidor consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "genesio@servidor.com");
+               Consumidor consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "gervasio@servidor.com");
+               Consumidor consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "geroncio@servidor.com");
                
                Console.WriteLine("Salvando Anunciantes");
                client.SalvarConsumidor(consumidorA);
@@ -37,26 +37,33 @@ namespace Juntos.Apresentacao.ConsoleTest
 
                Console.WriteLine("Gerando Ofertas");
                //Anunciante anunciante = ObterAnunciante();
-               AnuncianteDTO anunciante = ObterAnunciantePorEmail("empresa_A@servidor.com");
+               Anunciante anunciante = ObterAnunciantePorEmail("empresa_A@servidor.com");
                //anunciante.Ofertas = new List<Oferta>();
                Console.WriteLine(">");
-               OfertaDTO ofertaA = GerarOferta("Cha completo para duas pessoas", anunciante, "So nos dias de semana ate as 18 horas", 120, 100);
+               Oferta ofertaA = GerarOferta("Cha completo para duas pessoas",anunciante,"So nos dias de semana ate as 18 horas", 30, 100);
+<<<<<<< HEAD
 
                if (anunciante.Ofertas == null)
                {
-                   anunciante.Ofertas = new List<OfertaDTO>();
+                   anunciante.Ofertas = new List<Oferta>();
                }
 
                anunciante.Ofertas.Add(ofertaA);
                client.SalvarAnunciante(anunciante);
-
-               Console.WriteLine(">>");
-               OfertaDTO ofertaB = GerarOferta("Jantar Pink Fleet", anunciante, "Tercas e quintas", 100, 30);
-               client.SalvarOferta(ofertaB, anunciante.Id);
+            
+                client.SalvarOferta(ofertaA);
                
-                             
+               Console.WriteLine(">>");           
+               Oferta ofertaB = GerarOferta("Jantar Pink Fleet",anunciante,"Tercas e quintas", 10, 30);              
+               client.SalvarOferta(ofertaB);
+               
                Console.WriteLine(">>>");
-               OfertaDTO ofertaC = GerarOferta("Rodizio de Pizza", anunciante, "Segundas e Tercas", 150, 10);
+=======
+               client.SalvarOferta(ofertaA, anunciante.Id);
+               Oferta ofertaB = GerarOferta("Jantar Pink Fleet", anunciante, "Tercas e quintas", 10, 30);
+               client.SalvarOferta(ofertaB, anunciante.Id);
+>>>>>>> origin/master
+               Oferta ofertaC = GerarOferta("Rodizio de Pizza", anunciante, "Segundas e Tercas", 35, 10);
                client.SalvarOferta(ofertaC, anunciante.Id);
 
 
@@ -67,8 +74,8 @@ namespace Juntos.Apresentacao.ConsoleTest
 
                Console.WriteLine("Comprando Oferta");
 
-               ConsumidorDTO consumidor = ObterConsumidor();
-               OfertaDTO oferta = ObterOferta(anunciante.Id);
+               Consumidor consumidor = ObterConsumidor();
+               Oferta oferta = ObterOferta(anunciante.Id);
 
                ComprarOfertas(consumidor, oferta, 5);
 
@@ -105,16 +112,16 @@ namespace Juntos.Apresentacao.ConsoleTest
             client.Close();
         }
 
-        private static AnuncianteDTO CriarAnunciante(string nome, EnumTipoPessoa tipopessoa, long inscricao, string email)
+        private static Anunciante CriarAnunciante(string nome, EnumTipoPessoa tipopessoa, long inscricao, string email)
         {
-            AnuncianteDTO anunciante = new AnuncianteDTO();
+            Anunciante anunciante = new Anunciante();
 
             anunciante.Nome = nome;
             anunciante.Email = email;
             anunciante.CpfCnpj = inscricao;
             anunciante.Tipo = tipopessoa;
             
-            EnderecoDTO endereco = new EnderecoDTO();
+            Endereco endereco = new Endereco();
             endereco.Logradouro = "Rua A";
             endereco.Numero = 30;
             endereco.Complemento = "Apto 607";
@@ -124,22 +131,22 @@ namespace Juntos.Apresentacao.ConsoleTest
             endereco.Cep = "11111-111";
             endereco.Pais = "Brasil";
             
-            TelefoneDTO telefone = new TelefoneDTO();
+            Telefone telefone = new Telefone();
             telefone.DDI = 51;
             telefone.DDD = 21;
             telefone.Numero = 22757643;
 
-            anunciante.Telefones = new List<TelefoneDTO>();
-            anunciante.Enderecos = new List<EnderecoDTO>();
+            anunciante.Telefones = new List<Telefone>();
+            anunciante.Enderecos = new List<Endereco>();
             anunciante.Telefones.Add(telefone);
             anunciante.Enderecos.Add(endereco);
 
             return anunciante;
         }
 
-        private static ConsumidorDTO CriarConsumidor(string nome, EnumTipoPessoa tipopessoa, long inscricao, string email)
+        private static Consumidor CriarConsumidor(string nome, EnumTipoPessoa tipopessoa, long inscricao, string email)
         {
-            ConsumidorDTO consumidor = new ConsumidorDTO();
+            Consumidor consumidor = new Consumidor();
 
             consumidor.Nome = nome;
             consumidor.Email = email;
@@ -147,7 +154,7 @@ namespace Juntos.Apresentacao.ConsoleTest
             consumidor.Tipo = tipopessoa;
 
             
-            EnderecoDTO endereco = new EnderecoDTO();
+            Endereco endereco = new Endereco();
             endereco.Logradouro = "Rua A";
             endereco.Numero = 30;
             endereco.Complemento = "Apto 607";
@@ -157,13 +164,13 @@ namespace Juntos.Apresentacao.ConsoleTest
             endereco.Cep = "11111-111";
             endereco.Pais = "Brasil";
 
-            TelefoneDTO telefone = new TelefoneDTO();
+            Telefone telefone = new Telefone();
             telefone.DDI = 51;
             telefone.DDD = 21;
             telefone.Numero = 22757643;
 
-            consumidor.Telefones = new List<TelefoneDTO>();
-            consumidor.Enderecos = new List<EnderecoDTO>();
+            consumidor.Telefones = new List<Telefone>();
+            consumidor.Enderecos = new List<Endereco>();
 
             consumidor.Telefones.Add(telefone);
             consumidor.Enderecos.Add(endereco);
@@ -171,11 +178,11 @@ namespace Juntos.Apresentacao.ConsoleTest
             return consumidor;
         }
 
-        private static AnuncianteDTO ObterAnunciante()
+        private static Anunciante ObterAnunciante()
         {
 
-            List<AnuncianteDTO> anunciantes = client.RetornarTodosAnunciantes();
-            AnuncianteDTO anunciante=null;
+            List<Anunciante> anunciantes = client.RetornarTodosAnunciantes();
+            Anunciante anunciante=null;
 
             if (anunciantes.Count > 0)
             {
@@ -191,10 +198,10 @@ namespace Juntos.Apresentacao.ConsoleTest
             return anunciante;
         }
 
-        private static AnuncianteDTO ObterAnunciantePorEmail(string email)
+        private static Anunciante ObterAnunciantePorEmail(string email)
         {
 
-            AnuncianteDTO anunciante = client.ConsultarAnunciantePeloEmail(email);
+            Anunciante anunciante = client.ConsultarAnunciantePeloEmail(email);
 
             if (anunciante!=null)
             {
@@ -207,11 +214,15 @@ namespace Juntos.Apresentacao.ConsoleTest
             }
 
         }
-        private static OfertaDTO GerarOferta(string descricao, AnuncianteDTO anunciante, string condicao, int nrcupons, decimal valor)
+        private static Oferta GerarOferta(string descricao, Anunciante anunciante, string condicao, int nrcupons, decimal valor)
         {
-            OfertaDTO ofertaA = new OfertaDTO();
+            Oferta ofertaA = new Oferta();
 
+<<<<<<< HEAD
            // ofertaA.Anunciante = anunciante;
+=======
+            //ofertaA.Anunciante = anunciante;
+>>>>>>> origin/master
             ofertaA.Condicoes = condicao;
             ofertaA.Descricao = descricao;
             ofertaA.DataInicioValidade = DateTime.Now;
@@ -226,7 +237,7 @@ namespace Juntos.Apresentacao.ConsoleTest
         private static void PublicarOferta(long id)
         {
             Console.WriteLine("Publicando Oferta");
-            List<OfertaDTO> ofertas = client.RetornarTodasOfertasPorAnunciante(id);
+            List<Oferta> ofertas = client.RetornarTodasOfertas(id);
             Console.WriteLine("Obter ofertas");
 
             if (ofertas == null)
@@ -249,11 +260,11 @@ namespace Juntos.Apresentacao.ConsoleTest
         }
 
 
-        private static ConsumidorDTO ObterConsumidor()
+        private static Consumidor ObterConsumidor()
         {
-            List<ConsumidorDTO> consumidores = client.RetornarTodosConsumidores();
+            List<Consumidor> consumidores = client.RetornarTodosConsumidores();
 
-            ConsumidorDTO consumidor = null;
+            Consumidor consumidor = null;
 
             if (consumidores.Count > 0)
             {
@@ -269,11 +280,11 @@ namespace Juntos.Apresentacao.ConsoleTest
             return consumidor;
         }
 
-        private static OfertaDTO ObterOferta(long id) {
+        private static Oferta ObterOferta(long id) {
 
-            List<OfertaDTO> ofertas = client.RetornarTodasOfertasPorAnunciante(id);
+            List<Oferta> ofertas = client.RetornarTodasOfertas(id);
 
-            OfertaDTO oferta = null;
+            Oferta oferta = null;
 
             if (ofertas.Count > 0)
             {
@@ -291,65 +302,53 @@ namespace Juntos.Apresentacao.ConsoleTest
         }
 
 
-        private static void ComprarOfertas(ConsumidorDTO consumidor, OfertaDTO oferta, int nrcupons) {
+        private static void ComprarOfertas(Consumidor consumidor, Oferta oferta, int nrcupons) {
 
-            CompraDTO compra = client.ComprarOferta(consumidor.Id, oferta.Id, nrcupons);
+            Compra compra = client.ComprarOferta(consumidor.Id, oferta.Id, nrcupons);
             client.SalvarCompra(compra);
          
        }
 
 
-        private static void PagarCompras(ConsumidorDTO consumidor, EnumFormaPagamento tipo)
+        private static void PagarCompras(Consumidor consumidor, EnumFormaPagamento tipo)
         {
-
-            if (consumidor.Compras != null && consumidor.Compras.Count > 0)
+            consumidor.Compras.ForEach(c =>
             {
+            
+               
+                client.PagarCompra(c.Id, tipo);
 
-                consumidor.Compras.ForEach(c =>
-                {
-                    client.PagarCompra(c.Id, tipo);
 
-                });
-            }
+            });
         }
 
-        private static void InformarCupom(OfertaDTO oferta) 
+        private static void InformarCupom(Oferta oferta) 
         {
-
-            if (oferta.CuponsGerados != null && oferta.CuponsGerados.Count > 0)
+            oferta.CuponsGerados.ForEach(o =>
             {
 
-
-                oferta.CuponsGerados.ForEach(o =>
+                if (o.Id % 2 == 0)
                 {
-
-                    if (o.Id % 2 == 0)
-                    {
-                        client.InformarUsoCupom(o.Id);
-                    }
+                    client.InformarUsoCupom(o.Id);
+                }
 
 
-                });
-            }
+            });
         }
 
-        private static void ConsolidarOferta(OfertaDTO oferta)
+        private static void ConsolidarOferta(Oferta oferta)
         {
-            List<CupomDTO> cupons = client.ConsolidarOferta(oferta.Id);
+            List<Cupom> cupons = client.ConsolidarOferta(oferta.Id);
 
             decimal total = 0;
 
-            if (cupons != null && cupons.Count > 0)
+            cupons.ForEach(c =>
             {
 
-                cupons.ForEach(c =>
-                {
+                Console.WriteLine("Cupom " + c.Id + ":" + c.Valor);
+                total = total + c.Valor;
 
-                    Console.WriteLine("Cupom " + c.Id + ":" + c.Valor);
-                    total = total + c.Valor;
-
-                });
-            }
+            });
 
             Console.WriteLine("Total da Oferta = " + total);
                 

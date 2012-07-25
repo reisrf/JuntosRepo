@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ServiceModel;
 using Juntos.Model;
 using Juntos.Model.Enums;
+using Juntos.Apresentacao.WcfServiceApp.dto;
 
 namespace Juntos.WcfServiceApp
 {
@@ -10,46 +11,49 @@ namespace Juntos.WcfServiceApp
     public interface IJuntosService
     {
         [OperationContract]
-        List<Consumidor> RetornarTodosConsumidores();
+        List<ConsumidorDTO> RetornarTodosConsumidores();
 
         [OperationContract]
-        Consumidor ConsultarConsumidorPeloId(long id);
+        ConsumidorDTO ConsultarConsumidorPeloId(long id);
 
         [OperationContract]
-        void SalvarConsumidor(Consumidor consumidor);
+        void SalvarConsumidor(ConsumidorDTO consumidor);
 
         [OperationContract]
-        List<Anunciante> RetornarTodosAnunciantes();
+        List<AnuncianteDTO> RetornarTodosAnunciantes();
 
         [OperationContract]
-        Anunciante ConsultarAnunciantePeloId(long id);
+        AnuncianteDTO ConsultarAnunciantePeloId(long id);
         
         [OperationContract]
-        Anunciante ConsultarAnunciantePeloEmail(string email);
+        AnuncianteDTO ConsultarAnunciantePeloEmail(string email);
 
         [OperationContract]
-        void SalvarAnunciante(Anunciante anunciante);
+        void SalvarAnunciante(AnuncianteDTO anunciante);
 
         [OperationContract]
-        List<Oferta> RetornarTodasOfertas(long anuncianteid);
+        List<OfertaDTO> RetornarTodasOfertasPorAnunciante(long anuncianteid);
 
         [OperationContract]
-        Oferta ConsultarOfertaPeloId(long id);
+        OfertaDTO ConsultarOfertaPeloId(long id);
 
         [OperationContract]
-        void SalvarOferta(Oferta oferta, long idConsumidor);
+        void SalvarOferta(OfertaDTO oferta, long idConsumidor);
 
         [OperationContract]
-        List<Compra> RetornarTodasCompras(long consumidorid);
+        List<CompraDTO> RetornarTodasComprasPorConsumidor(long consumidorid);
+        
+        [OperationContract]
+        List<CompraDTO> RetornarTodasCompras();
 
         [OperationContract]
-        Compra ConsultarCompraPeloId(long id);
+        CompraDTO ConsultarCompraPeloId(long id);
 
         [OperationContract]
-        void SalvarCompra(Compra compra);
+        void SalvarCompra(CompraDTO compra);
 
         [OperationContract]
-        Compra ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons);
+        CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons);
 
         [OperationContract]
         void PagarCompra(long idCompra, EnumFormaPagamento formaPagamento);
@@ -61,9 +65,12 @@ namespace Juntos.WcfServiceApp
         void PublicarOferta(long idOferta);
 
         [OperationContract]
-        List<Cupom> ListarCuponsNaoUtilizados(long ofertaid);
+        List<CupomDTO> ListarCuponsNaoUtilizados(long ofertaid);
 
         [OperationContract]
-        List<Cupom> ConsolidarOferta(long ofertaid);
+        List<CupomDTO> ConsolidarOferta(long ofertaid);
+        
+        [OperationContract]
+        List<OfertaDTO> RetornarTodasOfertas();
     }
 }

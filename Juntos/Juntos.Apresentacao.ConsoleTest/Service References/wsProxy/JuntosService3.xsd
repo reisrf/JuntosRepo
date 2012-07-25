@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Juntos.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Juntos.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:1048/JuntosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" />
-  <xs:complexType name="ArrayOfConsumidor">
+  <xs:import schemaLocation="http://localhost:1048/JuntosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfConsumidorDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Consumidor" nillable="true" type="tns:Consumidor" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsumidorDTO" nillable="true" type="tns:ConsumidorDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfConsumidor" nillable="true" type="tns:ArrayOfConsumidor" />
-  <xs:complexType name="Consumidor">
+  <xs:element name="ArrayOfConsumidorDTO" nillable="true" type="tns:ArrayOfConsumidorDTO" />
+  <xs:complexType name="ConsumidorDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Pessoa">
+      <xs:extension base="tns:PessoaDTO">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Compras" nillable="true" type="tns:ArrayOfCompra" />
+          <xs:element minOccurs="0" name="Compras" nillable="true" type="tns:ArrayOfCompraDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Consumidor" nillable="true" type="tns:Consumidor" />
-  <xs:complexType name="Pessoa">
+  <xs:element name="ConsumidorDTO" nillable="true" type="tns:ConsumidorDTO" />
+  <xs:complexType name="PessoaDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
           <xs:element minOccurs="0" name="CpfCnpj" type="xs:long" />
           <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Enderecos" nillable="true" type="tns:ArrayOfEndereco" />
+          <xs:element minOccurs="0" name="Enderecos" nillable="true" type="tns:ArrayOfEnderecoDTO" />
           <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Telefones" nillable="true" type="tns:ArrayOfTelefone" />
+          <xs:element minOccurs="0" name="Telefones" nillable="true" type="tns:ArrayOfTelefoneDTO" />
           <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="Tipo" type="q1:EnumTipoPessoa" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Pessoa" nillable="true" type="tns:Pessoa" />
-  <xs:complexType name="Entidade">
+  <xs:element name="PessoaDTO" nillable="true" type="tns:PessoaDTO" />
+  <xs:complexType name="EntidadeDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:long" />
     </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
   </xs:complexType>
-  <xs:element name="Entidade" nillable="true" type="tns:Entidade" />
-  <xs:complexType name="ArrayOfEndereco">
+  <xs:element name="EntidadeDTO" nillable="true" type="tns:EntidadeDTO" />
+  <xs:complexType name="ArrayOfEnderecoDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Endereco" nillable="true" type="tns:Endereco" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnderecoDTO" nillable="true" type="tns:EnderecoDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfEndereco" nillable="true" type="tns:ArrayOfEndereco" />
-  <xs:complexType name="Endereco">
+  <xs:element name="ArrayOfEnderecoDTO" nillable="true" type="tns:ArrayOfEnderecoDTO" />
+  <xs:complexType name="EnderecoDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
           <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
@@ -60,16 +63,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Endereco" nillable="true" type="tns:Endereco" />
-  <xs:complexType name="ArrayOfTelefone">
+  <xs:element name="EnderecoDTO" nillable="true" type="tns:EnderecoDTO" />
+  <xs:complexType name="ArrayOfTelefoneDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telefone" nillable="true" type="tns:Telefone" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TelefoneDTO" nillable="true" type="tns:TelefoneDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfTelefone" nillable="true" type="tns:ArrayOfTelefone" />
-  <xs:complexType name="Telefone">
+  <xs:element name="ArrayOfTelefoneDTO" nillable="true" type="tns:ArrayOfTelefoneDTO" />
+  <xs:complexType name="TelefoneDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
           <xs:element minOccurs="0" name="DDD" type="xs:short" />
           <xs:element minOccurs="0" name="DDI" type="xs:short" />
@@ -78,53 +81,53 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Telefone" nillable="true" type="tns:Telefone" />
-  <xs:complexType name="ArrayOfCompra">
+  <xs:element name="TelefoneDTO" nillable="true" type="tns:TelefoneDTO" />
+  <xs:complexType name="ArrayOfCompraDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompraDTO" nillable="true" type="tns:CompraDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCompra" nillable="true" type="tns:ArrayOfCompra" />
-  <xs:complexType name="Compra">
+  <xs:element name="ArrayOfCompraDTO" nillable="true" type="tns:ArrayOfCompraDTO" />
+  <xs:complexType name="CompraDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Consumidor" nillable="true" type="tns:Consumidor" />
-          <xs:element minOccurs="0" name="Cupons" nillable="true" type="tns:ArrayOfCupom" />
+          <xs:element minOccurs="0" name="ConsumidorDto" nillable="true" type="tns:ConsumidorDTO" />
+          <xs:element minOccurs="0" name="Cupons" nillable="true" type="tns:ArrayOfCupomDTO" />
           <xs:element minOccurs="0" name="DataCompra" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="Pagamentos" nillable="true" type="tns:ArrayOfPagamento" />
+          <xs:element minOccurs="0" name="Pagamentos" nillable="true" type="tns:ArrayOfPagamentoDTO" />
           <xs:element minOccurs="0" name="ValorTotal" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Compra" nillable="true" type="tns:Compra" />
-  <xs:complexType name="ArrayOfCupom">
+  <xs:element name="CompraDTO" nillable="true" type="tns:CompraDTO" />
+  <xs:complexType name="ArrayOfCupomDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cupom" nillable="true" type="tns:Cupom" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CupomDTO" nillable="true" type="tns:CupomDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCupom" nillable="true" type="tns:ArrayOfCupom" />
-  <xs:complexType name="Cupom">
+  <xs:element name="ArrayOfCupomDTO" nillable="true" type="tns:ArrayOfCupomDTO" />
+  <xs:complexType name="CupomDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
           <xs:element minOccurs="0" name="DataUtilizacao" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DataValidade" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="Oferta" nillable="true" type="tns:Oferta" />
+          <xs:element minOccurs="0" name="OfertaDto" nillable="true" type="tns:OfertaDTO" />
           <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Cupom" nillable="true" type="tns:Cupom" />
-  <xs:complexType name="Oferta">
+  <xs:element name="CupomDTO" nillable="true" type="tns:CupomDTO" />
+  <xs:complexType name="OfertaDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Anunciante" nillable="true" type="tns:Anunciante" />
+          <xs:element minOccurs="0" name="AnuncianteDto" nillable="true" type="tns:AnuncianteDTO" />
           <xs:element minOccurs="0" name="Condicoes" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="CuponsGerados" nillable="true" type="tns:ArrayOfCupom" />
+          <xs:element minOccurs="0" name="CuponsGerados" nillable="true" type="tns:ArrayOfCupomDTO" />
           <xs:element minOccurs="0" name="DataExpiracao" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DataInicioValidade" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DataPublicacao" nillable="true" type="xs:dateTime" />
@@ -137,32 +140,32 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Oferta" nillable="true" type="tns:Oferta" />
-  <xs:complexType name="Anunciante">
+  <xs:element name="OfertaDTO" nillable="true" type="tns:OfertaDTO" />
+  <xs:complexType name="AnuncianteDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Pessoa">
+      <xs:extension base="tns:PessoaDTO">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Ofertas" nillable="true" type="tns:ArrayOfOferta" />
+          <xs:element minOccurs="0" name="Ofertas" nillable="true" type="tns:ArrayOfOfertaDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Anunciante" nillable="true" type="tns:Anunciante" />
-  <xs:complexType name="ArrayOfOferta">
+  <xs:element name="AnuncianteDTO" nillable="true" type="tns:AnuncianteDTO" />
+  <xs:complexType name="ArrayOfOfertaDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Oferta" nillable="true" type="tns:Oferta" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OfertaDTO" nillable="true" type="tns:OfertaDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfOferta" nillable="true" type="tns:ArrayOfOferta" />
-  <xs:complexType name="ArrayOfPagamento">
+  <xs:element name="ArrayOfOfertaDTO" nillable="true" type="tns:ArrayOfOfertaDTO" />
+  <xs:complexType name="ArrayOfPagamentoDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pagamento" nillable="true" type="tns:Pagamento" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PagamentoDTO" nillable="true" type="tns:PagamentoDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfPagamento" nillable="true" type="tns:ArrayOfPagamento" />
-  <xs:complexType name="Pagamento">
+  <xs:element name="ArrayOfPagamentoDTO" nillable="true" type="tns:ArrayOfPagamentoDTO" />
+  <xs:complexType name="PagamentoDTO">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:Entidade">
+      <xs:extension base="tns:EntidadeDTO">
         <xs:sequence>
           <xs:element minOccurs="0" name="Codigo" type="xs:long" />
           <xs:element minOccurs="0" name="DataPagamento" type="xs:dateTime" />
@@ -173,11 +176,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Pagamento" nillable="true" type="tns:Pagamento" />
-  <xs:complexType name="ArrayOfAnunciante">
+  <xs:element name="PagamentoDTO" nillable="true" type="tns:PagamentoDTO" />
+  <xs:complexType name="ArrayOfAnuncianteDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Anunciante" nillable="true" type="tns:Anunciante" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnuncianteDTO" nillable="true" type="tns:AnuncianteDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfAnunciante" nillable="true" type="tns:ArrayOfAnunciante" />
+  <xs:element name="ArrayOfAnuncianteDTO" nillable="true" type="tns:ArrayOfAnuncianteDTO" />
 </xs:schema>

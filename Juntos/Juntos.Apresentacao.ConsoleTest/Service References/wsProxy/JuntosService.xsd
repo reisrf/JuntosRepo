@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:1048/JuntosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Juntos.Model" />
+  <xs:import schemaLocation="http://localhost:1048/JuntosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" />
   <xs:import schemaLocation="http://localhost:1048/JuntosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" />
   <xs:element name="RetornarTodosConsumidores">
     <xs:complexType>
@@ -10,7 +10,7 @@
   <xs:element name="RetornarTodosConsumidoresResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="RetornarTodosConsumidoresResult" nillable="true" type="q1:ArrayOfConsumidor" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="RetornarTodosConsumidoresResult" nillable="true" type="q1:ArrayOfConsumidorDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -24,14 +24,14 @@
   <xs:element name="ConsultarConsumidorPeloIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ConsultarConsumidorPeloIdResult" nillable="true" type="q2:Consumidor" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ConsultarConsumidorPeloIdResult" nillable="true" type="q2:ConsumidorDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SalvarConsumidor">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="consumidor" nillable="true" type="q3:Consumidor" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="consumidor" nillable="true" type="q3:ConsumidorDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -48,7 +48,7 @@
   <xs:element name="RetornarTodosAnunciantesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="RetornarTodosAnunciantesResult" nillable="true" type="q4:ArrayOfAnunciante" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="RetornarTodosAnunciantesResult" nillable="true" type="q4:ArrayOfAnuncianteDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,14 +62,28 @@
   <xs:element name="ConsultarAnunciantePeloIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ConsultarAnunciantePeloIdResult" nillable="true" type="q5:Anunciante" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ConsultarAnunciantePeloIdResult" nillable="true" type="q5:AnuncianteDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAnunciantePeloEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAnunciantePeloEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ConsultarAnunciantePeloEmailResult" nillable="true" type="q6:AnuncianteDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SalvarAnunciante">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="anunciante" nillable="true" type="q6:Anunciante" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="anunciante" nillable="true" type="q7:AnuncianteDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -78,17 +92,17 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="RetornarTodasOfertas">
+  <xs:element name="RetornarTodasOfertasPorAnunciante">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="anuncianteid" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RetornarTodasOfertasResponse">
+  <xs:element name="RetornarTodasOfertasPorAnuncianteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="RetornarTodasOfertasResult" nillable="true" type="q7:ArrayOfOferta" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="RetornarTodasOfertasPorAnuncianteResult" nillable="true" type="q8:ArrayOfOfertaDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -102,14 +116,15 @@
   <xs:element name="ConsultarOfertaPeloIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ConsultarOfertaPeloIdResult" nillable="true" type="q8:Oferta" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ConsultarOfertaPeloIdResult" nillable="true" type="q9:OfertaDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SalvarOferta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="oferta" nillable="true" type="q9:Oferta" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="oferta" nillable="true" type="q10:OfertaDTO" />
+        <xs:element minOccurs="0" name="idConsumidor" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -118,17 +133,29 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="RetornarTodasCompras">
+  <xs:element name="RetornarTodasComprasPorConsumidor">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="consumidorid" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RetornarTodasComprasPorConsumidorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="RetornarTodasComprasPorConsumidorResult" nillable="true" type="q11:ArrayOfCompraDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarTodasCompras">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RetornarTodasComprasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="RetornarTodasComprasResult" nillable="true" type="q10:ArrayOfCompra" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="RetornarTodasComprasResult" nillable="true" type="q12:ArrayOfCompraDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -142,14 +169,14 @@
   <xs:element name="ConsultarCompraPeloIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ConsultarCompraPeloIdResult" nillable="true" type="q11:Compra" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ConsultarCompraPeloIdResult" nillable="true" type="q13:CompraDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SalvarCompra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="compra" nillable="true" type="q12:Compra" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="compra" nillable="true" type="q14:CompraDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -170,7 +197,7 @@
   <xs:element name="ComprarOfertaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ComprarOfertaResult" nillable="true" type="q13:Compra" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ComprarOfertaResult" nillable="true" type="q15:CompraDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -178,7 +205,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="idCompra" type="xs:long" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="formaPagamento" type="q14:EnumFormaPagamento" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="formaPagamento" type="q16:EnumFormaPagamento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -221,7 +248,7 @@
   <xs:element name="ListarCuponsNaoUtilizadosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ListarCuponsNaoUtilizadosResult" nillable="true" type="q15:ArrayOfCupom" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ListarCuponsNaoUtilizadosResult" nillable="true" type="q17:ArrayOfCupomDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -235,7 +262,19 @@
   <xs:element name="ConsolidarOfertaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Juntos.Model" minOccurs="0" name="ConsolidarOfertaResult" nillable="true" type="q16:ArrayOfCupom" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="ConsolidarOfertaResult" nillable="true" type="q18:ArrayOfCupomDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarTodasOfertas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarTodasOfertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto" minOccurs="0" name="RetornarTodasOfertasResult" nillable="true" type="q19:ArrayOfOfertaDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

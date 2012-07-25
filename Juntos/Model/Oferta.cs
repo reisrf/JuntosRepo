@@ -30,8 +30,7 @@ namespace Juntos.Model
 
         public DateTime DataExpiracao { get; set; }
 
-        [Obsolete] // Acredito que podemos utilizar a data de publicação para isso.
-            public DateTime DataInicioValidade { get; set; }
+        public DateTime DataInicioValidade { get; set; }
 
         public decimal ValorCupons { get; set; }
 

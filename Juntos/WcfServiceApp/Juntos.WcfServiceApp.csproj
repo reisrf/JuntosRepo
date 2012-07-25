@@ -97,6 +97,16 @@
     <None Include="Service References\wsProxy\PagamentoService.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dto\AnuncianteDTO.cs" />
+    <Compile Include="dto\CompraDTO.cs" />
+    <Compile Include="dto\ConsumidorDTO.cs" />
+    <Compile Include="dto\CupomDTO.cs" />
+    <Compile Include="dto\EnderecoDTO.cs" />
+    <Compile Include="dto\EntidadeDTO.cs" />
+    <Compile Include="dto\OfertaDTO.cs" />
+    <Compile Include="dto\PagamentoDTO.cs" />
+    <Compile Include="dto\PessoaDTO.cs" />
+    <Compile Include="dto\TelefoneDTO.cs" />
     <Compile Include="JuntosService.svc.cs">
       <DependentUpon>JuntosService.svc</DependentUpon>
     </Compile>

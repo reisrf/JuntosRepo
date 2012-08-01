@@ -175,19 +175,40 @@ namespace PessoaConsoleTest
 
 
 
-        private static List<AnuncianteDTO> ListarTodosAnunciantes()
+        private static void ListarTodosAnunciantes()
         {
             List<AnuncianteDTO> pessoas = new List<AnuncianteDTO>();
 
             using (var service = new JuntosServiceClient())
             {
                 pessoas = service.RetornarTodosAnunciantes();
-            }
+
+                if (pessoas.Count > 0) 
+                {
+                    
+                    pessoas.ForEach(p => {
+                    
+                        Console.WriteLine(p.Id + "/" + p.Nome);
                         
-            return pessoas;
+
+                    });
+                    Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                    Console.ReadLine();
+                
+                 } else {
+                        Console.WriteLine("Não Existem Anunciantes Cadastrados");
+                        Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                        Console.ReadLine();
+                }
+
+
+            }
+                  
+      
+            
         }
 
-        private static List<ConsumidorDTO> ListarTodosConsumidores()
+        private static void ListarTodosConsumidores()
         {
             List<ConsumidorDTO> pessoas = new List<ConsumidorDTO>();
 
@@ -196,12 +217,33 @@ namespace PessoaConsoleTest
                 pessoas = service.RetornarTodosConsumidores();
             }
 
-            return pessoas;
+                if (pessoas.Count > 0)
+                {
+
+                    pessoas.ForEach(p =>
+                    {
+
+                        Console.WriteLine(p.Id + "/" + p.Nome);
+                    });
+
+                    Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Não Existem Consumidores Cadastrados");
+                    Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                    Console.ReadLine();
+
+
+                }
+
+           
         }
 
-        private static PessoaDTO ListarAnunciantePorId()
+        private static void ListarAnunciantePorId()
         {
-            AnuncianteDTO pessoa = new AnuncianteDTO();
+            AnuncianteDTO pessoa = null;
 
             Console.Write("id : ");
             string id = Console.ReadLine();
@@ -211,17 +253,21 @@ namespace PessoaConsoleTest
                 pessoa = service.ConsultarAnunciantePeloId(Convert.ToInt32(id));
             }
 
+            if (pessoa!=null) {
+                 Console.WriteLine(pessoa.Id + "/" + pessoa.Nome);
+                 Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                 Console.ReadLine();
+            } else {
+                Console.WriteLine("Não Existe Consumidor com id " + id);
+            
+            }
 
-            return pessoa;
         }
 
-        private static PessoaDTO ListarConsumidorPorId()
+        private static void ListarConsumidorPorId()
         {
-            ConsumidorDTO pessoa = new ConsumidorDTO();
+            ConsumidorDTO pessoa = null;
             
-            Console.Write("id : ");
-            string nome = Console.ReadLine();
-
             Console.Write("id : ");
             string id = Console.ReadLine();
 
@@ -230,7 +276,17 @@ namespace PessoaConsoleTest
                 pessoa = service.ConsultarConsumidorPeloId(Convert.ToInt32(id));
             }
 
-            return pessoa;
+             if (pessoa!=null) {
+                 Console.WriteLine(pessoa.Id + "/" + pessoa.Nome);
+                 Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                 Console.ReadLine();
+            } else {
+                Console.WriteLine("Não Existe Consumidor com id " + id);
+            
+            }
+
+
+            
         }
 
         private static List<EnderecoDTO> IncluirEndereco()

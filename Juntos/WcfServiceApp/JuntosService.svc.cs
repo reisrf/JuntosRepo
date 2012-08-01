@@ -47,7 +47,7 @@ namespace Juntos.WcfServiceApp
         {
             IAnuncianteService anuncianteService = typeof (IAnuncianteService).Fabricar();
             List<Anunciante> anunciantes = anuncianteService.RetornarTodos();
-            List<AnuncianteDTO> result = null;
+            List<AnuncianteDTO> result = new List<AnuncianteDTO>();
 
             anunciantes.ForEach(a =>
             {

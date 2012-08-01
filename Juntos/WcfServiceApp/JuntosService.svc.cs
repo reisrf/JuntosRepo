@@ -98,9 +98,7 @@ namespace Juntos.WcfServiceApp
             
 
             ofertas.ForEach(o => {
-                result.Add(OfertaToDTO(o));
-            
-            
+                result.Add(OfertaToDTO(o));           
             });
 
             return result;
@@ -380,9 +378,7 @@ namespace Juntos.WcfServiceApp
             consumidor.Tipo = c.Tipo;
             consumidor.CpfCnpj = c.CpfCnpj;
             consumidor.Email = c.Email;
-            consumidor.Telefones = new List<Telefone>();
-            consumidor.Enderecos = new List<Endereco>();
-
+  
             if (c.Telefones != null && c.Telefones.Count != 0)
             {
                 c.Telefones.ForEach(t =>
@@ -475,8 +471,7 @@ namespace Juntos.WcfServiceApp
             anunciante.Tipo = a.Tipo;
             anunciante.CpfCnpj = a.CpfCnpj;
             anunciante.Email = a.Email;
-            anunciante.Telefones = new List<Telefone>();
-            anunciante.Enderecos = new List<Endereco>();
+  
             a.Telefones.ForEach(t =>
             {
                 Telefone telefone = new Telefone();
@@ -484,7 +479,7 @@ namespace Juntos.WcfServiceApp
                 telefone.DDI = t.DDI;
                 telefone.Id = t.Id;
                 telefone.Numero = t.Numero;
-                anunciante.Telefones.Add(telefone);
+                anunciante.IncluirTelefone(telefone);
             });
 
             a.Enderecos.ForEach(e =>
@@ -499,7 +494,7 @@ namespace Juntos.WcfServiceApp
                 endereco.Logradouro = e.Logradouro;
                 endereco.Numero = e.Numero;
                 endereco.Pais = e.Pais;
-                anunciante.Enderecos.Add(endereco);
+                anunciante.IncluirEndereco(endereco);
             });
 
             return anunciante;
@@ -522,6 +517,19 @@ namespace Juntos.WcfServiceApp
             oferta.Status = o.Status;
             oferta.ValorCupons = o.ValorCupons;
             oferta.CuponsGerados = new List<CupomDTO>();
+
+            EnderecoDTO endereco = new EnderecoDTO();
+            endereco.Bairro = o.Endereco.Bairro;
+            endereco.Cep = o.Endereco.Cep;
+            endereco.Cidade = o.Endereco.Cidade;
+            endereco.Complemento = o.Endereco.Complemento;
+            endereco.Estado = o.Endereco.Estado;
+            endereco.Id = o.Endereco.Id;
+            endereco.Logradouro = o.Endereco.Logradouro;
+            endereco.Numero = o.Endereco.Numero;
+            endereco.Pais = o.Endereco.Pais;
+            
+            oferta.Endereco = endereco;
 
             if (o.CuponsGerados != null && o.CuponsGerados.Count != 0)
             {
@@ -555,6 +563,20 @@ namespace Juntos.WcfServiceApp
             oferta.Status = o.Status;
             oferta.ValorCupons = o.ValorCupons;
             oferta.CuponsGerados = new List<Cupom>();
+
+            Endereco endereco = new Endereco();
+            endereco.Bairro = o.Endereco.Bairro;
+            endereco.Cep = o.Endereco.Cep;
+            endereco.Cidade = o.Endereco.Cidade;
+            endereco.Complemento = o.Endereco.Complemento;
+            endereco.Estado = o.Endereco.Estado;
+            endereco.Id = o.Endereco.Id;
+            endereco.Logradouro = o.Endereco.Logradouro;
+            endereco.Numero = o.Endereco.Numero;
+            endereco.Pais = o.Endereco.Pais;
+
+            oferta.Endereco = endereco;
+
            
             if (o.CuponsGerados != null && o.CuponsGerados.Count != 0)
             {

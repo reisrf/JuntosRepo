@@ -7,7 +7,8 @@ namespace Juntos.Model
     {
         protected Pessoa()
         {
-            
+            this.enderecos = new List<Endereco>();
+            this.telefones = new List<Telefone>();
         }
 
         protected Pessoa(EnumTipoPessoa tipo, string nome, long cpfCnpj, string email)
@@ -17,8 +18,8 @@ namespace Juntos.Model
             this.CpfCnpj = cpfCnpj;
             this.Email = email;
 
-            this.Enderecos = new List<Endereco>();
-            this.Telefones = new List<Telefone>();
+            this.enderecos = new List<Endereco>();
+            this.telefones = new List<Telefone>();
         }
 
         public string Email { get; set; }
@@ -29,9 +30,24 @@ namespace Juntos.Model
 
         public EnumTipoPessoa Tipo { get; set; }
 
-        public List<Telefone> Telefones { get; set; }
+        private List<Endereco> enderecos = new List<Endereco>();
+        public virtual List<Endereco> Enderecos { get { return this.enderecos; }  }
 
-        public List<Endereco> Enderecos { get; set; }
+        private List<Telefone> telefones = new List<Telefone>();
+        public virtual List<Telefone> Telefones { get { return this.telefones; } }
+
+
+        
+
+        public void IncluirEndereco(Endereco endereco)
+        {
+            enderecos.Add(endereco);
+        }
+
+        public void IncluirTelefone(Telefone telefone)
+        {
+            telefones.Add(telefone);
+        }
 
     }
 }

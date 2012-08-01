@@ -7,7 +7,7 @@ namespace Juntos.Apresentacao.WcfServiceApp.dto
     [DataContract(IsReference = true)]
     public class AnuncianteDTO : PessoaDTO
     {
-        [DataMember]
+       [DataMember]
         public List<OfertaDTO> Ofertas { get; set; }
     }
 }

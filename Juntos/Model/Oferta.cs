@@ -15,12 +15,16 @@ namespace Juntos.Model
 
         public Oferta(Anunciante anunciante)
         {
+            this.Status = EnumStatusOferta.Criada;
+            this.CuponsGerados = new List<Cupom>();
             this.Anunciante = anunciante;
         }
 
         //Não lembrei o que era...
         //public EnumTipoOferta Tipo { get; set; }
         public Anunciante Anunciante { get; set; }
+
+        public Endereco Endereco { get; set; }
 
         public EnumStatusOferta Status { get; set; }
 

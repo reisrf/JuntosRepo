@@ -4,7 +4,7 @@ namespace Juntos.Model
     {
         public Endereco() { }
         
-        public Endereco(Pessoa pessoa) { pessoa.Enderecos.Add(this); }
+        public Endereco(Pessoa pessoa) { pessoa.IncluirEndereco(this); }
 
         public string Logradouro { get; set; }
 

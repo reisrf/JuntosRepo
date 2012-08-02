@@ -24,7 +24,7 @@ namespace Juntos.Apresentacao.WcfServiceApp.dto
         public DateTime DataExpiracao { get; set; }
 
         [DataMember]
-        public DateTime DataInicioValidade { get; set; }
+        public DateTime? DataInicioValidade { get; set; }
 
         [DataMember]
         public decimal ValorCupons { get; set; }

@@ -31,10 +31,10 @@ namespace Juntos.Model
         public EnumTipoPessoa Tipo { get; set; }
 
         private List<Endereco> enderecos = new List<Endereco>();
-        public virtual List<Endereco> Enderecos { get { return this.enderecos; }  }
+        public virtual List<Endereco> Enderecos { get { return this.enderecos; } set {this.enderecos=value;} }
 
         private List<Telefone> telefones = new List<Telefone>();
-        public virtual List<Telefone> Telefones { get { return this.telefones; } }
+        public virtual List<Telefone> Telefones { get { return this.telefones; } set { this.telefones = value; } }
 
 
         

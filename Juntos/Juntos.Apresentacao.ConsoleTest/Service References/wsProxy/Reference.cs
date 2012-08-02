@@ -456,7 +456,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         private System.DateTime DataExpiracaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DataInicioValidadeField;
+        private System.Nullable<System.DateTime> DataInicioValidadeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> DataPublicacaoField;
@@ -468,6 +468,9 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         private string DescricaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO EnderecoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroMaximoCuponsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -475,9 +478,6 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValorCuponsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO enderecoField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO AnuncianteDto {
@@ -532,7 +532,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DataInicioValidade {
+        public System.Nullable<System.DateTime> DataInicioValidade {
             get {
                 return this.DataInicioValidadeField;
             }
@@ -584,6 +584,19 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO Endereco {
+            get {
+                return this.EnderecoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EnderecoField, value) != true)) {
+                    this.EnderecoField = value;
+                    this.RaisePropertyChanged("Endereco");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int NumeroMaximoCupons {
             get {
                 return this.NumeroMaximoCuponsField;
@@ -618,19 +631,6 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
                 if ((this.ValorCuponsField.Equals(value) != true)) {
                     this.ValorCuponsField = value;
                     this.RaisePropertyChanged("ValorCupons");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO endereco {
-            get {
-                return this.enderecoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.enderecoField, value) != true)) {
-                    this.enderecoField = value;
-                    this.RaisePropertyChanged("endereco");
                 }
             }
         }

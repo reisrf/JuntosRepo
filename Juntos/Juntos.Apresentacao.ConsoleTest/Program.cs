@@ -223,7 +223,7 @@ namespace Juntos.Apresentacao.ConsoleTest
             endereco.Cep = "11111-111";
             endereco.Pais = "Brasil";
 
-            ofertaA.endereco = endereco;
+            ofertaA.Endereco = endereco;
           
 
             return ofertaA;

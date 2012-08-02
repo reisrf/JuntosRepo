@@ -44,7 +44,6 @@ namespace PessoaConsoleTest
                         break;
                     default:
                         Console.WriteLine("Não conheço esta opção");
-                        showmenu();
                         break;
                 }
 
@@ -115,8 +114,7 @@ namespace PessoaConsoleTest
             }
             
             
-            showmenu();
-
+          
            
         }
 
@@ -168,8 +166,7 @@ namespace PessoaConsoleTest
             }
 
 
-            showmenu();
-
+  
 
         }
 
@@ -188,7 +185,7 @@ namespace PessoaConsoleTest
                     
                     pessoas.ForEach(p => {
                     
-                        Console.WriteLine(p.Id + "/" + p.Nome);
+                        Console.WriteLine(p.Id + " / " + p.Nome);
                         
 
                     });
@@ -223,7 +220,7 @@ namespace PessoaConsoleTest
                     pessoas.ForEach(p =>
                     {
 
-                        Console.WriteLine(p.Id + "/" + p.Nome);
+                        Console.WriteLine(p.Id + " / " + p.Nome);
                     });
 
                     Console.WriteLine("Digite Tecle Algo para voltar ao menu");
@@ -254,7 +251,7 @@ namespace PessoaConsoleTest
             }
 
             if (pessoa!=null) {
-                 Console.WriteLine(pessoa.Id + "/" + pessoa.Nome);
+                 Console.WriteLine(pessoa.Id + " / " + pessoa.Nome);
                  Console.WriteLine("Digite Tecle Algo para voltar ao menu");
                  Console.ReadLine();
             } else {
@@ -277,11 +274,13 @@ namespace PessoaConsoleTest
             }
 
              if (pessoa!=null) {
-                 Console.WriteLine(pessoa.Id + "/" + pessoa.Nome);
+                 Console.WriteLine(pessoa.Id + " / " + pessoa.Nome);
                  Console.WriteLine("Digite Tecle Algo para voltar ao menu");
                  Console.ReadLine();
             } else {
                 Console.WriteLine("Não Existe Consumidor com id " + id);
+                Console.WriteLine("Digite Tecle Algo para voltar ao menu");
+                Console.ReadLine();
             
             }
 

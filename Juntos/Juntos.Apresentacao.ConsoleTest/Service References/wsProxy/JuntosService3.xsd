@@ -129,14 +129,14 @@
           <xs:element minOccurs="0" name="Condicoes" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CuponsGerados" nillable="true" type="tns:ArrayOfCupomDTO" />
           <xs:element minOccurs="0" name="DataExpiracao" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="DataInicioValidade" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataInicioValidade" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DataPublicacao" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DataValidadeCupons" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="tns:EnderecoDTO" />
           <xs:element minOccurs="0" name="NumeroMaximoCupons" type="xs:int" />
           <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Juntos.Model.Enums" minOccurs="0" name="Status" type="q2:EnumStatusOferta" />
           <xs:element minOccurs="0" name="ValorCupons" type="xs:decimal" />
-          <xs:element minOccurs="0" name="endereco" nillable="true" type="tns:EnderecoDTO" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

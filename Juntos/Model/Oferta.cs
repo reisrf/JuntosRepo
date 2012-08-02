@@ -34,7 +34,7 @@ namespace Juntos.Model
 
         public DateTime DataExpiracao { get; set; }
 
-        public DateTime DataInicioValidade { get; set; }
+        public DateTime? DataInicioValidade { get; set; }
 
         public decimal ValorCupons { get; set; }
 
@@ -50,7 +50,7 @@ namespace Juntos.Model
         {
             if (this.Status != EnumStatusOferta.Publicada)
             {
-                throw new Exception("Oferta não públicada.");
+                throw new Exception("Oferta não publicada.");
             }
 
             if (this.MaximoDeCuponsAtingidos(quantidade))
@@ -76,6 +76,7 @@ namespace Juntos.Model
 
             this.Status = EnumStatusOferta.Publicada;
             this.DataPublicacao = DateTime.Now;
+            this.DataInicioValidade = DateTime.Now.AddDays(1);
         }
 
         public void Finalizar()

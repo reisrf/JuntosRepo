@@ -144,7 +144,7 @@ namespace Juntos.WcfServiceApp
                 anunciante.Ofertas = new List<Oferta>();
             }
 
-            anunciante.Ofertas.Add(DTOtoOferta(oferta));
+            anunciante.IncluirOferta(DTOtoOferta(oferta));
             anuncianteService.Salvar(anunciante);
         }
 
@@ -320,6 +320,11 @@ namespace Juntos.WcfServiceApp
 
         private ConsumidorDTO ConsumidorToDTO(Consumidor c)
         {
+            if (c == null)
+            {
+                return null;
+            }
+
 
             ConsumidorDTO consumidor = new ConsumidorDTO();
 
@@ -371,6 +376,12 @@ namespace Juntos.WcfServiceApp
 
         private Consumidor DTOtoConsumidor(ConsumidorDTO c)
         {
+
+            if (c == null)
+            {
+                return null;
+            }
+            
             Consumidor consumidor = new Consumidor();
 
             consumidor.Id = c.Id;
@@ -414,6 +425,12 @@ namespace Juntos.WcfServiceApp
 
         private AnuncianteDTO AnuncianteToDTO(Anunciante a)
         {
+
+            if (a == null)
+            {
+                return null;
+            }
+            
             AnuncianteDTO anunciante = new AnuncianteDTO();
 
             anunciante.Id = a.Id;
@@ -463,6 +480,10 @@ namespace Juntos.WcfServiceApp
 
         private Anunciante DTOtoAnunciante(AnuncianteDTO a)
         {
+            if (a == null)
+            {
+                return null;
+            }
 
             Anunciante anunciante = new Anunciante();
 
@@ -502,6 +523,10 @@ namespace Juntos.WcfServiceApp
 
         private OfertaDTO OfertaToDTO(Oferta o)
         {
+            if (o == null)
+            {
+                return null;
+            }
 
             OfertaDTO oferta = new OfertaDTO();
 
@@ -549,6 +574,10 @@ namespace Juntos.WcfServiceApp
 
         private Oferta DTOtoOferta(OfertaDTO o)
         {
+            if (o == null)
+            {
+                return null;
+            }
 
             Oferta oferta = new Oferta();
             //oferta.Anunciante = DTOtoAnunciante(o.Anunciante);
@@ -595,6 +624,10 @@ namespace Juntos.WcfServiceApp
 
         private CupomDTO CupomToDTO(Cupom c)
         {
+            if (c == null)
+            {
+                return null;
+            }
 
             CupomDTO cupom = new CupomDTO();
 
@@ -624,6 +657,12 @@ namespace Juntos.WcfServiceApp
 
         private CompraDTO CompraToDTO(Compra c)
         {
+
+            if (c == null)
+            {
+                return null;
+            }
+            
             CompraDTO compra = new CompraDTO();
 
             //compra.Consumidor = ConsumidorToDTO(c.Consumidor);
@@ -654,6 +693,12 @@ namespace Juntos.WcfServiceApp
 
         private Compra DTOtoCompra(CompraDTO c)
         {
+
+            if (c == null)
+            {
+                return null;
+            }
+            
             Compra compra = new Compra();
 
 
@@ -687,6 +732,11 @@ namespace Juntos.WcfServiceApp
         private PagamentoDTO PagamentoToDTO(Juntos.Model.Pagamento p)
         {
 
+            if (p == null)
+            {
+                return null;
+            }
+
             PagamentoDTO pagamento = new PagamentoDTO();
 
             pagamento.Codigo = p.Codigo;
@@ -702,7 +752,10 @@ namespace Juntos.WcfServiceApp
 
         private Juntos.Model.Pagamento DTOtoPagamento(PagamentoDTO p)
         {
-
+            if (p == null)
+            {
+                return null;
+            }
 
             Juntos.Model.Pagamento pagamento = new Juntos.Model.Pagamento();
 

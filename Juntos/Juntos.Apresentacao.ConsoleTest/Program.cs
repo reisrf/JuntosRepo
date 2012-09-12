@@ -13,84 +13,77 @@ namespace Juntos.Apresentacao.ConsoleTest
         static void Main(string[] args)
         {
             start();
+            try
+            {
+                Console.WriteLine("Criando Anunciantes");
+                AnuncianteDTO empresaA = CriarAnunciante("Empresa A LTDA", EnumTipoPessoa.Juridica, 11111111111111, "empresa_A@servidor.com");
+                AnuncianteDTO empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresa_B@servidor.com");
+                AnuncianteDTO empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresa_C@servidor.com");
+
+                Console.WriteLine("Salvando Anunciantes");
+                client.SalvarAnunciante(empresaA);
+                client.SalvarAnunciante(empresaB);
+                client.SalvarAnunciante(empresaC);
+
+                Console.WriteLine("Criando Consumidores");
+                ConsumidorDTO consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "genesio@servidor.com");
+                ConsumidorDTO consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "gervasio@servidor.com");
+                ConsumidorDTO consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "geroncio@servidor.com");
+
+                Console.WriteLine("Salvando Anunciantes");
+                client.SalvarConsumidor(consumidorA);
+                client.SalvarConsumidor(consumidorB);
+                client.SalvarConsumidor(consumidorC);
+
+                Console.WriteLine("Gerando Ofertas");
+                //Anunciante anunciante = ObterAnunciante();
+                AnuncianteDTO anunciante = ObterAnunciantePorEmail("empresa_A@servidor.com");
+                //anunciante.Ofertas = new List<Oferta>();
+                Console.WriteLine(">");
+                OfertaDTO ofertaA = GerarOferta("Cha completo para duas pessoas", anunciante, "So nos dias de semana ate as 18 horas", 120, 100);
+                client.SalvarOferta(ofertaA, anunciante.Id);
+
+                Console.WriteLine(">>");
+                OfertaDTO ofertaB = GerarOferta("Jantar Pink Fleet", anunciante, "Tercas e quintas", 100, 30);
+                client.SalvarOferta(ofertaB, anunciante.Id);
 
 
-               Console.WriteLine("Criando Anunciantes");
-               AnuncianteDTO empresaA = CriarAnunciante("Empresa A LTDA",EnumTipoPessoa.Juridica,11111111111111, "empresa_A@servidor.com");
-               AnuncianteDTO empresaB = CriarAnunciante("Empresa B LTDA", EnumTipoPessoa.Juridica, 22222222222222, "empresa_B@servidor.com");
-               AnuncianteDTO empresaC = CriarAnunciante("Empresa C LTDA", EnumTipoPessoa.Juridica, 33333333333333, "empresa_C@servidor.com");
-               
-               Console.WriteLine("Salvando Anunciantes");
-               client.SalvarAnunciante(empresaA);
-               client.SalvarAnunciante(empresaB);
-               client.SalvarAnunciante(empresaC);
+                Console.WriteLine(">>>");
+                OfertaDTO ofertaC = GerarOferta("Rodizio de Pizza", anunciante, "Segundas e Tercas", 150, 10);
+                client.SalvarOferta(ofertaC, anunciante.Id);
 
-               Console.WriteLine("Criando Consumidores");
-               ConsumidorDTO consumidorA = CriarConsumidor("Genesio Orlando", EnumTipoPessoa.Fisica, 30030030030, "genesio@servidor.com");
-               ConsumidorDTO consumidorB = CriarConsumidor("Gervasio Andre", EnumTipoPessoa.Fisica, 12345678909, "gervasio@servidor.com");
-               ConsumidorDTO consumidorC = CriarConsumidor("Geroncio Bernardo", EnumTipoPessoa.Fisica, 11111111111, "geroncio@servidor.com");
-               
-               Console.WriteLine("Salvando Anunciantes");
-               client.SalvarConsumidor(consumidorA);
-               client.SalvarConsumidor(consumidorB);
-               client.SalvarConsumidor(consumidorC);
+                Console.WriteLine("Publicando Oferta");
 
-               Console.WriteLine("Gerando Ofertas");
-               //Anunciante anunciante = ObterAnunciante();
-               AnuncianteDTO anunciante = ObterAnunciantePorEmail("empresa_A@servidor.com");
-               //anunciante.Ofertas = new List<Oferta>();
-               Console.WriteLine(">");
-               OfertaDTO ofertaA = GerarOferta("Cha completo para duas pessoas", anunciante, "So nos dias de semana ate as 18 horas", 120, 100);
+                PublicarOferta(anunciante.Id);
 
-               if (anunciante.Ofertas == null)
-               {
-                   anunciante.Ofertas = new List<OfertaDTO>();
-               }
+                Console.WriteLine("Comprando Oferta");
 
-               anunciante.Ofertas.Add(ofertaA);
-               client.SalvarAnunciante(anunciante);
+                ConsumidorDTO consumidor = ObterConsumidor();
+                OfertaDTO oferta = ObterOferta(anunciante.Id);
 
-               Console.WriteLine(">>");
-               OfertaDTO ofertaB = GerarOferta("Jantar Pink Fleet", anunciante, "Tercas e quintas", 100, 30);
-               client.SalvarOferta(ofertaB, anunciante.Id);
-               
-                             
-               Console.WriteLine(">>>");
-               OfertaDTO ofertaC = GerarOferta("Rodizio de Pizza", anunciante, "Segundas e Tercas", 150, 10);
-               client.SalvarOferta(ofertaC, anunciante.Id);
+                ComprarOfertas(consumidor, oferta, 5);
+
+                Console.WriteLine("Pagar Compra");
+
+                PagarCompras(consumidor, EnumFormaPagamento.PayPal);
 
 
-             
-               Console.WriteLine("Publicando Oferta");
+                Console.WriteLine("Comprando Oferta de novo");
+                ComprarOfertas(consumidor, oferta, 10);
 
-               PublicarOferta(anunciante.Id);
+                Console.WriteLine("Pagar nova Compra");
+                PagarCompras(consumidor, EnumFormaPagamento.PagSeguro);
 
-               Console.WriteLine("Comprando Oferta");
+                Console.WriteLine("Informar utilizacao Cupom");
+                InformarCupom(oferta);
 
-               ConsumidorDTO consumidor = ObterConsumidor();
-               OfertaDTO oferta = ObterOferta(anunciante.Id);
-
-               ComprarOfertas(consumidor, oferta, 5);
-
-               Console.WriteLine("Pagar Compra");
-
-               PagarCompras(consumidor, EnumFormaPagamento.PayPal);
-
-
-               Console.WriteLine("Comprando Oferta de novo");
-               ComprarOfertas(consumidor, oferta, 10);
-               
-               Console.WriteLine("Pagar nova Compra");
-               PagarCompras(consumidor, EnumFormaPagamento.PagSeguro);
-
-               Console.WriteLine("Informar utilizacao Cupom");
-               InformarCupom(oferta);
-               
-               Console.WriteLine("Consolidar Oferta");
-               ConsolidarOferta(oferta);
-
-            stop();
-
+                Console.WriteLine("Consolidar Oferta");
+                ConsolidarOferta(oferta);
+            }
+            finally
+            {
+                stop();
+            }
         }
 
 
@@ -219,6 +212,20 @@ namespace Juntos.Apresentacao.ConsoleTest
             ofertaA.DataValidadeCupons = DateTime.Now.AddDays(30);
             ofertaA.ValorCupons = valor;
             ofertaA.NumeroMaximoCupons = nrcupons;
+
+            EnderecoDTO endereco = new EnderecoDTO();
+            endereco.Logradouro = "Rua Oferta numero 10";
+            endereco.Numero = 30;
+            endereco.Complemento = "Apto 10";
+            endereco.Bairro = "Cantao Oferta";
+            endereco.Cidade = "Malnicipio Oferta";
+            endereco.Estado = "RJ";
+            endereco.Cep = "11111-111";
+            endereco.Pais = "Brasil";
+
+            ofertaA.Endereco = endereco;
+          
+
             return ofertaA;
         }
 
@@ -286,7 +293,8 @@ namespace Juntos.Apresentacao.ConsoleTest
             }
 
 
-            return oferta;
+
+            return client.ConsultarOfertaPeloId(oferta.Id);
         
         }
 

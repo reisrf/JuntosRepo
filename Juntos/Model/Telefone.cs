@@ -3,7 +3,7 @@ namespace Juntos.Model
     public class Telefone : Entidade
     {
         public Telefone() { }
-        public Telefone(Pessoa pessoa) { pessoa.Telefones.Add(this); }
+        public Telefone(Pessoa pessoa) { pessoa.IncluirTelefone(this); }
 
 
         public Telefone(short ddi, short ddd, int numero)

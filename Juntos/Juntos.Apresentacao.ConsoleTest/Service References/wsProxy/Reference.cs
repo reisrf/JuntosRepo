@@ -456,7 +456,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         private System.DateTime DataExpiracaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DataInicioValidadeField;
+        private System.Nullable<System.DateTime> DataInicioValidadeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> DataPublicacaoField;
@@ -466,6 +466,9 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescricaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO EnderecoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroMaximoCuponsField;
@@ -529,7 +532,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DataInicioValidade {
+        public System.Nullable<System.DateTime> DataInicioValidade {
             get {
                 return this.DataInicioValidadeField;
             }
@@ -576,6 +579,19 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
                 if ((object.ReferenceEquals(this.DescricaoField, value) != true)) {
                     this.DescricaoField = value;
                     this.RaisePropertyChanged("Descricao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO Endereco {
+            get {
+                return this.EnderecoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EnderecoField, value) != true)) {
+                    this.EnderecoField = value;
+                    this.RaisePropertyChanged("Endereco");
                 }
             }
         }

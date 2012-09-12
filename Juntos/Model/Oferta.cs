@@ -15,12 +15,16 @@ namespace Juntos.Model
 
         public Oferta(Anunciante anunciante)
         {
+            this.Status = EnumStatusOferta.Criada;
+            this.CuponsGerados = new List<Cupom>();
             this.Anunciante = anunciante;
         }
 
         //Não lembrei o que era...
         //public EnumTipoOferta Tipo { get; set; }
         public Anunciante Anunciante { get; set; }
+
+        public Endereco Endereco { get; set; }
 
         public EnumStatusOferta Status { get; set; }
 
@@ -30,7 +34,7 @@ namespace Juntos.Model
 
         public DateTime DataExpiracao { get; set; }
 
-        public DateTime DataInicioValidade { get; set; }
+        public DateTime? DataInicioValidade { get; set; }
 
         public decimal ValorCupons { get; set; }
 
@@ -46,7 +50,7 @@ namespace Juntos.Model
         {
             if (this.Status != EnumStatusOferta.Publicada)
             {
-                throw new Exception("Oferta não públicada.");
+                throw new Exception("Oferta não publicada.");
             }
 
             if (this.MaximoDeCuponsAtingidos(quantidade))
@@ -72,6 +76,7 @@ namespace Juntos.Model
 
             this.Status = EnumStatusOferta.Publicada;
             this.DataPublicacao = DateTime.Now;
+            this.DataInicioValidade = DateTime.Now.AddDays(1);
         }
 
         public void Finalizar()

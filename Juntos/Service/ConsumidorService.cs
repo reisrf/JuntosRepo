@@ -15,3 +15,14 @@ namespace Juntos.Service
     }
 
 }
+
+
+
+ public class AdvertiserService : PersonService<Advertiser>, IAdvertiserService 
+    {
+        public AdvertiserService(IAdvertiserRepository repository) : base(repository)
+        {
+        }
+    }
+    
+    

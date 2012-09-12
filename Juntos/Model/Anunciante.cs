@@ -15,7 +15,10 @@ namespace Juntos.Model
             this.Ofertas = new List<Oferta>();
         }
 
-        public List<Oferta> Ofertas { get; set; }
+        //public List<Oferta> Ofertas { get; set; }
+
+        private List<Oferta> ofertas = new List<Oferta>();
+        public virtual List<Oferta> Ofertas { get { return this.ofertas; } set { this.ofertas = value; } }
 
         public Oferta NovaOferta()
         {
@@ -23,5 +26,12 @@ namespace Juntos.Model
             this.Ofertas.Add(oferta);
             return oferta;
         }
+
+        public void IncluirOferta(Oferta o)
+        {
+            this.Ofertas.Add(o);
+           
+        }
+
     }
 }

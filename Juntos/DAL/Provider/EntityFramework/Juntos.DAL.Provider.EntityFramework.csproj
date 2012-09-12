@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnuncianteDAO.cs" />
+    <Compile Include="JuntosDb.cs" />
     <Compile Include="CompraDAO.cs" />
     <Compile Include="ConsumidorDAO.cs" />
     <Compile Include="CupomDAO.cs" />

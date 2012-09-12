@@ -12,6 +12,8 @@ namespace Juntos.DAL.Provider.EntityFramework
     {
         private static JuntosContext _instance;
 
+        public JuntosContext() { }
+
         private JuntosContext(string connectionString) : base(connectionString)
         {
         }
@@ -37,24 +39,31 @@ namespace Juntos.DAL.Provider.EntityFramework
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //Chaves Primarias e como sao geradas
             modelBuilder.Entity<Pessoa>().HasKey(c => c.Id);
             modelBuilder.Entity<Pessoa>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Endereco>().HasKey(e => e.Id);
             modelBuilder.Entity<Endereco>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
             modelBuilder.Entity<Telefone>().HasKey(e => e.Id);
             modelBuilder.Entity<Telefone>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Oferta>().HasKey(e => e.Id);
             modelBuilder.Entity<Oferta>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<Oferta>().HasRequired(o => o.Endereco);
+            
             modelBuilder.Entity<Cupom>().HasKey(e => e.Id);
             modelBuilder.Entity<Cupom>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             modelBuilder.Entity<Compra>().HasKey(e => e.Id);
             modelBuilder.Entity<Compra>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            
             modelBuilder.Entity<Pagamento>().HasKey(e => e.Id);
             modelBuilder.Entity<Pagamento>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            //Relacionamentos 1:n
             modelBuilder.Entity<Pessoa>().HasMany(e => e.Enderecos);
             modelBuilder.Entity<Pessoa>().HasMany(e => e.Telefones);
 
@@ -62,8 +71,15 @@ namespace Juntos.DAL.Provider.EntityFramework
             modelBuilder.Entity<Consumidor>().HasMany(e => e.Compras);
 
             modelBuilder.Entity<Oferta>().HasMany(e => e.CuponsGerados);
+
             modelBuilder.Entity<Compra>().HasMany(e => e.Cupons);
             modelBuilder.Entity<Compra>().HasMany(e => e.Pagamentos);
+
+
+            //Relacionamentos 1:1
+
+           
+
 
             base.OnModelCreating(modelBuilder);
         }

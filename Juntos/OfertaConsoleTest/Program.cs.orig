@@ -66,7 +66,11 @@ namespace OfertaConsoleTest
             Console.WriteLine("(0) Incluir Oferta");
             Console.WriteLine("(1) Publicar Oferta");
             Console.WriteLine("(2) Listar Oferta");
+<<<<<<< HEAD
             Console.WriteLine("(3) Listar Oferta por Id");
+=======
+            Console.WriteLine("(3) Listar Listar Oferta por Id");
+>>>>>>> 15aa5d864d470d4ed3d21fc8a1f5870c9d0bd7e3
             Console.WriteLine("(4) Listar Nao Publicas");
             Console.WriteLine("(5) Trocar de Anunciante");
             Console.WriteLine("(6) Sair");
@@ -310,7 +314,11 @@ namespace OfertaConsoleTest
 
             while (true)
             {
+<<<<<<< HEAD
                 Console.Write("Id Anunciante : ");
+=======
+                Console.Write("id : ");
+>>>>>>> 15aa5d864d470d4ed3d21fc8a1f5870c9d0bd7e3
                 string id = Console.ReadLine();
 
                 using (var service = new JuntosServiceClient())
@@ -320,7 +328,11 @@ namespace OfertaConsoleTest
 
                 if (anunciante != null)
                 {
+<<<<<<< HEAD
+                    Console.WriteLine(anunciante.Id + " / " + anunciante.Nome);
+=======
                     Console.WriteLine(anunciante.Id + "/" + anunciante.Nome);
+>>>>>>> 15aa5d864d470d4ed3d21fc8a1f5870c9d0bd7e3
                     
                     break;
                 }

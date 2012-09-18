@@ -42,7 +42,12 @@ namespace Juntos.Apresentacao.WcfServiceApp.dto
         public int NumeroMaximoCupons { get; set; }
 
         [DataMember]
-        public EnderecoDTO Endereco { get; set; }
+        public string Endereco { get; set; }
+
+        [DataMember]
+        public string Telefone { get; set; }
+
+
 
 
     }

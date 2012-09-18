@@ -331,7 +331,8 @@ namespace Juntos.WcfServiceApp
             consumidor.Id = c.Id;
             consumidor.Nome = c.Nome;
             consumidor.Tipo = c.Tipo;
-            consumidor.CpfCnpj = c.CpfCnpj;
+            consumidor.Inscricao = c.Inscricao;
+            consumidor.Senha = c.Senha;
             consumidor.Email = c.Email;
             consumidor.Telefones = new List<TelefoneDTO>();
             consumidor.Enderecos = new List<EnderecoDTO>();
@@ -387,7 +388,8 @@ namespace Juntos.WcfServiceApp
             consumidor.Id = c.Id;
             consumidor.Nome = c.Nome;
             consumidor.Tipo = c.Tipo;
-            consumidor.CpfCnpj = c.CpfCnpj;
+            consumidor.Senha = c.Senha;
+            consumidor.Inscricao = c.Inscricao;
             consumidor.Email = c.Email;
   
             if (c.Telefones != null && c.Telefones.Count != 0)
@@ -436,7 +438,8 @@ namespace Juntos.WcfServiceApp
             anunciante.Id = a.Id;
             anunciante.Nome = a.Nome;
             anunciante.Tipo = a.Tipo;
-            anunciante.CpfCnpj = a.CpfCnpj;
+            anunciante.Inscricao = a.Inscricao;
+            anunciante.Senha = a.Senha;
             anunciante.Email = a.Email;
             anunciante.Telefones = new List<TelefoneDTO>();
             anunciante.Enderecos = new List<EnderecoDTO>();
@@ -490,7 +493,8 @@ namespace Juntos.WcfServiceApp
             anunciante.Id = a.Id;
             anunciante.Nome = a.Nome;
             anunciante.Tipo = a.Tipo;
-            anunciante.CpfCnpj = a.CpfCnpj;
+            anunciante.Inscricao = a.Inscricao;
+            anunciante.Senha = a.Senha;
             anunciante.Email = a.Email;
   
             a.Telefones.ForEach(t =>
@@ -542,19 +546,9 @@ namespace Juntos.WcfServiceApp
             oferta.Status = o.Status;
             oferta.ValorCupons = o.ValorCupons;
             oferta.CuponsGerados = new List<CupomDTO>();
-
-            EnderecoDTO endereco = new EnderecoDTO();
-            endereco.Bairro = o.Endereco.Bairro;
-            endereco.Cep = o.Endereco.Cep;
-            endereco.Cidade = o.Endereco.Cidade;
-            endereco.Complemento = o.Endereco.Complemento;
-            endereco.Estado = o.Endereco.Estado;
-            endereco.Id = o.Endereco.Id;
-            endereco.Logradouro = o.Endereco.Logradouro;
-            endereco.Numero = o.Endereco.Numero;
-            endereco.Pais = o.Endereco.Pais;
+            oferta.Endereco = o.Endereco;
+            oferta.Telefone = o.Telefone;
             
-            oferta.Endereco = endereco;
 
             if (o.CuponsGerados != null && o.CuponsGerados.Count != 0)
             {
@@ -592,19 +586,8 @@ namespace Juntos.WcfServiceApp
             oferta.Status = o.Status;
             oferta.ValorCupons = o.ValorCupons;
             oferta.CuponsGerados = new List<Cupom>();
-
-            Endereco endereco = new Endereco();
-            endereco.Bairro = o.Endereco.Bairro;
-            endereco.Cep = o.Endereco.Cep;
-            endereco.Cidade = o.Endereco.Cidade;
-            endereco.Complemento = o.Endereco.Complemento;
-            endereco.Estado = o.Endereco.Estado;
-            endereco.Id = o.Endereco.Id;
-            endereco.Logradouro = o.Endereco.Logradouro;
-            endereco.Numero = o.Endereco.Numero;
-            endereco.Pais = o.Endereco.Pais;
-
-            oferta.Endereco = endereco;
+            oferta.Endereco = o.Endereco;
+            oferta.Telefone = o.Telefone;
 
            
             if (o.CuponsGerados != null && o.CuponsGerados.Count != 0)
@@ -635,7 +618,7 @@ namespace Juntos.WcfServiceApp
             cupom.DataValidade = c.DataValidade;
             cupom.Id = c.Id;
             //cupom.Oferta = OfertaToDTO(c.Oferta);
-            cupom.Valor = cupom.Valor;
+            cupom.Valor = c.Valor;
 
 
             return cupom;
@@ -649,7 +632,7 @@ namespace Juntos.WcfServiceApp
             cupom.DataValidade = c.DataValidade;
             cupom.Id = c.Id;
             //cupom.Oferta = DTOtoOferta(c.Oferta);
-            cupom.Valor = cupom.Valor;
+            cupom.Valor = c.Valor;
 
 
             return cupom;

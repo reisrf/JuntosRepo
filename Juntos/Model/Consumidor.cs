@@ -10,11 +10,11 @@ namespace Juntos.Model
             this.Compras = new List<Compra>();
         }
 
-        public Consumidor(EnumTipoPessoa tipo, string nome, long cpfCnpj, string email) : base(tipo, nome, cpfCnpj, email)
+        public Consumidor(EnumTipoPessoa tipo, string nome, long cpfCnpj, string email, string senha) : base(tipo, nome, cpfCnpj, email, senha)
         {
             this.Compras = new List<Compra>();
         }
 
-        public List<Compra> Compras { get; set; }
+        public virtual List<Compra> Compras { get; set; }
     }
 }

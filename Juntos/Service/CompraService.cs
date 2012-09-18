@@ -37,7 +37,7 @@ namespace Juntos.Service
                 throw new Exception("A compra já se encontra paga.");
             }
 
-            var pagamento = compra.Pagar(formaPagamento);
+            Pagamento pagamento = compra.Pagar(formaPagamento);
             IPagamentoService pagamentoService = typeof (IPagamentoService).Fabricar();
             pagamentoService.Adicionar(pagamento);
             this.Repository.Atualizar(compra);

@@ -97,7 +97,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3815</DevelopmentServerPort>
+          <DevelopmentServerPort>5241</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/Juntos.PagamentoService</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

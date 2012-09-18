@@ -24,8 +24,6 @@ namespace Juntos.Model
         //public EnumTipoOferta Tipo { get; set; }
         public Anunciante Anunciante { get; set; }
 
-        public Endereco Endereco { get; set; }
-
         public EnumStatusOferta Status { get; set; }
 
         public DateTime? DataPublicacao { get; set; }
@@ -42,7 +40,11 @@ namespace Juntos.Model
 
         public string Condicoes { get; set; }
 
-        public List<Cupom> CuponsGerados { get; set; }
+        public string Endereco { get; set; }
+
+        public string Telefone { get; set; }
+
+        public virtual List<Cupom> CuponsGerados { get; set; }
 
         public int NumeroMaximoCupons { get; set; }
 

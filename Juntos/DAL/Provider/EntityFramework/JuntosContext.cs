@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using Juntos.Model;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Juntos.DAL.Provider.EntityFramework
 {
@@ -52,8 +53,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             modelBuilder.Entity<Oferta>().HasKey(e => e.Id);
             modelBuilder.Entity<Oferta>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Oferta>().HasRequired(o => o.Endereco);
-            
+                        
             modelBuilder.Entity<Cupom>().HasKey(e => e.Id);
             modelBuilder.Entity<Cupom>().Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
@@ -76,7 +76,7 @@ namespace Juntos.DAL.Provider.EntityFramework
             modelBuilder.Entity<Compra>().HasMany(e => e.Pagamentos);
 
 
-            //Relacionamentos 1:1
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
            
 

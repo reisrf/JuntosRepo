@@ -1,11 +1,19 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
 
 <h2>@ViewBag.Message</h2>
-<p>
-    <a href="Consumidor" title="Cadastro de Consumidores">Cadastro de Consumidores</a>
-</p>
-<p>
-    <a href="Anunciante" title="Cadastro de Anunciantes">Cadastro de Anunciantes</a> 
-</p>
+<table>
+    <td>
+        <h1> Consumidores </h1>
+        <a href="../Consumidor/Register" >Cadastre-se</a>&nbsp;&nbsp;&nbsp;<a href="../Consumidor/Login" >Entrar</a> 
+    </td>
+    <td>&nbsp;&nbsp;</td>
+    <td>
+        <h1> Anunciantes </h1>
+        <a href="../Anunciante/Register">Cadastre-se</a>&nbsp;&nbsp;&nbsp;<a href="../Anunciante/Login" >Entrar</a>  
+    </td>
+</table>
+
+@{ Html.RenderAction("ListaDeOfertasAtivas", "Oferta"); }

@@ -113,6 +113,8 @@ namespace ConsoleApplication2
                     Console.WriteLine("Id : " + oferta.Id);
                     Console.WriteLine("Descricao : " + oferta.Descricao);
                     Console.WriteLine("Condicoes : " + oferta.Condicoes);
+                    Console.WriteLine("Endereco : " + oferta.Endereco);
+                    Console.WriteLine("Telefone : " + oferta.Telefone);
                     Console.WriteLine("Estado : " + oferta.Status);
                     Console.WriteLine("----------------------------------");
                 }
@@ -238,7 +240,7 @@ namespace ConsoleApplication2
             Console.Write("Id Compra : ");
             string id = Console.ReadLine();
 
-            Console.Write("Forma de Pagamento : (P)ayPal, Pa(g)Seguro ou (C)artao");
+            Console.Write("Forma de Pagamento : (P)ayPal, Pa(g)Seguro ou (C)artao =>  ");
             string pagamento = Console.ReadLine();
 
             EnumFormaPagamento pagto;

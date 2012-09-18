@@ -37,5 +37,14 @@ namespace Juntos.MvcJuntos.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult ListaDeOfertasAtivas()
+        {
+
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            List<Oferta> ofertas = ofertaService.RetornarTodos();
+            return View(ofertas);
+        }
+
     }
 }

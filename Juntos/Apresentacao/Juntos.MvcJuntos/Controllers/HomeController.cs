@@ -10,7 +10,7 @@ namespace Juntos.MvcJuntos.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Benvindo ao Juntos!";
+            ViewBag.Message = "Benvindo ao Juntos! Onde juntos compramos melhor!";
 
             return View();
         }
@@ -19,5 +19,7 @@ namespace Juntos.MvcJuntos.Controllers
         {
             return View();
         }
+
+
     }
 }

@@ -44,6 +44,12 @@ namespace OfertaConsoleTest
                         InformarAnunciante();
                         break;
                     case 6:
+                        InformarUtilizacoCupom();
+                        break;
+                    case 7:
+                        ConsolidarOferta();
+                        break;
+                    case 8:
                         sai = true;
                         break;
                     default:
@@ -69,7 +75,9 @@ namespace OfertaConsoleTest
             Console.WriteLine("(3) Listar Oferta por Id");
             Console.WriteLine("(4) Listar Nao Publicas");
             Console.WriteLine("(5) Trocar de Anunciante");
-            Console.WriteLine("(6) Sair");
+            Console.WriteLine("(6) Informar Utilizaco de Cupom");
+            Console.WriteLine("(7) Consolidar Oferta");
+            Console.WriteLine("(8) Sair");
         }
 
 
@@ -88,36 +96,17 @@ namespace OfertaConsoleTest
             Console.Write("Validade dos Cupons em dias ");
             string validadeC = Console.ReadLine();
             //Endereco
-            Console.Write("Logradouro : ");
-            string logradouro = Console.ReadLine();
-            Console.Write("Complemento : ");
-            string complemento = Console.ReadLine();
-            Console.Write("Numero : ");
-            string numero = Console.ReadLine();
-            Console.Write("Bairro : ");
-            string bairro = Console.ReadLine();
-            Console.Write("Cidade : ");
-            string cidade = Console.ReadLine();
-            Console.Write("Estado : ");
-            string estado = Console.ReadLine();
-            Console.Write("CEP : ");
-            string cep = Console.ReadLine();
-            Console.Write("Pais : ");
-            string pais = Console.ReadLine();
+            Console.Write("Endereco : ");
+            string endereco = Console.ReadLine();
+            Console.Write("Telefone : ");
+            string telefone = Console.ReadLine();
 
-            EnderecoDTO endereco = new EnderecoDTO();
-            endereco.Logradouro = logradouro;
-            endereco.Complemento = complemento;
-            endereco.Numero = Convert.ToInt32(numero);
-            endereco.Bairro = bairro;
-            endereco.Cidade = cidade;
-            endereco.Estado = estado;
-            endereco.Cep = cep;
-            endereco.Pais = pais;
+          
 
             OfertaDTO oferta = new OfertaDTO();
 
             oferta.Endereco = endereco;
+            oferta.Telefone = telefone;
             oferta.Condicoes = condicao;
             oferta.DataExpiracao = DateTime.Now.AddDays(Convert.ToInt32(validadeO));
             oferta.DataValidadeCupons = DateTime.Now.AddDays(Convert.ToInt32(validadeC));
@@ -154,6 +143,8 @@ namespace OfertaConsoleTest
                              Console.WriteLine("Id : " + o.Id );
                              Console.WriteLine("Descricao : " + o.Descricao );
                              Console.WriteLine("Condicoes : " + o.Condicoes);
+                             Console.WriteLine("Endereco : " + o.Endereco);
+                             Console.WriteLine("Telefone : " + o.Telefone);
                              Console.WriteLine("Estado : " + o.Status);
                              Console.WriteLine("----------------------------------");
                         } //if for-each
@@ -320,7 +311,7 @@ namespace OfertaConsoleTest
 
                 if (anunciante != null)
                 {
-                    Console.WriteLine(anunciante.Id + "/" + anunciante.Nome);
+                    Console.WriteLine(anunciante.Id + " / " + anunciante.Nome);
                     
                     break;
                 }
@@ -344,8 +335,66 @@ namespace OfertaConsoleTest
 
 
 
-        
+        private static void InformarUtilizacoCupom() 
+        {
 
+
+
+            Console.Write("Id Cupom : ");
+            string id = Console.ReadLine();
+
+            using (var service = new JuntosServiceClient())
+            {
+                OfertaDTO oferta = service.ConsultarOfertaPeloId(1);
+
+                oferta.CuponsGerados.ForEach(c => {
+
+                    Console.WriteLine("Id " + c.Id);
+                    Console.WriteLine("Utilizacao " + c.DataUtilizacao);
+                    Console.WriteLine("Valor " + c.Valor);
+                
+                });
+                
+                service.InformarUsoCupom(Convert.ToInt32(id));
+            }
+        
+        
+        
+        }
+
+        private static void ConsolidarOferta()
+        {
+
+            Console.Write("Id Oferta : ");
+            string id = Console.ReadLine();
+
+            List<CupomDTO> cupons = new List<CupomDTO>();
+
+            using (var service = new JuntosServiceClient())
+            {
+                cupons = service.ConsolidarOferta(Convert.ToInt32(id));
+            }
+
+            if (cupons.Count > 0)
+            {
+                cupons.ForEach(c =>
+                {
+
+                    Console.WriteLine("Id " + c.Id);
+                    Console.WriteLine("Utilizacao " + c.DataUtilizacao);
+                    Console.WriteLine("Valor " + c.Valor);
+
+                });
+            }
+            else
+            {
+                Console.WriteLine("Não Existem Cupons Utilizados para Oferta id " + id);
+                Console.WriteLine("Digite Tecle Algo para voltar");
+                Console.ReadLine();
+            }
+
+
+        }
 
 
 

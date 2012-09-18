@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Security;
 using Framework;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,8 @@ namespace Juntos.MvcJuntos.Controllers
             Consumidor consumidor = new Consumidor();
             consumidor.Nome = pessoa.Nome;
             consumidor.Email = pessoa.Email;
-            consumidor.CpfCnpj = pessoa.CpfCnpj;
+            consumidor.Senha = pessoa.Senha;
+            consumidor.Inscricao = pessoa.Inscricao;
             consumidor.Tipo = EnumTipoPessoa.Fisica;
             Endereco endereco = new Endereco(consumidor);
             endereco.Logradouro = pessoa.Logradouro;
@@ -76,7 +78,69 @@ namespace Juntos.MvcJuntos.Controllers
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
             consumidorService.Adicionar(consumidor);
 
-            return RedirectToAction("Index");
+            FormsAuthentication.SetAuthCookie(consumidor.Email, true);
+            return RedirectToAction(@"../Oferta");
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Register(Models.PessoaDTO pessoa)
+        {
+            Consumidor consumidor = new Consumidor();
+            consumidor.Nome = pessoa.Nome;
+            consumidor.Email = pessoa.Email;
+            consumidor.Senha = pessoa.Senha;
+            consumidor.Inscricao = pessoa.Inscricao;
+            consumidor.Tipo = EnumTipoPessoa.Fisica;
+            Endereco endereco = new Endereco(consumidor);
+            endereco.Logradouro = pessoa.Logradouro;
+            endereco.Numero = pessoa.LogradouroNumero;
+            endereco.Complemento = pessoa.Complemento;
+            endereco.Bairro = pessoa.Bairro;
+            endereco.Cidade = pessoa.Cidade;
+            endereco.Estado = pessoa.Estado;
+            endereco.Pais = pessoa.Pais;
+            endereco.Cep = pessoa.Cep;
+
+            Telefone telefone = new Telefone(consumidor);
+            telefone.DDI = pessoa.DDI;
+            telefone.DDD = pessoa.DDD;
+            telefone.Numero = pessoa.NumeroTelefone;
+            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
+            consumidorService.Adicionar(consumidor);
+
+            FormsAuthentication.SetAuthCookie(consumidor.Email, true);
+            return RedirectToAction(@"../Oferta");
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Models.PessoaDTO pessoa)
+        {
+            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
+            Consumidor consumidor = consumidorService.ConsultarPeloEmaileSenha(pessoa.Email, pessoa.Senha);
+
+            
+
+            if (consumidor != null)
+            {
+                FormsAuthentication.SetAuthCookie(consumidor.Email, true);
+                return RedirectToAction(@"../Oferta");
+            }
+            else
+            {
+                //Add message
+                ModelState.AddModelError("", "Email ou senha incorretos. Por favor, tente novamente.");
+                return View();
+            }
+            
         }
     }
 }

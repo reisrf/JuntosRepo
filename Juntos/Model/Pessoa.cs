@@ -11,12 +11,13 @@ namespace Juntos.Model
             this.telefones = new List<Telefone>();
         }
 
-        protected Pessoa(EnumTipoPessoa tipo, string nome, long cpfCnpj, string email)
+        protected Pessoa(EnumTipoPessoa tipo, string nome, long inscricao, string email, string senha)
         {
             this.Tipo = tipo;
             this.Nome = nome;
-            this.CpfCnpj = cpfCnpj;
+            this.Inscricao = inscricao;
             this.Email = email;
+            this.Senha = senha;
 
             this.enderecos = new List<Endereco>();
             this.telefones = new List<Telefone>();
@@ -24,11 +25,13 @@ namespace Juntos.Model
 
         public string Email { get; set; }
 
-        public long CpfCnpj { get; set; }
+        public long Inscricao { get; set; }
+
+        public string Senha { get; set; }
 
         public string Nome { get; set; }
 
-        public EnumTipoPessoa Tipo { get; set; }
+        public virtual EnumTipoPessoa Tipo { get; set; }
 
         private List<Endereco> enderecos = new List<Endereco>();
         public virtual List<Endereco> Enderecos { get { return this.enderecos; } set {this.enderecos=value;} }

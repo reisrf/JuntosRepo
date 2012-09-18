@@ -30,9 +30,9 @@ namespace Juntos.Model
 
         public Consumidor Consumidor { get; set; }
 
-        public List<Cupom> Cupons { get; set; }
+        public virtual List<Cupom> Cupons { get; set; }
 
-        public List<Pagamento> Pagamentos { get; set; }
+        public virtual List<Pagamento> Pagamentos { get; set; }
 
         public bool IsPaga()
         {

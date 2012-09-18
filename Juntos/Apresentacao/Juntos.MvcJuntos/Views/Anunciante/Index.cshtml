@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Juntos.Model.Anunciante>
+﻿@model IEnumerable<Juntos.Model.Consumidor>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table>
     <tr>
         <th>
-            Cpf/Cnpj
+            Inscrição
         </th>
         <th>
             Nome
@@ -26,7 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CpfCnpj)
+            @Html.DisplayFor(modelItem => item.Inscricao)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)

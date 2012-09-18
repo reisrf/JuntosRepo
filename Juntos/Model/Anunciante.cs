@@ -10,7 +10,7 @@ namespace Juntos.Model
             this.Ofertas = new List<Oferta>();
         }
 
-        public Anunciante(string nome, long cnpj, string email) : base(EnumTipoPessoa.Juridica, nome, cnpj, email)
+        public Anunciante(string nome, long cnpj, string email, string senha) : base(EnumTipoPessoa.Juridica, nome, cnpj, email, senha)
         {
             this.Ofertas = new List<Oferta>();
         }

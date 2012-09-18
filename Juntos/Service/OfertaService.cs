@@ -43,7 +43,8 @@ namespace Juntos.Service
         public void UtilizarCupom(long idCupom)
         {
             var oferta = this.Repository.Consultar(o => o.CuponsGerados.Any(c => c.Id.Equals(idCupom))).FirstOrDefault();
-            
+
+                        
             if (oferta == null)
             {
                 throw new Exception(string.Format("Oferta para cupom de Id {0} não encontrada.", idCupom));

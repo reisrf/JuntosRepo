@@ -23,11 +23,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CpfCnpj)
+            @Html.LabelFor(model => model.Inscricao)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CpfCnpj)
-            @Html.ValidationMessageFor(model => model.CpfCnpj)
+            @Html.EditorFor(model => model.Inscricao)
+            @Html.ValidationMessageFor(model => model.Inscricao)
         </div>
 
         <div class="editor-label">
@@ -36,6 +36,14 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Email)
             @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Senha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Senha)
+            @Html.ValidationMessageFor(model => model.Senha)
         </div>
         
         <div class="editor-label">

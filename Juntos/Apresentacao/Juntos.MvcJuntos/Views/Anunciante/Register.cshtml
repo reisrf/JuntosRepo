@@ -1,0 +1,137 @@
+﻿@model Juntos.MvcJuntos.Models.PessoaDTO
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Informe seus dados</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        
+        <table>
+            <td valign="top">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nome)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nome)
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Inscricao)
+                </div>
+                <div class="editor-field">
+                    (CNPJ)@Html.EditorFor(model => model.Inscricao) 
+                    @Html.ValidationMessageFor(model => model.Inscricao)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Senha)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Senha)
+                    @Html.ValidationMessageFor(model => model.Senha)
+                </div>
+            </td>
+            <td valign="top">
+                <legend>Endereço</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Logradouro)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Logradouro)
+                    @Html.ValidationMessageFor(model => model.Logradouro)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.LogradouroNumero)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.LogradouroNumero)
+                    @Html.ValidationMessageFor(model => model.LogradouroNumero)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Bairro)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Bairro)
+                    @Html.ValidationMessageFor(model => model.Bairro)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Cidade)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Cidade)
+                    @Html.ValidationMessageFor(model => model.Cidade)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Estado)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Estado)
+                    @Html.ValidationMessageFor(model => model.Estado)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Pais)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Pais)
+                    @Html.ValidationMessageFor(model => model.Pais)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Cep)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Cep)
+                    @Html.ValidationMessageFor(model => model.Cep)
+                </div>
+            </td>
+            <td valign="top">
+                <legend>Telefone</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DDI)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DDI)
+                    @Html.ValidationMessageFor(model => model.DDI)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DDD)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DDD)
+                    @Html.ValidationMessageFor(model => model.DDD)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.NumeroTelefone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NumeroTelefone)
+                    @Html.ValidationMessageFor(model => model.NumeroTelefone)<br/>
+                    <input type="submit" value="Confirmar" />
+                </div>  
+            </td>
+        </table>
+        
+    </fieldset>
+}
+
+

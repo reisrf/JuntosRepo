@@ -14,7 +14,7 @@ namespace Juntos.Model
         {
         }
 
-        public EnumFormaPagamento FormaPagamento { get; set; }
+        public virtual EnumFormaPagamento FormaPagamento { get; set; }
 
        
         public long Codigo { get; set; }
@@ -23,6 +23,6 @@ namespace Juntos.Model
 
         public decimal Valor { get; set; }
 
-        public EnumStatusPagamento Status { get; set; }
+        public virtual EnumStatusPagamento Status { get; set; }
     }
 }

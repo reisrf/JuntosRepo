@@ -21,11 +21,11 @@
     <MetadataSource Address="http://localhost:3815/ControladorDePagamentoService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ControladorDePagamentoService.disco" MetadataType="Disco" ID="b3e99df7-69b8-4f8c-a932-3eecddcb1f03" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?disco" />
-    <MetadataFile FileName="ControladorDePagamentoService.xsd" MetadataType="Schema" ID="f19e5749-e801-4d66-9c2a-87ec68766cf4" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?xsd=xsd0" />
     <MetadataFile FileName="ControladorDePagamentoService1.xsd" MetadataType="Schema" ID="1382a21e-6447-4d05-b325-85ba769c7124" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ControladorDePagamentoService2.xsd" MetadataType="Schema" ID="656036d0-de84-493b-9c4d-bd5823a5d025" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ControladorDePagamentoService.disco" MetadataType="Disco" ID="b3e99df7-69b8-4f8c-a932-3eecddcb1f03" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?disco" />
     <MetadataFile FileName="PagamentoService.wsdl" MetadataType="Wsdl" ID="9ed92b36-38a7-403c-9f54-6be70597d416" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?wsdl" />
+    <MetadataFile FileName="ControladorDePagamentoService2.xsd" MetadataType="Schema" ID="656036d0-de84-493b-9c4d-bd5823a5d025" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ControladorDePagamentoService.xsd" MetadataType="Schema" ID="f19e5749-e801-4d66-9c2a-87ec68766cf4" SourceId="1" SourceUrl="http://localhost:3815/ControladorDePagamentoService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -5,6 +5,7 @@ using System.Text;
 using ConsoleApplication1.proxy;
 
 
+
 namespace PessoaConsoleTest
 {
     class Program
@@ -75,6 +76,8 @@ namespace PessoaConsoleTest
             string inscricao = Console.ReadLine();
             Console.Write("email : ");
             string email = Console.ReadLine();
+            Console.Write("Senha : ");
+            string senha = Console.ReadLine();
             Console.Write("Tipo de Pessoa ([F]isica ou [J]uridica) : ");
             string tipopessoa = Console.ReadLine();
             
@@ -83,7 +86,8 @@ namespace PessoaConsoleTest
             pessoa.Enderecos = new List<EnderecoDTO>();
             
             pessoa.Nome = nome;
-            pessoa.CpfCnpj = Convert.ToInt64(inscricao);
+            pessoa.Inscricao = Convert.ToInt64(inscricao);
+            pessoa.Senha = senha;
             pessoa.Email = email;
             
             if (tipopessoa.Equals("f") || tipopessoa.Equals("F"))
@@ -127,6 +131,8 @@ namespace PessoaConsoleTest
             string inscricao = Console.ReadLine();
             Console.Write("email : ");
             string email = Console.ReadLine();
+            Console.Write("Senha : ");
+            string senha = Console.ReadLine();
             Console.Write("Tipo de Pessoa ([F]isica ou [J]uridica) : ");
             string tipopessoa = Console.ReadLine();
 
@@ -135,7 +141,8 @@ namespace PessoaConsoleTest
             pessoa.Enderecos = new List<EnderecoDTO>();
 
             pessoa.Nome = nome;
-            pessoa.CpfCnpj = Convert.ToInt64(inscricao);
+            pessoa.Inscricao = Convert.ToInt64(inscricao);
+            pessoa.Senha = senha;
             pessoa.Email = email;
 
             if (tipopessoa.Equals("f") || tipopessoa.Equals("F"))

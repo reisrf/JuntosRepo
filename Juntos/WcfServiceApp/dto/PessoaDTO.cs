@@ -12,7 +12,10 @@ namespace Juntos.Apresentacao.WcfServiceApp.dto
         public string Email { get; set; }
 
         [DataMember]
-        public long CpfCnpj { get; set; }
+        public long Inscricao { get; set; }
+
+        [DataMember]
+        public string Senha { get; set; }
 
         [DataMember]
         public string Nome { get; set; }

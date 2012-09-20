@@ -35,14 +35,7 @@ namespace Juntos.Service
             if (listPessoa!=null)
             {
                 return listPessoa.FirstOrDefault();
-                /*foreach (TPessoa pessoa in listPessoa)
-                {
-                    if (pessoa.Senha == senha)
-                    {
-                        return pessoa;
-                    }
-                }*/
-                
+               
             }
             return null;
 

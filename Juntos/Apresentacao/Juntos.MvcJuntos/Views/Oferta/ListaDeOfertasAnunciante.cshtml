@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Juntos.Model.Oferta>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<table border="2">
+     @Html.ActionLink("Criar nova Oferta", "Criar")
+</table>
+<table border="2">
+     @Html.ActionLink("Ofertas a Publicar", "ListaDeOfertasAnuncianteAPublicar")
+</table>
+<table border="2">
+    @Html.ActionLink("Ofertas Publicadas", "ListaDeOfertasAnunciantePublicadas")
+</table>
+<table border="2">
+    @Html.ActionLink("Ofertas Finalizadas", "ListaDeOfertasAnuncianteFinalizadas")
+</table>
+<br/>
+<div>
+     @Html.ActionLink("Voltar", "../Home/Index")
+</div>
+

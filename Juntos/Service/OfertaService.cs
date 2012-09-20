@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Juntos.IRepository;
 using Juntos.IService;
 using Juntos.Model;
+using Juntos.Model.Enums;
 
 namespace Juntos.Service
 {
@@ -60,6 +62,21 @@ namespace Juntos.Service
             cupom.DataUtilizacao = DateTime.Now;
 
             this.Repository.Atualizar(oferta);
+        }
+
+        public List<Oferta> BuscarPorAnunciante(Anunciante anunciante)
+        {
+            return this.Repository.Consultar(o => o.Anunciante.Equals(anunciante));
+        }
+
+        public List<Oferta> BuscarPorAnuncianteEStatus(Anunciante anunciante, EnumStatusOferta status)
+        {
+            return this.Repository.Consultar(o => o.Anunciante.Equals(anunciante) && o.Status == status);
+        }
+
+        public List<Oferta> BuscarPorStatus( EnumStatusOferta status)
+        {
+            return this.Repository.Consultar(o =>  o.Status == status);
         }
     }
 }

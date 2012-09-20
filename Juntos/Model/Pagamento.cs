@@ -16,6 +16,11 @@ namespace Juntos.Model
 
         public virtual EnumFormaPagamento FormaPagamento { get; set; }
 
+        public virtual int FormaPagamentoId
+        {
+            get { return (int)FormaPagamento; }
+            set { FormaPagamento = (EnumFormaPagamento)value; }
+        }
        
         public long Codigo { get; set; }
 

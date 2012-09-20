@@ -78,7 +78,7 @@ namespace Juntos.MvcJuntos.Controllers
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
             consumidorService.Adicionar(consumidor);
 
-            FormsAuthentication.SetAuthCookie(consumidor.Email, true);
+            System.Web.HttpContext.Current.Session["consumidorId"] = consumidor.Id.ToString();
             return RedirectToAction(@"../Oferta");
         }
 
@@ -112,7 +112,7 @@ namespace Juntos.MvcJuntos.Controllers
             IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
             consumidorService.Adicionar(consumidor);
 
-            FormsAuthentication.SetAuthCookie(consumidor.Email, true);
+            System.Web.HttpContext.Current.Session["consumidorId"] = consumidor.Id.ToString();
             return RedirectToAction(@"../Oferta");
         }
 

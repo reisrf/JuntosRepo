@@ -1,0 +1,94 @@
+﻿@model Juntos.MvcJuntos.Models.OfertaDTO
+
+@{
+    ViewBag.Title = "Criar";
+}
+
+<h2>Criar nova Oferta</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/methods_pt.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Nova Oferta</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataValidadeCupons)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataValidadeCupons)
+            @Html.ValidationMessageFor(model => model.DataValidadeCupons)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataExpiracao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataExpiracao)
+            @Html.ValidationMessageFor(model => model.DataExpiracao)
+        </div>
+
+        
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorCupons)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorCupons)
+            @Html.ValidationMessageFor(model => model.ValorCupons)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Condicoes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Condicoes)
+            @Html.ValidationMessageFor(model => model.Condicoes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco)
+            @Html.ValidationMessageFor(model => model.Endereco)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telefone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telefone)
+            @Html.ValidationMessageFor(model => model.Telefone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumeroMaximoCupons)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumeroMaximoCupons)
+            @Html.ValidationMessageFor(model => model.NumeroMaximoCupons)
+        </div>
+
+        
+
+        <p>
+            <input type="submit" value="Criar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

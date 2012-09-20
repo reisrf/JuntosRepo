@@ -1,15 +1,14 @@
 ﻿@model IEnumerable<Juntos.Model.Oferta>
 @{
-    Layout = "~/Views/Shared/_NoHeaderLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ListaDeOfertasAnunciantePublicadas";
     
 }
 
-
-<h2>Nossas ofertas ativas no momento :</h2>
+<h2>Ofertas publicadas :</h2>
 <table>
     <tr>
         <th>
@@ -19,10 +18,10 @@
             Condições
         </th>
         <th>
-            Preço
+            ValorCupons
         </th>
         <th>
-            Encerra em
+            Data Expiração
         </th>
     </tr>
 
@@ -43,9 +42,11 @@
         </td>
         <td>
             @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) 
-            @Html.ActionLink("Comprar", "Comprar", new { id = item.Id }) |
         </td>
     </tr>
 }
 
 </table>
+<div>
+    @Html.ActionLink("Voltar", "ListaDeOfertasAnunciante")
+</div>

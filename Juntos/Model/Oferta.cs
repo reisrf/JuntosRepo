@@ -20,11 +20,16 @@ namespace Juntos.Model
             this.Anunciante = anunciante;
         }
 
-        //Não lembrei o que era...
-        //public EnumTipoOferta Tipo { get; set; }
-        public Anunciante Anunciante { get; set; }
 
-        public EnumStatusOferta Status { get; set; }
+        public Anunciante Anunciante { get; set; }
+        
+        public virtual EnumStatusOferta Status { get; set; }
+
+        public virtual int StatusOfertaId
+        {
+            get { return (int) Status; }
+            set { Status = (EnumStatusOferta) value; }
+        }
 
         public DateTime? DataPublicacao { get; set; }
 

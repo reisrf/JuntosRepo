@@ -77,8 +77,7 @@ namespace Juntos.MvcJuntos.Controllers
             telefone.Numero = pessoa.NumeroTelefone;
             IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
             anuncianteService.Adicionar(anunciante);
-
-            FormsAuthentication.SetAuthCookie(anunciante.Email, true);
+            System.Web.HttpContext.Current.Session["anuncianteId"] = anunciante.Id.ToString();
             return RedirectToAction(@"../Oferta");
         }
 
@@ -112,8 +111,9 @@ namespace Juntos.MvcJuntos.Controllers
             IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
             anuncianteService.Adicionar(anunciante);
 
-            FormsAuthentication.SetAuthCookie(anunciante.Email, true);
-            return RedirectToAction(@"../Oferta");
+            System.Web.HttpContext.Current.Session["anuncianteId"] = anunciante.Id.ToString();
+
+            return RedirectToAction(@"../Oferta/ListaDeOfertasAnunciante");
         }
 
         public ActionResult Login()
@@ -131,13 +131,13 @@ namespace Juntos.MvcJuntos.Controllers
 
             if (anunciante != null)
             {
-                FormsAuthentication.SetAuthCookie(anunciante.Email, true);
-                return RedirectToAction(@"../Oferta");
+                System.Web.HttpContext.Current.Session["anuncianteId"] = anunciante.Id.ToString();
+                return RedirectToAction(@"../Oferta/ListaDeOfertasAnunciante");
             }
             else
             {
                 //Add message
-                ModelState.AddModelError("", "Email ou senha incorretos. Por favor, tente novamente.");
+               ModelState.AddModelError("", "Email ou senha incorretos. Por favor, tente novamente.");
                 return View();
             }
 

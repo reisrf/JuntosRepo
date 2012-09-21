@@ -132,6 +132,7 @@ namespace Juntos.MvcJuntos.Controllers
             if (anunciante != null)
             {
                 System.Web.HttpContext.Current.Session["anuncianteId"] = anunciante.Id.ToString();
+                System.Web.HttpContext.Current.Session["consumidorId"] = string.Empty;
                 return RedirectToAction(@"../Oferta/ListaDeOfertasAnunciante");
             }
             else

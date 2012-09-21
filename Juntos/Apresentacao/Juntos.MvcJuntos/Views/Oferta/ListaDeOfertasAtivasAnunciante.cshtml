@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Juntos.Model.Oferta>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+
+<h2>Nossas ofertas ativas no momento :</h2>
+<table>
+    <tr>
+        <th>
+            Descrição
+        </th>
+        <th>
+            Condições
+        </th>
+        <th>
+            Preço
+        </th>
+        <th>
+            Encerra em
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Condicoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorCupons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataExpiracao)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhes", "DetalhesAnunciante", new { id = item.Id }) 
+               
+            </td>
+        </tr>
+    }
+
+</table>
+

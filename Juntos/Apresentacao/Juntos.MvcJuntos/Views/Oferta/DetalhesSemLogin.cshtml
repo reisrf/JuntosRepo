@@ -1,0 +1,56 @@
+﻿@model Juntos.Model.Oferta
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Publish";
+    
+}
+
+
+<fieldset>
+    <legend>Oferta</legend>
+
+    <div class="display-label">Descrição</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+
+    <div class="display-label">Condições</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Condicoes)
+    </div>
+
+    <div class="display-label">Data Expiração</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataExpiracao)
+    </div>
+
+    <div class="display-label">Data de Validade dos Cupons</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataValidadeCupons)
+    </div>
+    <div class="display-label">Endereço</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco)
+    </div>
+
+    <div class="display-label">Telefone</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefone)
+    </div>
+
+    <div class="display-label">Número Máximo de Cupons</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumeroMaximoCupons)
+    </div>
+
+    <div class="display-label">Valor Cupons</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorCupons)
+    </div>
+
+
+</fieldset>
+        @Html.ActionLink("Voltar", "../Home/Index")

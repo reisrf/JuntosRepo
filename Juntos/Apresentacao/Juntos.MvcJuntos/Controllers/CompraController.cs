@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Framework;
 using Juntos.IService;
 using Juntos.Model;
+using Juntos.MvcJuntos.Models;
 
 namespace Juntos.MvcJuntos.Controllers
 {
@@ -37,5 +38,69 @@ namespace Juntos.MvcJuntos.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Comprar(string id)
+        {
+            long ofertaId = long.Parse(id);
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            Oferta oferta = ofertaService.BuscarPorId(ofertaId);
+            System.Web.HttpContext.Current.Session["ofertaId"] = oferta.Id.ToString();
+            long consumidorId = long.Parse(System.Web.HttpContext.Current.Session["consumidorId"].ToString());
+            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
+            Consumidor consumidor = consumidorService.BuscarPorId(consumidorId);
+
+            ICompraService compraService = typeof(ICompraService).Fabricar();
+            CompraDTO compraDTO = new CompraDTO();
+            compraDTO.Consumidor = consumidor;
+            compraDTO.Oferta = oferta;
+            return View(compraDTO);
+            
+        }
+
+        [HttpPost]
+        public ActionResult Comprar(Models.CompraDTO compra)
+        {
+            if (ModelState.IsValid)
+            {
+                Compra newCompra = new Compra();
+                long consumidorId = long.Parse(System.Web.HttpContext.Current.Session["consumidorId"].ToString());
+                IConsumidorService consumidorService = typeof (IConsumidorService).Fabricar();
+                Consumidor consumidor = consumidorService.BuscarPorId(consumidorId);
+
+                long ofertaId = long.Parse(System.Web.HttpContext.Current.Session["ofertaId"].ToString());
+                IOfertaService ofertaService = typeof (IOfertaService).Fabricar();
+                Oferta oferta = ofertaService.BuscarPorId(ofertaId);
+
+                ICompraService compraService = typeof (ICompraService).Fabricar();
+                newCompra = compraService.ComprarOferta(consumidor, oferta, compra.nrcupons);
+
+
+
+
+                return RedirectToAction(@"PagarCompra");
+            }
+            return View(compra);
+        }
+
+
+        public ActionResult PagarCompra()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PagarCompra(Models.CompraDTO compraDTO)
+        {
+            if (ModelState.IsValid)
+            {
+                ICompraService compraService = typeof(ICompraService).Fabricar();
+
+                Compra compra = compraService.BuscarPorId(compraDTO.id);
+
+                compraService.PagarCompra(compra,  compraDTO.FormaPagamento);
+
+                return RedirectToAction(@"../Compra/ListaDeComprasConsumidor");
+            }
+            return View(compraDTO);
+        }
     }
 }

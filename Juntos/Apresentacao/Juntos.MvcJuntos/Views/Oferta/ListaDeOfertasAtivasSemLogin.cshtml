@@ -9,7 +9,7 @@
 }
 
 
-<h2>Nossas ofertas ativas no momento :</h2>
+<h2>Nossas ofertas ativas no momento. Para comprar se cadastre e entre no Juntos! </h2>
 <table>
     <tr>
         <th>
@@ -42,8 +42,8 @@
             @Html.DisplayFor(modelItem => item.DataExpiracao)
         </td>
         <td>
-            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) 
-            @Html.ActionLink("Comprar", "Comprar", new { id = item.Id }) |
+            @Html.ActionLink("Detalhes", "DetalhesSemLogin", new { id = item.Id }) 
+            
         </td>
     </tr>
 }

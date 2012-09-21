@@ -131,8 +131,9 @@ namespace Juntos.MvcJuntos.Controllers
 
             if (consumidor != null)
             {
-                FormsAuthentication.SetAuthCookie(consumidor.Email, true);
-                return RedirectToAction(@"../Oferta");
+                System.Web.HttpContext.Current.Session["consumidorId"] = consumidor.Id.ToString();
+                System.Web.HttpContext.Current.Session["anuncianteId"] = string.Empty;
+                return RedirectToAction(@"../Oferta/ListaDeOfertasAtivasConsumidor");
             }
             else
             {

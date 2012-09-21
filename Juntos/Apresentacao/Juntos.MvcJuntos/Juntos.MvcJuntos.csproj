@@ -71,6 +71,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompraDTO.cs" />
     <Compile Include="Models\OfertaDTO.cs" />
     <Compile Include="Models\PessoaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Compra\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -223,7 +223,7 @@
     <Content Include="Views\Shared\_NoHeaderLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Oferta\ListaDeOfertasAtivas.cshtml" />
+    <Content Include="Views\Oferta\ListaDeOfertasAtivasConsumidor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Oferta\Criar.cshtml" />
@@ -244,7 +244,28 @@
     <Content Include="Views\Oferta\Publicar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Oferta\Detalhes.cshtml" />
+    <Content Include="Views\Oferta\DetalhesConsumidor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Oferta\DetalhesSemLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Oferta\ListaDeOfertasAtivasSemLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Oferta\DetalhesAnunciante.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Oferta\ListaDeOfertasAtivasAnunciante.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Compra\Comprar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Compra\PagarCompra.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Compra\ListaDeComprasConsumidor.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

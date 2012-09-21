@@ -39,8 +39,23 @@ namespace Juntos.MvcJuntos.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ListaDeOfertasAtivasConsumidor()
+        {
 
-        public ActionResult ListaDeOfertasAtivas()
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            List<Oferta> ofertas = ofertaService.BuscarPorStatus(EnumStatusOferta.Publicada);
+
+            return View(ofertas);
+        }
+        public ActionResult ListaDeOfertasAtivasAnunciante()
+        {
+
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            List<Oferta> ofertas = ofertaService.BuscarPorStatus(EnumStatusOferta.Publicada);
+
+            return View(ofertas);
+        }
+        public ActionResult ListaDeOfertasAtivasSemLogin()
         {
 
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
@@ -85,16 +100,23 @@ namespace Juntos.MvcJuntos.Controllers
 
         public ActionResult ListaDeOfertasAnunciante()
         {
-            long anuncianteId = long.Parse(System.Web.HttpContext.Current.Session["anuncianteId"].ToString());
-            IAnuncianteService anuncianteService = typeof(IAnuncianteService).Fabricar();
-            Anunciante anunciante = anuncianteService.BuscarPorId(anuncianteId);
+            if (System.Web.HttpContext.Current.Session["anuncianteId"] == null ||  System.Web.HttpContext.Current.Session["anuncianteId"].ToString() == string.Empty)
+            {
+                return RedirectToAction(@"../Home/Index");
+            }
+            else
+            {
+                long anuncianteId = long.Parse(System.Web.HttpContext.Current.Session["anuncianteId"].ToString());
+                IAnuncianteService anuncianteService = typeof (IAnuncianteService).Fabricar();
+                Anunciante anunciante = anuncianteService.BuscarPorId(anuncianteId);
 
-            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
-            List<Oferta> ofertas = ofertaService.BuscarPorAnunciante(anunciante);
+                IOfertaService ofertaService = typeof (IOfertaService).Fabricar();
+                List<Oferta> ofertas = ofertaService.BuscarPorAnunciante(anunciante);
 
-            
 
-            return View(ofertas);
+
+                return View(ofertas);
+            }
         }
 
         public ActionResult ListaDeOfertasAnuncianteAPublicar()
@@ -149,7 +171,7 @@ namespace Juntos.MvcJuntos.Controllers
             
         }
 
-        public ActionResult Detalhes(long id)
+        public ActionResult DetalhesAnunciante(long id)
         {
 
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
@@ -157,6 +179,48 @@ namespace Juntos.MvcJuntos.Controllers
             Oferta oferta = ofertaService.BuscarPorId(id);
 
             return View(oferta);
+
+        }
+
+        public ActionResult DetalhesConsumidor(long id)
+        {
+
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+
+            Oferta oferta = ofertaService.BuscarPorId(id);
+
+            return View(oferta);
+
+        }
+
+        public ActionResult DetalhesSemLogin(long id)
+        {
+
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+
+            Oferta oferta = ofertaService.BuscarPorId(id);
+
+            return View(oferta);
+
+        }
+
+
+        public ActionResult ComprarOferta(long id)
+        {
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+
+            Oferta oferta = ofertaService.BuscarPorId(id);
+
+            return View(oferta);
+
+        }
+
+        [HttpPost, ActionName("Publicar")]
+        public ActionResult ComprarOfertaConfirmado(long id)
+        {
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            ofertaService.Publicar(id);
+            return RedirectToAction(@"../Oferta/ListaDeOfertasAnuncianteAPublicar");
 
         }
 

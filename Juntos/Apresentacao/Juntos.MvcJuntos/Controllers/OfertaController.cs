@@ -20,12 +20,14 @@ namespace Juntos.MvcJuntos.Controllers
             List<Oferta> ofertas = ofertaService.RetornarTodos();
             return View(ofertas);
         }
+
         public ActionResult Edit(long id)
         {
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
             Oferta oferta = ofertaService.BuscarPorId(id);
             return View(oferta);
         }
+
         [HttpPost]
         public ActionResult Edit(Oferta oferta)
         {
@@ -47,6 +49,7 @@ namespace Juntos.MvcJuntos.Controllers
 
             return View(ofertas);
         }
+
         public ActionResult ListaDeOfertasAtivasAnunciante()
         {
 
@@ -55,6 +58,7 @@ namespace Juntos.MvcJuntos.Controllers
 
             return View(ofertas);
         }
+
         public ActionResult ListaDeOfertasAtivasSemLogin()
         {
 
@@ -63,7 +67,6 @@ namespace Juntos.MvcJuntos.Controllers
 
             return View(ofertas);
         }
-
 
         public ActionResult Criar()
         {
@@ -204,7 +207,6 @@ namespace Juntos.MvcJuntos.Controllers
 
         }
 
-
         public ActionResult ComprarOferta(long id)
         {
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
@@ -215,7 +217,7 @@ namespace Juntos.MvcJuntos.Controllers
 
         }
 
-        [HttpPost, ActionName("Publicar")]
+        [HttpPost, ActionName("Comprar")]
         public ActionResult ComprarOfertaConfirmado(long id)
         {
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();

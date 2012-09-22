@@ -76,15 +76,28 @@ namespace Juntos.MvcJuntos.Controllers
 
 
 
-                return RedirectToAction(@"PagarCompra");
+                return RedirectToAction(@"PagarCompra/" + compra.id.ToString());
             }
             return View(compra);
         }
 
 
-        public ActionResult PagarCompra()
+        public ActionResult PagarCompra(string id)
         {
-            return View();
+            long compraId = long.Parse(id);
+            ICompraService compraService = typeof(ICompraService).Fabricar();
+            Compra compra = compraService.BuscarPorId(compraId);
+
+            long ofertaId = long.Parse(System.Web.HttpContext.Current.Session["ofertaId"].ToString());
+            IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
+            Oferta oferta = ofertaService.BuscarPorId(ofertaId);
+
+            CompraDTO compraDTO = new CompraDTO();
+            compraDTO.Consumidor = compra.Consumidor;
+            compraDTO.Oferta = compra.Cupons[0].Oferta;
+            compraDTO.ValorTotal = compra.ValorTotal;
+
+            return View(compraDTO);
         }
 
         [HttpPost]

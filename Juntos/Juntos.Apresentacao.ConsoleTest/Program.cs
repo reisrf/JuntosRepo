@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Juntos.Apresentacao.ConsoleTest.wsProxy;
+using Juntos.Apresentacao.ConsoleTest.proxy;
+
 
 namespace Juntos.Apresentacao.ConsoleTest
 {
@@ -104,7 +105,7 @@ namespace Juntos.Apresentacao.ConsoleTest
 
             anunciante.Nome = nome;
             anunciante.Email = email;
-            anunciante.CpfCnpj = inscricao;
+            anunciante.Inscricao = inscricao;
             anunciante.Tipo = tipopessoa;
             
             EnderecoDTO endereco = new EnderecoDTO();
@@ -136,7 +137,7 @@ namespace Juntos.Apresentacao.ConsoleTest
 
             consumidor.Nome = nome;
             consumidor.Email = email;
-            consumidor.CpfCnpj = inscricao;
+            consumidor.Inscricao = inscricao;
             consumidor.Tipo = tipopessoa;
 
             
@@ -213,17 +214,8 @@ namespace Juntos.Apresentacao.ConsoleTest
             ofertaA.ValorCupons = valor;
             ofertaA.NumeroMaximoCupons = nrcupons;
 
-            EnderecoDTO endereco = new EnderecoDTO();
-            endereco.Logradouro = "Rua Oferta numero 10";
-            endereco.Numero = 30;
-            endereco.Complemento = "Apto 10";
-            endereco.Bairro = "Cantao Oferta";
-            endereco.Cidade = "Malnicipio Oferta";
-            endereco.Estado = "RJ";
-            endereco.Cep = "11111-111";
-            endereco.Pais = "Brasil";
 
-            ofertaA.Endereco = endereco;
+            ofertaA.Endereco = "Rua Oferta numero 10";
           
 
             return ofertaA;

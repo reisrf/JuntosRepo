@@ -20,6 +20,7 @@ namespace Juntos.Service
             
             var compra = new Compra(consumidor);
             var cupons = oferta.GerarCupons(quantidadeCupons);
+            compra.Consumidor = consumidor;
             compra.Cupons.AddRange(cupons);
             compra.DataCompra = DateTime.Now;
 

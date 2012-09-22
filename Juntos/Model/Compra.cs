@@ -9,6 +9,25 @@ namespace Juntos.Model
     {
         private decimal? _valorTotal;
 
+        public DateTime DataCompra { get; set; }
+
+        public Consumidor Consumidor { get; set; }
+
+        public virtual List<Cupom> Cupons { get; set; }
+
+        public virtual List<Pagamento> Pagamentos { get; set; }
+
+        public decimal ValorTotal
+        {
+            get { return this._valorTotal ?? this.Cupons.Sum(c => c.Valor); }
+            set { this._valorTotal = value; }
+        }
+
+        public bool IsPaga()
+        {
+            return this.Pagamentos.Any(p => p.Status == EnumStatusPagamento.Aprovado);
+        }
+
         public Compra()
         {
             this.Cupons = new List<Cupom>();
@@ -18,25 +37,6 @@ namespace Juntos.Model
         public Compra(Consumidor consumidor) : this()
         {
             this.Consumidor = consumidor;
-        }
-
-        public decimal ValorTotal
-        {
-            get { return this._valorTotal ?? this.Cupons.Sum(c => c.Valor); } 
-            set { this._valorTotal = value; }
-        }
-
-        public DateTime DataCompra { get; set; }
-
-        public Consumidor Consumidor { get; set; }
-
-        public virtual List<Cupom> Cupons { get; set; }
-
-        public virtual List<Pagamento> Pagamentos { get; set; }
-
-        public bool IsPaga()
-        {
-            return this.Pagamentos.Any(p => p.Status == EnumStatusPagamento.Aprovado);
         }
 
         public Pagamento Pagar(EnumFormaPagamento formaPagamento)

@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\wsProxy\Reference.cs">
+    <Compile Include="Service References\proxy\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -58,34 +58,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\wsProxy\ControladorDePagamentoService.xsd">
+    <None Include="Service References\proxy\ControladorDePagamentoService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\ControladorDePagamentoService1.xsd">
+    <None Include="Service References\proxy\ControladorDePagamentoService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\ControladorDePagamentoService2.xsd">
+    <None Include="Service References\proxy\ControladorDePagamentoService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\juntos.aplicacao.wsPagamentoClient.wsProxy.Pagamento.datasource">
+    <None Include="Service References\proxy\juntos.aplicacao.wsPagamentoClient.proxy.Pagamento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\PagamentoService.wsdl" />
+    <None Include="Service References\proxy\PagamentoService.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\wsProxy\" />
+    <WCFMetadataStorage Include="Service References\proxy\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\ControladorDePagamentoService.disco" />
+    <None Include="Service References\proxy\ControladorDePagamentoService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\configuration91.svcinfo" />
+    <None Include="Service References\proxy\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\configuration.svcinfo" />
+    <None Include="Service References\proxy\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\Reference.svcmap">
+    <None Include="Service References\proxy\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

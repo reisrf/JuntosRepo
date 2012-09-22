@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using juntos.aplicacao.wsPagamentoClient.wsProxy;
+using juntos.aplicacao.wsPagamentoClient.proxy;
 
 namespace juntos.aplicacao.wsPagamentoClient
 {

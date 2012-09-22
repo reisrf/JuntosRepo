@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
+namespace Juntos.Apresentacao.ConsoleTest.proxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,13 +17,13 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConsumidorDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class ConsumidorDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.PessoaDTO {
+    public partial class ConsumidorDTO : Juntos.Apresentacao.ConsoleTest.proxy.PessoaDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO> ComprasField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO> ComprasField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO> Compras {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO> Compras {
             get {
                 return this.ComprasField;
             }
@@ -40,14 +40,14 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntidadeDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.TelefoneDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.PagamentoDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.PessoaDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.EnderecoDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.TelefoneDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.PagamentoDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.PessoaDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO))]
     public partial class EntidadeDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -93,7 +93,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EnderecoDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class EnderecoDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
+    public partial class EnderecoDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string BairroField;
@@ -228,7 +228,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TelefoneDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class TelefoneDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
+    public partial class TelefoneDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short DDDField;
@@ -283,25 +283,25 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompraDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class CompraDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
+    public partial class CompraDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO ConsumidorDtoField;
+        private Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO ConsumidorDtoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> CuponsField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> CuponsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DataCompraField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.PagamentoDTO> PagamentosField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.PagamentoDTO> PagamentosField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValorTotalField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO ConsumidorDto {
+        public Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO ConsumidorDto {
             get {
                 return this.ConsumidorDtoField;
             }
@@ -314,7 +314,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> Cupons {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> Cupons {
             get {
                 return this.CuponsField;
             }
@@ -340,7 +340,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.PagamentoDTO> Pagamentos {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.PagamentoDTO> Pagamentos {
             get {
                 return this.PagamentosField;
             }
@@ -370,7 +370,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CupomDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class CupomDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
+    public partial class CupomDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> DataUtilizacaoField;
@@ -379,7 +379,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         private System.DateTime DataValidadeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO OfertaDtoField;
+        private Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO OfertaDtoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValorField;
@@ -411,7 +411,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO OfertaDto {
+        public Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO OfertaDto {
             get {
                 return this.OfertaDtoField;
             }
@@ -441,16 +441,16 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OfertaDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class OfertaDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
+    public partial class OfertaDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO AnuncianteDtoField;
+        private Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO AnuncianteDtoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CondicoesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> CuponsGeradosField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> CuponsGeradosField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DataExpiracaoField;
@@ -468,19 +468,22 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         private string DescricaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO EnderecoField;
+        private string EnderecoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroMaximoCuponsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnumStatusOferta StatusField;
+        private Juntos.Apresentacao.ConsoleTest.proxy.EnumStatusOferta StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelefoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValorCuponsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO AnuncianteDto {
+        public Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO AnuncianteDto {
             get {
                 return this.AnuncianteDtoField;
             }
@@ -506,7 +509,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> CuponsGerados {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> CuponsGerados {
             get {
                 return this.CuponsGeradosField;
             }
@@ -584,7 +587,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO Endereco {
+        public string Endereco {
             get {
                 return this.EnderecoField;
             }
@@ -610,7 +613,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnumStatusOferta Status {
+        public Juntos.Apresentacao.ConsoleTest.proxy.EnumStatusOferta Status {
             get {
                 return this.StatusField;
             }
@@ -618,6 +621,19 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Telefone {
+            get {
+                return this.TelefoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelefoneField, value) != true)) {
+                    this.TelefoneField = value;
+                    this.RaisePropertyChanged("Telefone");
                 }
             }
         }
@@ -640,7 +656,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PagamentoDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    public partial class PagamentoDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
+    public partial class PagamentoDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long CodigoField;
@@ -649,10 +665,10 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         private System.DateTime DataPagamentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnumFormaPagamento FormaPagamentoField;
+        private Juntos.Apresentacao.ConsoleTest.proxy.EnumFormaPagamento FormaPagamentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnumStatusPagamento StatusField;
+        private Juntos.Apresentacao.ConsoleTest.proxy.EnumStatusPagamento StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValorField;
@@ -684,7 +700,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnumFormaPagamento FormaPagamento {
+        public Juntos.Apresentacao.ConsoleTest.proxy.EnumFormaPagamento FormaPagamento {
             get {
                 return this.FormaPagamentoField;
             }
@@ -697,7 +713,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnumStatusPagamento Status {
+        public Juntos.Apresentacao.ConsoleTest.proxy.EnumStatusPagamento Status {
             get {
                 return this.StatusField;
             }
@@ -727,40 +743,30 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PessoaDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto", IsReference=true)]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO))]
-    public partial class PessoaDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.EntidadeDTO {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long CpfCnpjField;
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO))]
+    public partial class PessoaDTO : Juntos.Apresentacao.ConsoleTest.proxy.EntidadeDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO> EnderecosField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.EnderecoDTO> EnderecosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long InscricaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.TelefoneDTO> TelefonesField;
+        private string SenhaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Juntos.Apresentacao.ConsoleTest.wsProxy.EnumTipoPessoa TipoField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.TelefoneDTO> TelefonesField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long CpfCnpj {
-            get {
-                return this.CpfCnpjField;
-            }
-            set {
-                if ((this.CpfCnpjField.Equals(value) != true)) {
-                    this.CpfCnpjField = value;
-                    this.RaisePropertyChanged("CpfCnpj");
-                }
-            }
-        }
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Juntos.Apresentacao.ConsoleTest.proxy.EnumTipoPessoa TipoField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Email {
@@ -776,7 +782,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.EnderecoDTO> Enderecos {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.EnderecoDTO> Enderecos {
             get {
                 return this.EnderecosField;
             }
@@ -784,6 +790,19 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
                 if ((object.ReferenceEquals(this.EnderecosField, value) != true)) {
                     this.EnderecosField = value;
                     this.RaisePropertyChanged("Enderecos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long Inscricao {
+            get {
+                return this.InscricaoField;
+            }
+            set {
+                if ((this.InscricaoField.Equals(value) != true)) {
+                    this.InscricaoField = value;
+                    this.RaisePropertyChanged("Inscricao");
                 }
             }
         }
@@ -802,7 +821,20 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.TelefoneDTO> Telefones {
+        public string Senha {
+            get {
+                return this.SenhaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenhaField, value) != true)) {
+                    this.SenhaField = value;
+                    this.RaisePropertyChanged("Senha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.TelefoneDTO> Telefones {
             get {
                 return this.TelefonesField;
             }
@@ -815,7 +847,7 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.EnumTipoPessoa Tipo {
+        public Juntos.Apresentacao.ConsoleTest.proxy.EnumTipoPessoa Tipo {
             get {
                 return this.TipoField;
             }
@@ -832,13 +864,13 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AnuncianteDTO", Namespace="http://schemas.datacontract.org/2004/07/Juntos.Apresentacao.WcfServiceApp.dto")]
     [System.SerializableAttribute()]
-    public partial class AnuncianteDTO : Juntos.Apresentacao.ConsoleTest.wsProxy.PessoaDTO {
+    public partial class AnuncianteDTO : Juntos.Apresentacao.ConsoleTest.proxy.PessoaDTO {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO> OfertasField;
+        private System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO> OfertasField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO> Ofertas {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO> Ofertas {
             get {
                 return this.OfertasField;
             }
@@ -911,56 +943,56 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="wsProxy.IJuntosService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="proxy.IJuntosService")]
     public interface IJuntosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodosConsumidores", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodosConsumidoresResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO> RetornarTodosConsumidores();
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO> RetornarTodosConsumidores();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarConsumidorPeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarConsumidorPeloIdResponse")]
-        Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO ConsultarConsumidorPeloId(long id);
+        Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO ConsultarConsumidorPeloId(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/SalvarConsumidor", ReplyAction="http://tempuri.org/IJuntosService/SalvarConsumidorResponse")]
-        void SalvarConsumidor(Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO consumidor);
+        void SalvarConsumidor(Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO consumidor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodosAnunciantes", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodosAnunciantesResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO> RetornarTodosAnunciantes();
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO> RetornarTodosAnunciantes();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarAnunciantePeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarAnunciantePeloIdResponse")]
-        Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO ConsultarAnunciantePeloId(long id);
+        Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO ConsultarAnunciantePeloId(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarAnunciantePeloEmail", ReplyAction="http://tempuri.org/IJuntosService/ConsultarAnunciantePeloEmailResponse")]
-        Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO ConsultarAnunciantePeloEmail(string email);
+        Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO ConsultarAnunciantePeloEmail(string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/SalvarAnunciante", ReplyAction="http://tempuri.org/IJuntosService/SalvarAnuncianteResponse")]
-        void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO anunciante);
+        void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO anunciante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasOfertasPorAnunciante", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasOfertasPorAnuncianteResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO> RetornarTodasOfertasPorAnunciante(long anuncianteid);
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO> RetornarTodasOfertasPorAnunciante(long anuncianteid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarOfertaPeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarOfertaPeloIdResponse")]
-        Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO ConsultarOfertaPeloId(long id);
+        Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO ConsultarOfertaPeloId(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/SalvarOferta", ReplyAction="http://tempuri.org/IJuntosService/SalvarOfertaResponse")]
-        void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO oferta, long idConsumidor);
+        void SalvarOferta(Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO oferta, long idConsumidor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasComprasPorConsumidor", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasComprasPorConsumidorResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO> RetornarTodasComprasPorConsumidor(long consumidorid);
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO> RetornarTodasComprasPorConsumidor(long consumidorid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasCompras", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasComprasResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO> RetornarTodasCompras();
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO> RetornarTodasCompras();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsultarCompraPeloId", ReplyAction="http://tempuri.org/IJuntosService/ConsultarCompraPeloIdResponse")]
-        Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO ConsultarCompraPeloId(long id);
+        Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO ConsultarCompraPeloId(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/SalvarCompra", ReplyAction="http://tempuri.org/IJuntosService/SalvarCompraResponse")]
-        void SalvarCompra(Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO compra);
+        void SalvarCompra(Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO compra);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ComprarOferta", ReplyAction="http://tempuri.org/IJuntosService/ComprarOfertaResponse")]
-        Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons);
+        Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/PagarCompra", ReplyAction="http://tempuri.org/IJuntosService/PagarCompraResponse")]
-        void PagarCompra(long idCompra, Juntos.Apresentacao.ConsoleTest.wsProxy.EnumFormaPagamento formaPagamento);
+        void PagarCompra(long idCompra, Juntos.Apresentacao.ConsoleTest.proxy.EnumFormaPagamento formaPagamento);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/InformarUsoCupom", ReplyAction="http://tempuri.org/IJuntosService/InformarUsoCupomResponse")]
         void InformarUsoCupom(long idCupom);
@@ -969,22 +1001,22 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
         void PublicarOferta(long idOferta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ListarCuponsNaoUtilizados", ReplyAction="http://tempuri.org/IJuntosService/ListarCuponsNaoUtilizadosResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> ListarCuponsNaoUtilizados(long ofertaid);
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> ListarCuponsNaoUtilizados(long ofertaid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/ConsolidarOferta", ReplyAction="http://tempuri.org/IJuntosService/ConsolidarOfertaResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> ConsolidarOferta(long ofertaid);
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> ConsolidarOferta(long ofertaid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJuntosService/RetornarTodasOfertas", ReplyAction="http://tempuri.org/IJuntosService/RetornarTodasOfertasResponse")]
-        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO> RetornarTodasOfertas();
+        System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO> RetornarTodasOfertas();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IJuntosServiceChannel : Juntos.Apresentacao.ConsoleTest.wsProxy.IJuntosService, System.ServiceModel.IClientChannel {
+    public interface IJuntosServiceChannel : Juntos.Apresentacao.ConsoleTest.proxy.IJuntosService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class JuntosServiceClient : System.ServiceModel.ClientBase<Juntos.Apresentacao.ConsoleTest.wsProxy.IJuntosService>, Juntos.Apresentacao.ConsoleTest.wsProxy.IJuntosService {
+    public partial class JuntosServiceClient : System.ServiceModel.ClientBase<Juntos.Apresentacao.ConsoleTest.proxy.IJuntosService>, Juntos.Apresentacao.ConsoleTest.proxy.IJuntosService {
         
         public JuntosServiceClient() {
         }
@@ -1005,67 +1037,67 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO> RetornarTodosConsumidores() {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO> RetornarTodosConsumidores() {
             return base.Channel.RetornarTodosConsumidores();
         }
         
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO ConsultarConsumidorPeloId(long id) {
+        public Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO ConsultarConsumidorPeloId(long id) {
             return base.Channel.ConsultarConsumidorPeloId(id);
         }
         
-        public void SalvarConsumidor(Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO consumidor) {
+        public void SalvarConsumidor(Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO consumidor) {
             base.Channel.SalvarConsumidor(consumidor);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO> RetornarTodosAnunciantes() {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO> RetornarTodosAnunciantes() {
             return base.Channel.RetornarTodosAnunciantes();
         }
         
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO ConsultarAnunciantePeloId(long id) {
+        public Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO ConsultarAnunciantePeloId(long id) {
             return base.Channel.ConsultarAnunciantePeloId(id);
         }
         
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO ConsultarAnunciantePeloEmail(string email) {
+        public Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO ConsultarAnunciantePeloEmail(string email) {
             return base.Channel.ConsultarAnunciantePeloEmail(email);
         }
         
-        public void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO anunciante) {
+        public void SalvarAnunciante(Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO anunciante) {
             base.Channel.SalvarAnunciante(anunciante);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO> RetornarTodasOfertasPorAnunciante(long anuncianteid) {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO> RetornarTodasOfertasPorAnunciante(long anuncianteid) {
             return base.Channel.RetornarTodasOfertasPorAnunciante(anuncianteid);
         }
         
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO ConsultarOfertaPeloId(long id) {
+        public Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO ConsultarOfertaPeloId(long id) {
             return base.Channel.ConsultarOfertaPeloId(id);
         }
         
-        public void SalvarOferta(Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO oferta, long idConsumidor) {
+        public void SalvarOferta(Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO oferta, long idConsumidor) {
             base.Channel.SalvarOferta(oferta, idConsumidor);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO> RetornarTodasComprasPorConsumidor(long consumidorid) {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO> RetornarTodasComprasPorConsumidor(long consumidorid) {
             return base.Channel.RetornarTodasComprasPorConsumidor(consumidorid);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO> RetornarTodasCompras() {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO> RetornarTodasCompras() {
             return base.Channel.RetornarTodasCompras();
         }
         
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO ConsultarCompraPeloId(long id) {
+        public Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO ConsultarCompraPeloId(long id) {
             return base.Channel.ConsultarCompraPeloId(id);
         }
         
-        public void SalvarCompra(Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO compra) {
+        public void SalvarCompra(Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO compra) {
             base.Channel.SalvarCompra(compra);
         }
         
-        public Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons) {
+        public Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons) {
             return base.Channel.ComprarOferta(idConsumidor, idOferta, quantidadeCupons);
         }
         
-        public void PagarCompra(long idCompra, Juntos.Apresentacao.ConsoleTest.wsProxy.EnumFormaPagamento formaPagamento) {
+        public void PagarCompra(long idCompra, Juntos.Apresentacao.ConsoleTest.proxy.EnumFormaPagamento formaPagamento) {
             base.Channel.PagarCompra(idCompra, formaPagamento);
         }
         
@@ -1077,15 +1109,15 @@ namespace Juntos.Apresentacao.ConsoleTest.wsProxy {
             base.Channel.PublicarOferta(idOferta);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> ListarCuponsNaoUtilizados(long ofertaid) {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> ListarCuponsNaoUtilizados(long ofertaid) {
             return base.Channel.ListarCuponsNaoUtilizados(ofertaid);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO> ConsolidarOferta(long ofertaid) {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO> ConsolidarOferta(long ofertaid) {
             return base.Channel.ConsolidarOferta(ofertaid);
         }
         
-        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO> RetornarTodasOfertas() {
+        public System.Collections.Generic.List<Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO> RetornarTodasOfertas() {
             return base.Channel.RetornarTodasOfertas();
         }
     }

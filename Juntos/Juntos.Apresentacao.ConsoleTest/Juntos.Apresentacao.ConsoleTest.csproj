@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\wsProxy\Reference.cs">
+    <Compile Include="Service References\proxy\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -60,49 +60,49 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.AnuncianteDTO.datasource">
+    <None Include="Service References\proxy\Juntos.Apresentacao.ConsoleTest.proxy.AnuncianteDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.CompraDTO.datasource">
+    <None Include="Service References\proxy\Juntos.Apresentacao.ConsoleTest.proxy.CompraDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.ConsumidorDTO.datasource">
+    <None Include="Service References\proxy\Juntos.Apresentacao.ConsoleTest.proxy.ConsumidorDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.CupomDTO.datasource">
+    <None Include="Service References\proxy\Juntos.Apresentacao.ConsoleTest.proxy.CupomDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\Juntos.Apresentacao.ConsoleTest.wsProxy.OfertaDTO.datasource">
+    <None Include="Service References\proxy\Juntos.Apresentacao.ConsoleTest.proxy.OfertaDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\wsProxy\JuntosService.wsdl" />
-    <None Include="Service References\wsProxy\JuntosService.xsd">
+    <None Include="Service References\proxy\JuntosService.wsdl" />
+    <None Include="Service References\proxy\JuntosService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\JuntosService1.xsd">
+    <None Include="Service References\proxy\JuntosService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\JuntosService2.xsd">
+    <None Include="Service References\proxy\JuntosService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\wsProxy\JuntosService3.xsd">
+    <None Include="Service References\proxy\JuntosService3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\wsProxy\" />
+    <WCFMetadataStorage Include="Service References\proxy\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\JuntosService.disco" />
+    <None Include="Service References\proxy\JuntosService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\configuration91.svcinfo" />
+    <None Include="Service References\proxy\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\configuration.svcinfo" />
+    <None Include="Service References\proxy\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsProxy\Reference.svcmap">
+    <None Include="Service References\proxy\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

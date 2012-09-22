@@ -193,6 +193,11 @@ namespace Juntos.WcfServiceApp
         {
             ICompraService compraService = typeof(ICompraService).Fabricar();
             compraService.Salvar(DTOtoCompra(compra));
+
+            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
+            Consumidor consumidor = consumidorService.BuscarPorId(compra.ConsumidorId);
+            
+            consumidorService.Atualizar(consumidor);
         }
 
         public CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons)
@@ -648,7 +653,7 @@ namespace Juntos.WcfServiceApp
             
             CompraDTO compra = new CompraDTO();
 
-            //compra.Consumidor = ConsumidorToDTO(c.Consumidor);
+            compra.ConsumidorId = c.Consumidor.Id;
             compra.DataCompra = c.DataCompra;
             compra.Id = c.Id;
             compra.ValorTotal = c.ValorTotal;
@@ -683,9 +688,9 @@ namespace Juntos.WcfServiceApp
             }
             
             Compra compra = new Compra();
+            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
 
-
-            //compra.Consumidor = DTOtoConsumidor(c.Consumidor);
+            compra.Consumidor = consumidorService.BuscarPorId(c.ConsumidorId);
             compra.DataCompra = c.DataCompra;
             compra.Id = c.Id;
             compra.ValorTotal = c.ValorTotal;

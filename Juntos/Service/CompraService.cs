@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Framework;
 using Juntos.IRepository;
 using Juntos.IService;
@@ -25,6 +26,9 @@ namespace Juntos.Service
             compra.DataCompra = DateTime.Now;
 
             this.Repository.Adicionar(compra);
+
+            
+
             consumidorService.Atualizar(consumidor);
             ofertaService.Atualizar(oferta);
 

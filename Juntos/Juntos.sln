@@ -34,6 +34,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juntos.aplicacao.Services", "Juntos.aplicacao.Services\Juntos.aplicacao.Services.csproj", "{8884FB36-D15C-421D-8D0F-02FB24C87DC1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B63B3242-FE75-4C91-B442-E243C82162AA} = {B63B3242-FE75-4C91-B442-E243C82162AA}
+		{4F380775-CF13-4338-9B33-49772700D885} = {4F380775-CF13-4338-9B33-49772700D885}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juntos.WcfServiceApp", "WcfServiceApp\Juntos.WcfServiceApp.csproj", "{DF7502AA-0EFF-4431-A2AA-282FA4F6834C}"

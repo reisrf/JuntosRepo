@@ -62,18 +62,18 @@ namespace Juntos.Apresentacao.ConsoleTest
                 ConsumidorDTO consumidor = ObterConsumidor();
                 OfertaDTO oferta = ObterOferta(anunciante.Id);
 
-                ComprarOfertas(consumidor, oferta, 5);
+                CompraDTO compra =  ComprarOferta(consumidor, oferta, 5);
 
                 Console.WriteLine("Pagar Compra");
 
-                PagarCompras(consumidor, EnumFormaPagamento.PayPal);
+                PagarCompra(compra, EnumFormaPagamento.PayPal);
 
 
                 Console.WriteLine("Comprando Oferta de novo");
-                ComprarOfertas(consumidor, oferta, 10);
+                CompraDTO compra2 = ComprarOferta(consumidor, oferta, 10);
 
                 Console.WriteLine("Pagar nova Compra");
-                PagarCompras(consumidor, EnumFormaPagamento.PagSeguro);
+                PagarCompra(compra2, EnumFormaPagamento.PagSeguro);
 
                 Console.WriteLine("Informar utilizacao Cupom");
                 InformarCupom(oferta);
@@ -291,26 +291,21 @@ namespace Juntos.Apresentacao.ConsoleTest
         }
 
 
-        private static void ComprarOfertas(ConsumidorDTO consumidor, OfertaDTO oferta, int nrcupons) {
+        private static CompraDTO ComprarOferta(ConsumidorDTO consumidor, OfertaDTO oferta, int nrcupons) {
 
             CompraDTO compra = client.ComprarOferta(consumidor.Id, oferta.Id, nrcupons);
             client.SalvarCompra(compra);
-         
-       }
+            return compra;
+
+        }
 
 
-        private static void PagarCompras(ConsumidorDTO consumidor, EnumFormaPagamento tipo)
+        private static void PagarCompra(CompraDTO compra, EnumFormaPagamento tipo)
         {
 
-            if (consumidor.Compras != null && consumidor.Compras.Count > 0)
-            {
+            
+              client.PagarCompra(compra.Id, tipo);
 
-                consumidor.Compras.ForEach(c =>
-                {
-                    client.PagarCompra(c.Id, tipo);
-
-                });
-            }
         }
 
         private static void InformarCupom(OfertaDTO oferta) 

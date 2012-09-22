@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Juntos.aplicacao.Services.wsProxy;
+
+using juntos.aplicacao.wsPagamentoClient.proxy;
 
 namespace Juntos.aplicacao.Services
 {

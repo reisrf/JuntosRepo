@@ -66,7 +66,7 @@
     <Compile Include="PagamentoService.svc.cs">
       <DependentUpon>PagamentoService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IPagamentoService.cs" />
+    <Compile Include="IPagamentoWService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +80,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5246</DevelopmentServerPort>
+          <DevelopmentServerPort>1973</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -54,12 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JuntosService.svc" />
-    <None Include="Service References\PagamentoServices\PagamentoService.disco" />
-    <None Include="Service References\PagamentoServices\configuration91.svcinfo" />
-    <None Include="Service References\PagamentoServices\configuration.svcinfo" />
-    <None Include="Service References\PagamentoServices\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Service References\PagamentoServices\PagamentoService.wsdl" />
+    <None Include="Service References\PagamentoServices\PagamentoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PagamentoServices\PagamentoService1.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\wsProxy\ControladorDePagamentoService.disco" />
     <None Include="Service References\wsProxy\configuration91.svcinfo" />
@@ -71,6 +71,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\PagamentoServices\PagamentoService.disco" />
+    <None Include="Service References\PagamentoServices\configuration91.svcinfo" />
+    <None Include="Service References\PagamentoServices\configuration.svcinfo" />
+    <None Include="Service References\PagamentoServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -78,13 +85,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <None Include="Service References\PagamentoServices\PagamentoService.wsdl" />
-    <None Include="Service References\PagamentoServices\PagamentoService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PagamentoServices\PagamentoService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\wsProxy\ControladorDePagamentoService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -175,7 +175,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4680</DevelopmentServerPort>
+          <DevelopmentServerPort>1970</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

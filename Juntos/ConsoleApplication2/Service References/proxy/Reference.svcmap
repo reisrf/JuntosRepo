@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d213d924-3672-4562-8610-cdb0c67e343f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4b426f43-fd97-479c-8890-aa7f1caa4151" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:4680/JuntosService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1970/JuntosService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="JuntosService.xsd" MetadataType="Schema" ID="cc1c4f33-f74f-4a2a-b517-721d2e7eb361" SourceId="1" SourceUrl="http://localhost:4680/JuntosService.svc?xsd=xsd1" />
-    <MetadataFile FileName="JuntosService.disco" MetadataType="Disco" ID="ca713b75-5c67-4b55-a657-590f3f460b4c" SourceId="1" SourceUrl="http://localhost:4680/JuntosService.svc?disco" />
-    <MetadataFile FileName="JuntosService.wsdl" MetadataType="Wsdl" ID="0aa24ca8-266d-463e-9e46-759c75750d57" SourceId="1" SourceUrl="http://localhost:4680/JuntosService.svc?wsdl" />
-    <MetadataFile FileName="JuntosService1.xsd" MetadataType="Schema" ID="1014b344-638f-4052-9fec-e8038891f4cc" SourceId="1" SourceUrl="http://localhost:4680/JuntosService.svc?xsd=xsd3" />
-    <MetadataFile FileName="JuntosService2.xsd" MetadataType="Schema" ID="fe2e7633-64b0-4425-9f72-6ea397cae093" SourceId="1" SourceUrl="http://localhost:4680/JuntosService.svc?xsd=xsd2" />
-    <MetadataFile FileName="JuntosService3.xsd" MetadataType="Schema" ID="a1f05157-aa1d-4dca-894a-9c7640228ee8" SourceId="1" SourceUrl="http://localhost:4680/JuntosService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JuntosService.xsd" MetadataType="Schema" ID="40a9272c-a2e9-424b-b9bf-f46dacc63f20" SourceId="1" SourceUrl="http://localhost:1970/JuntosService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JuntosService1.xsd" MetadataType="Schema" ID="2fb1461b-de4d-4af0-b188-dcc6a2c324b6" SourceId="1" SourceUrl="http://localhost:1970/JuntosService.svc?xsd=xsd3" />
+    <MetadataFile FileName="JuntosService2.xsd" MetadataType="Schema" ID="3ed8a662-055b-48f6-a4ed-7ecffdc4c5e4" SourceId="1" SourceUrl="http://localhost:1970/JuntosService.svc?xsd=xsd1" />
+    <MetadataFile FileName="JuntosService.disco" MetadataType="Disco" ID="29169299-50b5-48fb-9a08-1c839eb6f371" SourceId="1" SourceUrl="http://localhost:1970/JuntosService.svc?disco" />
+    <MetadataFile FileName="JuntosService.wsdl" MetadataType="Wsdl" ID="f95c1e52-6d67-4ebc-99f5-f038a59dd2ee" SourceId="1" SourceUrl="http://localhost:1970/JuntosService.svc?wsdl" />
+    <MetadataFile FileName="JuntosService3.xsd" MetadataType="Schema" ID="d40e0ca3-0693-484f-a153-709e4207d3ce" SourceId="1" SourceUrl="http://localhost:1970/JuntosService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

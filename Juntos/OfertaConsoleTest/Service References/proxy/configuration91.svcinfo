@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VOHglNQp8DexHcQzNYJTpNydkh4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SkjyHrOO/6xbgGIUQHfjrTWd1Jc=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IJuntosService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IJuntosService" contract="proxy.IJuntosService" bindingType="basicHttpBinding" address="http://localhost:4680/JuntosService.svc" bindingConfiguration="BasicHttpBinding_IJuntosService">
+    <endpoint name="BasicHttpBinding_IJuntosService" contract="proxy.IJuntosService" bindingType="basicHttpBinding" address="http://localhost:1970/JuntosService.svc" bindingConfiguration="BasicHttpBinding_IJuntosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:4680/JuntosService.svc</serializedValue>
+          <serializedValue>http://localhost:1970/JuntosService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

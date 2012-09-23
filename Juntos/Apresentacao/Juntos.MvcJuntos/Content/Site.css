@@ -207,8 +207,9 @@ select {
 }
 
 input[type="submit"] {
-    font-size: 1.2em;
-    padding: 5px;
+    font-size: 1.0em;
+    padding: 10px;
+    font-weight: bold;
 }
 
 /* TABLE
@@ -304,6 +305,8 @@ div#title {
 .display-label, 
 .editor-label {
     margin: 1em 0 0 0;
+    font-weight: bold;
+    color: #000000;
 }
 
 .display-field, 

@@ -11,6 +11,7 @@ namespace Juntos.WcfServiceApp
     using Juntos.Apresentacao.WcfServiceApp.dto;
     using Juntos.WcfServiceApp.wsProxy;
 
+
     public class JuntosService : IJuntosService
     {
         public List<ConsumidorDTO> RetornarTodosConsumidores()
@@ -193,11 +194,6 @@ namespace Juntos.WcfServiceApp
         {
             ICompraService compraService = typeof(ICompraService).Fabricar();
             compraService.Salvar(DTOtoCompra(compra));
-
-            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
-            Consumidor consumidor = consumidorService.BuscarPorId(compra.ConsumidorId);
-            
-            consumidorService.Atualizar(consumidor);
         }
 
         public CompraDTO ComprarOferta(long idConsumidor, long idOferta, int quantidadeCupons)
@@ -223,9 +219,11 @@ namespace Juntos.WcfServiceApp
             ICompraService compraService = typeof (ICompraService).Fabricar();
             var compra = compraService.BuscarPorId(idCompra);
 
+            
+
             if (formaPagamento == EnumFormaPagamento.PayPal)
             {
-                using (var pagamentoServiceClient = new PagamentoServiceClient())
+                using (var pagamentoServiceClient = new PagamentoWServiceClient())
                 {
                     pagamentoServiceClient.Open();
                     if (pagamentoServiceClient.Pagar(compra.ValorTotal))
@@ -653,7 +651,7 @@ namespace Juntos.WcfServiceApp
             
             CompraDTO compra = new CompraDTO();
 
-            compra.ConsumidorId = c.Consumidor.Id;
+            //compra.Consumidor = ConsumidorToDTO(c.Consumidor);
             compra.DataCompra = c.DataCompra;
             compra.Id = c.Id;
             compra.ValorTotal = c.ValorTotal;
@@ -688,9 +686,9 @@ namespace Juntos.WcfServiceApp
             }
             
             Compra compra = new Compra();
-            IConsumidorService consumidorService = typeof(IConsumidorService).Fabricar();
 
-            compra.Consumidor = consumidorService.BuscarPorId(c.ConsumidorId);
+
+            //compra.Consumidor = DTOtoConsumidor(c.Consumidor);
             compra.DataCompra = c.DataCompra;
             compra.Id = c.Id;
             compra.ValorTotal = c.ValorTotal;

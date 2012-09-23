@@ -170,7 +170,7 @@ namespace Juntos.MvcJuntos.Controllers
         {
             IOfertaService ofertaService = typeof(IOfertaService).Fabricar();
             ofertaService.Publicar(id);
-            return RedirectToAction(@"../Oferta/ListaDeOfertasAnuncianteAPublicar");
+            return RedirectToAction(@"../Oferta/ListaDeOfertasAnunciantePublicadas");
             
         }
 

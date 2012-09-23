@@ -27,20 +27,18 @@ namespace Juntos.Service
         {
             return this.Repository.Consultar(e => e.Email.Equals(email)).FirstOrDefault();
         }
-        
-	public TPessoa ConsultarPeloEmaileSenha(string email, string senha)
+       
+        public TPessoa ConsultarPeloEmaileSenha(string email, string senha)
         {
             List<TPessoa> listPessoa = Repository.Consultar(e => e.Email.Equals(email) && e.Senha == senha);
-        
-            if (listPessoa!=null)
+
+            if (listPessoa != null)
             {
                 return listPessoa.FirstOrDefault();
-               
+
             }
             return null;
 
         }
-
-  
-      }
+    }
 }

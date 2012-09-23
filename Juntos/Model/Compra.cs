@@ -9,25 +9,6 @@ namespace Juntos.Model
     {
         private decimal? _valorTotal;
 
-        public DateTime DataCompra { get; set; }
-
-        public Consumidor Consumidor { get; set; }
-
-        public virtual List<Cupom> Cupons { get; set; }
-
-        public virtual List<Pagamento> Pagamentos { get; set; }
-
-        public decimal ValorTotal
-        {
-            get { return this._valorTotal ?? this.Cupons.Sum(c => c.Valor); }
-            set { this._valorTotal = value; }
-        }
-
-        public bool IsPaga()
-        {
-            return this.Pagamentos.Any(p => p.Status == EnumStatusPagamento.Aprovado);
-        }
-
         public Compra()
         {
             this.Cupons = new List<Cupom>();
@@ -39,31 +20,67 @@ namespace Juntos.Model
             this.Consumidor = consumidor;
         }
 
-        public Pagamento Pagar(EnumFormaPagamento formaPagamento)
+        public decimal ValorTotal
+        {
+            get { return this._valorTotal ?? this.Cupons.Sum(c => c.Valor); } 
+            set { this._valorTotal = value; }
+        }
+
+        public DateTime DataCompra { get; set; }
+
+        public Consumidor Consumidor { get; set; }
+
+        public virtual List<Cupom> Cupons { get; set; }
+
+        public virtual List<Pagamento> Pagamentos { get; set; }
+
+        public bool IsPaga()
+        {
+            return this.Pagamentos.Any(p => p.Status == EnumStatusPagamento.Aprovado);
+        }
+
+        public void Pagar(EnumFormaPagamento formaPagamento)
         {
             if (this.IsPaga())
             {
                 throw new Exception("A compra já está paga.");
             }
 
-            this.CancelarPagamentoPendente();
+                 
+            var novo = new Pagamento(formaPagamento)
+                {
+                    Status = EnumStatusPagamento.Aprovado,
+                    Valor = this.ValorTotal,
+                    DataPagamento = DateTime.Now
+                };
 
-            var pagamento = new Pagamento(formaPagamento)
-                                {
-                                    Status = EnumStatusPagamento.Pendente,
-                                    Valor = this.ValorTotal,
-                                    DataPagamento = DateTime.Now
-                                };
-
-            this.Pagamentos.Add(pagamento);
-
-            return pagamento;
+                this.Pagamentos.Add(novo);
         }
 
-        private void CancelarPagamentoPendente()
+
+        private void CancelarPagamentoPendente(EnumFormaPagamento formaPagamento)
         {
-            var pagamento = this.Pagamentos.FirstOrDefault(p => p.Status == EnumStatusPagamento.Pendente);
-            if (pagamento != null) pagamento.Status = EnumStatusPagamento.Cancelado;
+            var novo = new Pagamento(formaPagamento)
+            {
+                Status = EnumStatusPagamento.Cancelado,
+                Valor = this.ValorTotal,
+                DataPagamento = DateTime.Now
+            };
+
+            this.Pagamentos.Add(novo);
+        }
+
+
+        public void RejeitarPagamento(EnumFormaPagamento formaPagamento)
+        {
+            var novo = new Pagamento(formaPagamento)
+            {
+                Status = EnumStatusPagamento.Rejeitado,
+                Valor = this.ValorTotal,
+                DataPagamento = DateTime.Now
+            };
+
+            this.Pagamentos.Add(novo);
         }
     }
 }

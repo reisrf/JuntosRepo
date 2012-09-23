@@ -113,7 +113,7 @@ namespace Juntos.MvcJuntos.Controllers
             consumidorService.Adicionar(consumidor);
 
             System.Web.HttpContext.Current.Session["consumidorId"] = consumidor.Id.ToString();
-            return RedirectToAction(@"../Oferta");
+            return RedirectToAction(@"../Oferta/ListaDeOfertasAtivasConsumidor");
         }
 
         public ActionResult Login()

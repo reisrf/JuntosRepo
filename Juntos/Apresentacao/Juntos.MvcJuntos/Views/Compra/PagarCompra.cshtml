@@ -4,7 +4,7 @@
     ViewBag.Title = "PagarCompra";
 }
 
-<h2>Comprar Oferta</h2>
+<h2>Pagar Compra</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -13,64 +13,72 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Pagar Compra</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Oferta.Descricao)
-        </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model => model.Oferta.Descricao)
+        
+        <table>
+            <td valign="top">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Oferta.Descricao)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.Oferta.Descricao)
            
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Oferta.Condicoes)
-        </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model => model.Oferta.Condicoes)
-        </div>
-         <div class="editor-label">
-            @Html.LabelFor(model => model.Oferta.DataValidadeCupons)
-        </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model => model.Oferta.DataValidadeCupons)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Oferta.ValorCupons)
-        </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model => model.Oferta.ValorCupons)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nrcupons)
-        </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model => model.nrcupons)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ValorTotal)
-        </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model => model.ValorTotal)
-            @Html.ValidationMessageFor(model => model.ValorTotal)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FormaPagamento)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.FormaPagamento, new SelectList(Enum.GetValues(typeof(Juntos.Model.Enums.EnumFormaPagamento))))
-            @Html.ValidationMessageFor(model => model.FormaPagamento)
-        </div>
-      
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Oferta.Condicoes)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.Oferta.Condicoes)
+                </div>
+            </td>
+            <td valign="top">
+                 <div class="editor-label">
+                    @Html.LabelFor(model => model.Oferta.DataValidadeCupons)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.Oferta.DataValidadeCupons)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Oferta.ValorCupons)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.Oferta.ValorCupons)
+                </div>
+            </td>
+            <td valign="top">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.nrcupons)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.nrcupons)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ValorTotal)
+                </div>
+                <div class="editor-field">
+                    @Html.DisplayFor(model => model.ValorTotal)
+                    @Html.ValidationMessageFor(model => model.ValorTotal)
+                </div>
+           </td>
+           <td valign="top">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.FormaPagamento)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.FormaPagamento, new SelectList(Enum.GetValues(typeof(Juntos.Model.Enums.EnumFormaPagamento))))
+                    @Html.ValidationMessageFor(model => model.FormaPagamento)
+                </div>
+        
 
         
 
-        <p>
-            <input type="submit" value="PagarCompra" />
-        </p>
+                <p>
+                    <input type="submit" value="PagarCompra" />
+                </p>
+            </td>
+        </table>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "../Oferta/ListaDeOfertasAtivasConsumidor")
+    @Html.ActionLink("Voltar", "../Oferta/ListaDeOfertasAtivasConsumidor")
 </div>

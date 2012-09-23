@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using Juntos.Model;
+using System.Collections.Generic;
 using Juntos.Model.Enums;
 
 namespace Juntos.IService

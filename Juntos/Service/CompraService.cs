@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Framework;
 using Juntos.IRepository;
 using Juntos.IService;
@@ -21,14 +20,10 @@ namespace Juntos.Service
             
             var compra = new Compra(consumidor);
             var cupons = oferta.GerarCupons(quantidadeCupons);
-            compra.Consumidor = consumidor;
             compra.Cupons.AddRange(cupons);
             compra.DataCompra = DateTime.Now;
 
             this.Repository.Adicionar(compra);
-
-            
-
             consumidorService.Atualizar(consumidor);
             ofertaService.Atualizar(oferta);
 
@@ -42,10 +37,21 @@ namespace Juntos.Service
                 throw new Exception("A compra já se encontra paga.");
             }
 
-            Pagamento pagamento = compra.Pagar(formaPagamento);
-            IPagamentoService pagamentoService = typeof (IPagamentoService).Fabricar();
-            pagamentoService.Adicionar(pagamento);
+            compra.Pagar(formaPagamento);
             this.Repository.Atualizar(compra);
         }
+
+        public void RejeitarCompra(Compra compra, EnumFormaPagamento formaPagamento)
+        {
+            if (compra.IsPaga())
+            {
+                throw new Exception("A compra já se encontra paga.");
+            }
+
+            compra.RejeitarPagamento(formaPagamento);
+            this.Repository.Atualizar(compra);
+        }
+
+
     }
 }

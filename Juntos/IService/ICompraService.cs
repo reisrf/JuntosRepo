@@ -8,5 +8,6 @@ namespace Juntos.IService
     {
         Compra ComprarOferta(Consumidor consumidor, Oferta oferta, int quantidadeCupons);
         void PagarCompra(Compra compra, EnumFormaPagamento formaPagamento);
+        void RejeitarCompra(Compra compra, EnumFormaPagamento formaPagamento);
     }
 }

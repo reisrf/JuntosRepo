@@ -72,6 +72,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CompraDTO.cs" />
+    <Compile Include="Models\CupomDTO.cs" />
     <Compile Include="Models\OfertaDTO.cs" />
     <Compile Include="Models\PessoaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Compra\ListaDeComprasConsumidor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cupom\ListaDeCupomConsumidor.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

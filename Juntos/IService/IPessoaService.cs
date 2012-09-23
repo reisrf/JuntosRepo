@@ -7,7 +7,7 @@ namespace Juntos.IService
         where TPessoa : Pessoa
     {
         List<TPessoa> ConsultarPeloNome(string nome);
-        TPessoa ConsultarPelaInscricao(long Inscricao);
+        TPessoa ConsultarPelaInscricao(long cpfCnpj);
         TPessoa ConsultarPeloEmail(string email);
         TPessoa ConsultarPeloEmaileSenha(string email, string senha);
     }

@@ -33,13 +33,6 @@ namespace Juntos.Model
 
         public virtual EnumTipoPessoa Tipo { get; set; }
 
-        public virtual int TipoPessoaId
-        {
-            get { return (int)Tipo; }
-            set { Tipo = (EnumTipoPessoa)value; }
-        }
-       
-
         private List<Endereco> enderecos = new List<Endereco>();
         public virtual List<Endereco> Enderecos { get { return this.enderecos; } set {this.enderecos=value;} }
 

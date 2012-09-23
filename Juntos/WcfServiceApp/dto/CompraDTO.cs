@@ -15,7 +15,7 @@ namespace Juntos.Apresentacao.WcfServiceApp.dto
         public DateTime DataCompra { get; set; }
 
         [DataMember]
-        public long ConsumidorId { get; set; }
+        public ConsumidorDTO ConsumidorDto { get; set; }
 
         [DataMember]
         public List<CupomDTO> Cupons { get; set; }

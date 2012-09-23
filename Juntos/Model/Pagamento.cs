@@ -29,5 +29,11 @@ namespace Juntos.Model
         public decimal Valor { get; set; }
 
         public virtual EnumStatusPagamento Status { get; set; }
+
+        public virtual int StatusPagamentoId
+        {
+            get { return (int)Status; }
+            set { Status = (EnumStatusPagamento)value; }
+        }
     }
 }

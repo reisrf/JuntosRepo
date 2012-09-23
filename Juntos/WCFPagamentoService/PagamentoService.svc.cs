@@ -8,7 +8,7 @@ using System.Text;
 
 namespace WCFPagamentoService
 {
-    public class PagamentoService : IPagamentoService
+    public class PagamentoService : IPagamentoWService
     {
         public bool Pagar(decimal valor)
         {

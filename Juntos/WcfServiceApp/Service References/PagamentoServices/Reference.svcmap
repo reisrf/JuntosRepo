@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7969081d-03b6-40a6-a6d0-bc6d77ca6d68" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bbaa537b-67df-4ee3-9be3-a1b0914650a3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -8,7 +8,9 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
@@ -18,13 +20,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1459/PagamentoService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:5246/PagamentoService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PagamentoService.disco" MetadataType="Disco" ID="b849e930-b211-48d1-8ec5-1154f60afbd3" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?disco" />
-    <MetadataFile FileName="PagamentoService.xsd" MetadataType="Schema" ID="512347bb-4993-40fb-acce-3e7bf200394a" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PagamentoService1.xsd" MetadataType="Schema" ID="ff5f4f46-588c-4f11-bee0-6ea12f3292e8" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PagamentoService.wsdl" MetadataType="Wsdl" ID="740a127c-f03c-4328-9557-dd7607e6c196" SourceId="1" SourceUrl="http://localhost:1459/PagamentoService.svc?wsdl" />
+    <MetadataFile FileName="PagamentoService.wsdl" MetadataType="Wsdl" ID="9590495f-1e0b-42cc-af68-b2445e3b925c" SourceId="1" SourceUrl="http://localhost:5246/PagamentoService.svc?wsdl" />
+    <MetadataFile FileName="PagamentoService.disco" MetadataType="Disco" ID="37dc8a3a-6d9e-49a0-b780-e1d4e3320115" SourceId="1" SourceUrl="http://localhost:5246/PagamentoService.svc?disco" />
+    <MetadataFile FileName="PagamentoService.xsd" MetadataType="Schema" ID="5f74b659-87c1-4dc4-9731-fbfc32124a4a" SourceId="1" SourceUrl="http://localhost:5246/PagamentoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PagamentoService1.xsd" MetadataType="Schema" ID="094880ee-df4a-4dd7-b268-73e4fda0edfa" SourceId="1" SourceUrl="http://localhost:5246/PagamentoService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -347,13 +347,13 @@ namespace OfertaConsoleTest
             {
                 OfertaDTO oferta = service.ConsultarOfertaPeloId(1);
 
-                oferta.CuponsGerados.ForEach(c => {
+            /*    oferta.CuponsGerados.ForEach(c => {
 
                     Console.WriteLine("Id " + c.Id);
                     Console.WriteLine("Utilizacao " + c.DataUtilizacao);
                     Console.WriteLine("Valor " + c.Valor);
                 
-                });
+                }); */
                 
                 service.InformarUsoCupom(Convert.ToInt32(id));
             }

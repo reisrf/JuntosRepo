@@ -78,17 +78,8 @@ namespace Juntos.DAL.Provider.EntityFramework
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<Oferta>()
-                .Property(x => x.StatusOfertaId)
-                .HasColumnName("Status");
+           
 
-            modelBuilder.Entity<Pagamento>()
-                .Property(x => x.FormaPagamentoId)
-                .HasColumnName("FormaPagamento");
-
-            modelBuilder.Entity<Pessoa>()
-                .Property(x => x.TipoPessoaId)
-                .HasColumnName("Tipo");
 
             base.OnModelCreating(modelBuilder);
         }

@@ -1,9 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Juntos.IRepository;
 using Juntos.IService;
 using Juntos.Model;
+using System.Collections.Generic;
 using Juntos.Model.Enums;
 
 namespace Juntos.Service
@@ -74,9 +74,9 @@ namespace Juntos.Service
             return this.Repository.Consultar(o => o.Anunciante.Equals(anunciante) && o.Status == status);
         }
 
-        public List<Oferta> BuscarPorStatus( EnumStatusOferta status)
+        public List<Oferta> BuscarPorStatus(EnumStatusOferta status)
         {
-            return this.Repository.Consultar(o =>  o.Status == status);
+            return this.Repository.Consultar(o => o.Status == status);
         }
     }
 }

@@ -14,11 +14,32 @@ namespace Juntos.MvcJuntos.Controllers
     {
         public ActionResult Index()
         {
-
             ICompraService compraService = typeof(ICompraService).Fabricar();
             List<Compra> compras = compraService.RetornarTodos();
             return View(compras);
         }
+
+        public ActionResult ListaDeComprasConsumidor()
+        {
+
+            long consumidorId = long.Parse(System.Web.HttpContext.Current.Session["consumidorId"].ToString());
+            ICompraService compraService = typeof(ICompraService).Fabricar();
+            List<Compra> compras = compraService.RetornarTodos();
+            List<Compra> comprasConsumidor = new List<Compra>();
+            foreach (Compra compra in compras)
+            {
+                if (compra.Consumidor.Id == consumidorId)
+                {
+                    comprasConsumidor.Add(compra);
+                }
+
+            }
+            return View(comprasConsumidor);
+
+            
+        }
+
+
         public ActionResult Edit(long id)
         {
             ICompraService compraService = typeof(ICompraService).Fabricar();

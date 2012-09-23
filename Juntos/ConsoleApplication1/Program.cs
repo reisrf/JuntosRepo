@@ -5,7 +5,6 @@ using System.Text;
 using ConsoleApplication1.proxy;
 
 
-
 namespace PessoaConsoleTest
 {
     class Program

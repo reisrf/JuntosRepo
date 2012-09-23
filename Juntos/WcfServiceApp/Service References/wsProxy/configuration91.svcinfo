@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="OQqfzKmmA1NQobQHHPBVEYMWUs0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="dQ6itDKlyl8A9ITyIJtX0rZ7b0A=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IControladorPagamentoService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IControladorPagamentoService" contract="wsProxy.IControladorPagamentoService" bindingType="basicHttpBinding" address="http://localhost:3815/ControladorDePagamentoService.svc" bindingConfiguration="BasicHttpBinding_IControladorPagamentoService">
+    <endpoint name="BasicHttpBinding_IControladorPagamentoService" contract="wsProxy.IControladorPagamentoService" bindingType="basicHttpBinding" address="http://localhost:5241/ControladorDePagamentoService.svc" bindingConfiguration="BasicHttpBinding_IControladorPagamentoService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:3815/ControladorDePagamentoService.svc</serializedValue>
+          <serializedValue>http://localhost:5241/ControladorDePagamentoService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Juntos.Model.Compra>
+﻿@model IEnumerable<Juntos.Model.Cupom>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -16,13 +16,13 @@
             Oferta
         </th>
         <th>
-            Data Compra
+            Data Validade
         </th>
         <th>
-            Qtde. Cupons
+            Data Utilização
         </th>
         <th>
-            Valor Total
+            Valor Cupom
         </th>
         
     </tr>
@@ -31,18 +31,20 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Cupons[0].Oferta.Descricao)
+                @Html.DisplayFor(modelItem => item.Oferta.Descricao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DataCompra)
+                @Html.DisplayFor(modelItem => item.DataValidade)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cupons.Count)
+                @Html.DisplayFor(modelItem => item.DataUtilizacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ValorTotal)
+                @Html.DisplayFor(modelItem => item.Valor)
             </td>
-            
+            <td>
+                @Html.DisplayFor(modelItem => item.IsUtilizado())
+            </td>
            
         </tr>
     }

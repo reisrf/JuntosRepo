@@ -97,7 +97,7 @@ namespace Juntos.MvcJuntos.Controllers
 
 
 
-                return RedirectToAction(@"PagarCompra/" + compra.id.ToString());
+                return RedirectToAction(@"PagarCompra/" + newCompra.Id.ToString());
             }
             return View(compra);
         }
